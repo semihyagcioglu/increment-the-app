@@ -34,7 +34,7 @@
 
     <div class="container">
         <div class="header" >
-            <div class="btn">Login</div>
+            <div class="btn"><a href="LogIn.aspx" target="_self">Login</a></div>
             <div class="btn btn-success">Sign Up</div>
         </div>
 
