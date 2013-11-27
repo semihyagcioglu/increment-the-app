@@ -57,7 +57,16 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\bootstrap-theme.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\jumbotron-narrow.css" />
     <Content Include="Default.aspx" />
+    <Content Include="img\button_appstore.png" />
+    <Content Include="img\button_googlePlay.png" />
+    <Content Include="img\button_win.png" />
+    <Content Include="img\slide3_3.png" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
