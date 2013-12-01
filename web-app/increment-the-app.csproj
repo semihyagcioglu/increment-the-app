@@ -61,6 +61,7 @@
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\jumbotron-narrow.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Home.aspx" />
     <Content Include="img\button_appstore.png" />
     <Content Include="img\button_googlePlay.png" />
     <Content Include="img\button_win.png" />
@@ -77,6 +78,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Library\Database.cs" />
     <Compile Include="LogIn.aspx.cs">
