@@ -72,7 +72,7 @@
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\LoginSingupChecks.js" />
     <Content Include="LogIn.aspx" />
-    <Content Include="SingUp.aspx" />
+    <Content Include="SignUp.aspx" />
     <Content Include="TaskManagement.aspx" />
     <Content Include="Unsubscribe.aspx" />
     <Content Include="UserAuthorization.aspx" />
@@ -127,12 +127,12 @@
     <Compile Include="Reports.Master.designer.cs">
       <DependentUpon>Reports.Master</DependentUpon>
     </Compile>
-    <Compile Include="SingUp.aspx.cs">
-      <DependentUpon>SingUp.aspx</DependentUpon>
+    <Compile Include="SignUp.aspx.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SingUp.aspx.designer.cs">
-      <DependentUpon>SingUp.aspx</DependentUpon>
+    <Compile Include="SignUp.aspx.designer.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -177,6 +177,7 @@
   <ItemGroup>
     <Content Include="Site.Master" />
     <Content Include="Reports.Master" />
+    <Content Include="css\bootstrap.min2.css" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

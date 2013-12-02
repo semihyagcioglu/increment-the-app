@@ -5,16 +5,31 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="css/jumbotron-narrow.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap.min2.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
-    </div>
+        <div>
+            <div class="container">
+                <div class="header">
+                    <div class="btn"><a href="Default.aspx" target="_self">Home</a></div>
+                    <div class="btn"><a href="LogIn.aspx" target="_self">Login</a></div>
+                    <div class="btn btn-success"><a href="SignUp.aspx">Sign Up</a></div>
+                </div>
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+
+                <div class="footer">
+                    <p>&copy; Increment the App 2013</p>
+                </div>
+            </div>
+        </div>
     </form>
 </body>
 </html>
