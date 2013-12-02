@@ -60,7 +60,9 @@
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\jumbotron-narrow.css" />
+    <Content Include="Dashboard.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="FindATask.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="img\button_appstore.png" />
     <Content Include="img\button_googlePlay.png" />
@@ -68,18 +70,37 @@
     <Content Include="img\slide3_3.png" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\LoginSingupChecks.js" />
     <Content Include="LogIn.aspx" />
+    <Content Include="SingUp.aspx" />
+    <Content Include="TaskManagement.aspx" />
     <Content Include="Unsubscribe.aspx" />
     <Content Include="UserAuthorization.aspx" />
+    <Content Include="UserRegistrationReports.aspx" />
     <Content Include="Web.config" />
+    <Content Include="WsReports.asmx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FindATask.aspx.cs">
+      <DependentUpon>FindATask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FindATask.aspx.designer.cs">
+      <DependentUpon>FindATask.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
@@ -89,6 +110,7 @@
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Library\Database.cs" />
+    <Compile Include="Library\Recommend.cs" />
     <Compile Include="Library\Reports.cs" />
     <Compile Include="LogIn.aspx.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
@@ -105,12 +127,26 @@
     <Compile Include="Reports.Master.designer.cs">
       <DependentUpon>Reports.Master</DependentUpon>
     </Compile>
+    <Compile Include="SingUp.aspx.cs">
+      <DependentUpon>SingUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SingUp.aspx.designer.cs">
+      <DependentUpon>SingUp.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="TaskManagement.aspx.cs">
+      <DependentUpon>TaskManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaskManagement.aspx.designer.cs">
+      <DependentUpon>TaskManagement.aspx</DependentUpon>
     </Compile>
     <Compile Include="Unsubscribe.aspx.cs">
       <DependentUpon>Unsubscribe.aspx</DependentUpon>
@@ -125,6 +161,17 @@
     </Compile>
     <Compile Include="UserAuthorization.aspx.designer.cs">
       <DependentUpon>UserAuthorization.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserRegistrationReports.aspx.cs">
+      <DependentUpon>UserRegistrationReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserRegistrationReports.aspx.designer.cs">
+      <DependentUpon>UserRegistrationReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WsReports.asmx.cs">
+      <DependentUpon>WsReports.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
