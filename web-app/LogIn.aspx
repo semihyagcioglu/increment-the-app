@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="increment_the_app.Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LogIn.aspx.cs" Inherits="increment_the_app.LogIn" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,30 +34,36 @@
 
     <div class="container">
         <div class="header" >
+             <div class="btn"><a href="Default.aspx" target="_self">Home</a></div>
             <div class="btn"><a href="LogIn.aspx" target="_self">Login</a></div>
             <div class="btn btn-success">Sign Up</div>
         </div>
 
-      <div class="jumbotron">
-       
-          <div id="iphone" class="iphone"><img src="img/slide3_3.png" width="143px" height="376px" /></div>
-          <div class="motto"> 
-              <div class="motto-title">Increment the App</div>
-			  
-              <p >The ultimate application that will set you free. An amazing app for amazing people.</p>
-          </div>
-
-          <div id="btn" class="buttons">
-              <a href="contact.html" class="btn btn-success" style="background-image: url('./img/button_appstore.png'); background-repeat: no-repeat; background-position: center;"></a>
-              <a href="contact.html" class="btn btn-warning" style="background-image: url('./img/button_googlePlay.png'); background-repeat: no-repeat; background-position: center;"></a>
-              <a href="contact.html" class="btn btn-primary" style="background-image: url('./img/button_win.png'); background-repeat: no-repeat; background-position: center;"></a>
-          </div>
-      </div>
-        
-        <div class="row marketing">
-          
-		
-      </div>
+      <div class="row">
+		<div class="col-md-4 col-md-offset-4">
+    		<div class="panel panel-default">
+			  	<div class="panel-heading">
+			    	<h3 class="panel-title">Please sign in</h3>
+			 	</div>
+			  	<div class="panel-body">
+			    	<form accept-charset="UTF-8" role="form">
+			    	  	<div class="form-group">
+			    		    <input class="form-control" placeholder="E-mail" name="email" type="text">
+			    		</div>
+			    		<div class="form-group">
+			    			<input class="form-control" placeholder="Password" name="password" type="password" value="">
+			    		</div>
+			    		<div class="checkbox">
+			    	    	<label>
+			    	    		<input name="remember" type="checkbox" value="Remember Me"> Remember Me
+			    	    	</label>
+			    	    </div>
+			    		<input class="btn btn-lg btn-success btn-block" type="submit" value="Login">
+			      	</form>
+			    </div>
+			</div>
+		</div>
+	</div>
 
       <div class="footer">
         <p>&copy; Increment the App 2013</p>
