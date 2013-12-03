@@ -79,6 +79,7 @@
     <Content Include="UserRegistrationReports.aspx" />
     <Content Include="Web.config" />
     <Content Include="WsReports.asmx" />
+    <Content Include="WsUsers.asmx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dashboard.aspx.cs">
@@ -112,6 +113,7 @@
     <Compile Include="Library\Database.cs" />
     <Compile Include="Library\Recommend.cs" />
     <Compile Include="Library\Reports.cs" />
+    <Compile Include="Library\Users.cs" />
     <Compile Include="LogIn.aspx.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -171,6 +173,10 @@
     </Compile>
     <Compile Include="WsReports.asmx.cs">
       <DependentUpon>WsReports.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WsUsers.asmx.cs">
+      <DependentUpon>WsUsers.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
