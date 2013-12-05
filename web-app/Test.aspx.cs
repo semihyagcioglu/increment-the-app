@@ -15,7 +15,7 @@ namespace increment_the_app
         {
             DataBase db = new DataBase("IncrementDBConnection");
 
-            DataTable dtUsers = DataBase.GetDataTable("SELECT UserId, Name FROM Users");
+            DataTable dtUsers = DataBase.GetDataTable("SELECT * FROM Users");
 
             gvUsers.DataSource = dtUsers;
             gvUsers.DataBind();
