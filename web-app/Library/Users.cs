@@ -17,8 +17,26 @@ namespace increment_the_app.Library
 
         public static string LogOut(string userId)
         {
-            //close account connection to site
-            return "session closed";
+            string result = string.Empty;
+            //the kill sesion
+
+            try
+            {
+                HttpContext.Current.Session.Abandon();
+                //Logs.UpdateUserLoginLog(userId);
+                Logs.UpdateUserLoginLog(userId);
+
+            }
+
+            catch (Exception ex)
+            {
+                string ip = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"].ToString();
+                Logs.InsertErrorLog(ex, System.Web.HttpContext.Current.Request.Url.AbsoluteUri, userId, ip, string.Empty);
+                //ann erroroccured trying to abadon the session
+                result = "ERROR_USER_SESSION_NOT_DESTROYED";
+            }
+            //check info from database
+            return result;
         }
 
         public static string CheckIfIsFirstTime(string userId)
