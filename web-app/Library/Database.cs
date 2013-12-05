@@ -30,20 +30,25 @@ namespace increment_the_app.Library
         {
             using (SqlConnection connection = new SqlConnection(cnnStr))
             {
-                SqlTransaction transaction = connection.BeginTransaction();
-                SqlCommand cmd = new SqlCommand(sqlCommand, connection, transaction);
+               // SqlTransaction transaction = connection.BeginTransaction();
+                //SqlCommand cmd = new SqlCommand(sqlCommand, connection, transaction);
+                SqlCommand cmd = new SqlCommand(sqlCommand, connection);
+                
+                var ds = new DataSet();
+
                 try
                 {
                     if (connection.State == ConnectionState.Closed)
                     {
                         connection.Open();
                     }
+
                     var da = new SqlDataAdapter(cmd);
                     da.SelectCommand.CommandTimeout = 30000;
 
-                    var ds = new DataSet();
+                    
                     da.Fill(ds);
-                    cmd.Transaction.Commit();
+                    //cmd.Transaction.Commit();
 
 
                     if (connection.State == ConnectionState.Open)
@@ -51,20 +56,22 @@ namespace increment_the_app.Library
                         connection.Close();
                         connection.Dispose();
                     }
-                    return ds;
+                    
                 }
                 catch (SqlException eX)
                 {
-                    try
-                    {
-                        cmd.Transaction.Rollback();
-                    }
-                    catch (SqlException eXR)
-                    {
-                        throw eXR;
-                    }
-                    throw eX;
+                    //try
+                    //{
+                    //   // cmd.Transaction.Rollback();
+                    //}
+                    //catch (SqlException eXR)
+                    //{
+                    //    throw eXR;
+                    //}
+                    //throw eX;
                 }
+
+                return ds;
             }
         }
 
