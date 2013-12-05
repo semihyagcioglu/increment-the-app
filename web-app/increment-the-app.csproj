@@ -72,13 +72,14 @@
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\LoginSingupChecks.js" />
     <Content Include="LogIn.aspx" />
-    <Content Include="SingUp.aspx" />
+    <Content Include="SignUp.aspx" />
     <Content Include="TaskManagement.aspx" />
     <Content Include="Unsubscribe.aspx" />
     <Content Include="UserAuthorization.aspx" />
     <Content Include="UserRegistrationReports.aspx" />
     <Content Include="Web.config" />
     <Content Include="WsReports.asmx" />
+    <Content Include="WsUsers.asmx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dashboard.aspx.cs">
@@ -109,9 +110,12 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Library\Crypto.cs" />
     <Compile Include="Library\Database.cs" />
+    <Compile Include="Library\Logs.cs" />
     <Compile Include="Library\Recommend.cs" />
     <Compile Include="Library\Reports.cs" />
+    <Compile Include="Library\Users.cs" />
     <Compile Include="LogIn.aspx.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -127,12 +131,12 @@
     <Compile Include="Reports.Master.designer.cs">
       <DependentUpon>Reports.Master</DependentUpon>
     </Compile>
-    <Compile Include="SingUp.aspx.cs">
-      <DependentUpon>SingUp.aspx</DependentUpon>
+    <Compile Include="SignUp.aspx.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SingUp.aspx.designer.cs">
-      <DependentUpon>SingUp.aspx</DependentUpon>
+    <Compile Include="SignUp.aspx.designer.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -173,10 +177,15 @@
       <DependentUpon>WsReports.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="WsUsers.asmx.cs">
+      <DependentUpon>WsUsers.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Site.Master" />
     <Content Include="Reports.Master" />
+    <Content Include="css\bootstrap.min2.css" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
