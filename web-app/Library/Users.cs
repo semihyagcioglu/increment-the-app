@@ -22,7 +22,7 @@ namespace increment_the_app.Library
         public static string CheckIfIsFirstTime(string userId)
         {
             //check account if first time logged on
-            return "-1";
+            return "1";
         }
 
         public static string LoginWithFacebook(string facebookId, string email, string firstName, string lastName, string city, string sex, string pic, string bday)
