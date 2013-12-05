@@ -110,7 +110,9 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Library\Crypto.cs" />
     <Compile Include="Library\Database.cs" />
+    <Compile Include="Library\Logs.cs" />
     <Compile Include="Library\Recommend.cs" />
     <Compile Include="Library\Reports.cs" />
     <Compile Include="Library\Users.cs" />
