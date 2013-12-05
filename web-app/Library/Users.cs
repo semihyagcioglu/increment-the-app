@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
+
 
 namespace increment_the_app.Library
 {
@@ -22,7 +24,31 @@ namespace increment_the_app.Library
         public static string CheckIfIsFirstTime(string userId)
         {
             //check account if first time logged on
-            return "-1";
+            string result = string.Empty;
+
+            result = "ERROR_USER_WRONG_ID";
+            string query = "SELECT IsFirstTime FROM [Users] WHERE (UserId = '" + userId + "'); UPDATE [Users] Set IsFirstTime = 0  WHERE (UserId = '" + userId + "')";
+
+            try
+            {
+                DataTable dtUserInfo = DataBase.GetDataTable(query);
+
+                if (dtUserInfo.Rows.Count > 0)
+                {
+                    DataRow dr = dtUserInfo.Rows[0];
+                    result = dr["IsFirstTime"].ToString();
+                }
+
+            }
+            catch (Exception exx)
+            {
+                result = "-1";
+                string ip = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"].ToString();
+                Logs.InsertErrorLog(exx, "Users.cs/CheckIfIsFirstTime", userId, ip, query);
+            }
+
+
+            return result;
         }
 
         public static string LoginWithFacebook(string facebookId, string email, string firstName, string lastName, string city, string sex, string pic, string bday)
