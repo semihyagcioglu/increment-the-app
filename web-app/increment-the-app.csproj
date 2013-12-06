@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Test.aspx" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\jumbotron-narrow.css" />
@@ -82,6 +83,13 @@
     <Content Include="WsUsers.asmx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
