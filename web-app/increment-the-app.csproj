@@ -78,7 +78,9 @@
     <Content Include="Unsubscribe.aspx" />
     <Content Include="UserAuthorization.aspx" />
     <Content Include="UserRegistrationReports.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="WsReports.asmx" />
     <Content Include="WsUsers.asmx" />
   </ItemGroup>
