@@ -13,6 +13,14 @@ namespace increment_the_app.Library
         private static string cnnStr = null;
 
         /// <summary>
+        /// Default constructor to connect Azure database.
+        /// </summary>
+        public DataBase()
+        {
+            cnnStr = ConfigurationManager.ConnectionStrings["IncrementDBConnection"].ConnectionString;
+        }
+
+        /// <summary>
         /// This constructors set connection string
         /// </summary>
         /// <param name="cnnStrName">is a connection strings name in the application config file (app.config)</param>
