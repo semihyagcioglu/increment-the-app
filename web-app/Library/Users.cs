@@ -11,8 +11,61 @@ namespace increment_the_app.Library
     {
         public static string LogIn(string email, string password)
         {
-            //check info from database
-            return "sucsess";
+             string result = string.Empty;
+
+            string userId = string.Empty;
+            string name = string.Empty;
+            string surname = string.Empty;
+            string uniqueId = string.Empty;
+
+            string queryUser = @" SELECT [UserId], [Name], [Surname],[UniqueId]
+                                  FROM [Users]
+                                  WHERE (Email = '" + DataBase.CleanString(email) + "') AND ([Password] = '" + DataBase.CleanString(password) + "')";
+            try
+            {
+                DataTable dtUserInfo = DataBase.GetDataTable(queryUser);
+                if (dtUserInfo.Rows.Count > 0)
+                {
+                    DataRow drUserInfo = dtUserInfo.Rows[0];
+
+                    //Get user specific info
+                    userId = drUserInfo["UserId"].ToString();
+                    name = drUserInfo["Name"].ToString();
+                    surname = drUserInfo["Surname"].ToString();
+                    uniqueId = drUserInfo["UniqueId"].ToString();
+
+                    //Set session timeout to 3 hours
+                    HttpContext.Current.Session.Timeout = 180;
+
+                    //Set session vars
+                    HttpContext.Current.Session["userId"] = userId;
+                    HttpContext.Current.Session["name"] = name;
+                    HttpContext.Current.Session["surname"] = surname;
+                    HttpContext.Current.Session["LoginType"] = "1";
+                    HttpContext.Current.Session["uniqueID"] = uniqueId;
+
+                    //Logs.UpdateUserAccessLog(userId);
+                    //Logs.CreateUserLoginLog(userId);
+
+                    result = userId;
+
+                }
+                else
+                {
+                    //result = Resources.CustomCodes.ERROR_USER_NOT_FOUND;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                //Exception trying to get user related info from "Users" Table
+                //result = Resources.CustomCodes.ERROR_GENERIC.ToString();
+                //string ip = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"].ToString();
+                //Logs.InsertErrorLog(ex, System.Web.HttpContext.Current.Request.Url.AbsoluteUri, userId, ip, queryUser);
+            }
+
+            return result;
+        
         }
 
         public static string LogOut(string userId)

@@ -13,9 +13,7 @@ namespace increment_the_app
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            DataBase db = new DataBase("IncrementDBConnection");
-
-            DataTable dtUsers = DataBase.GetDataTable("SELECT * FROM Users");
+            DataTable dtUsers = DataBase.GetDataTable("SELECT COUNT(UserId) AS Count, GETDATE() AS Time FROM Users");
 
             gvUsers.DataSource = dtUsers;
             gvUsers.DataBind();

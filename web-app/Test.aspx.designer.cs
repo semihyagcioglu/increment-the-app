@@ -13,15 +13,6 @@ namespace increment_the_app {
     public partial class Test {
         
         /// <summary>
-        /// frm control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm frm;
-        
-        /// <summary>
         /// gvUsers control.
         /// </summary>
         /// <remarks>
