@@ -158,6 +158,11 @@ namespace increment_the_app.Library
             return retVal;
         }
 
+        public static string UpdateUserLoginLog(string userId)
+        {
+           // Will be updated
+            return userId;
+        }
 
         public static string UpdateActionLog(string userId, Guid sessionId)
         {
@@ -251,5 +256,7 @@ namespace increment_the_app.Library
 
             return arlActionVariables;
         }
+
+       
     }
 }
