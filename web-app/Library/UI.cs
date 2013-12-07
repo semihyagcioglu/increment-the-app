@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace increment_the_app.Library
 {
-    class UI
+    public class UI
     {
         // This function binds the given DropDownList with the given data table with respect to the data text field and the value field.
         public static void Bind2Ddl(ListControl ddl, DataTable dt, string textField, string valueField)
