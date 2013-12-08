@@ -243,9 +243,99 @@ namespace increment_the_app.Library
         {
             return "";
         }
-        public static string UnsubscribeUser(string userId, string email)
+        public static string Unsubscribe(string userId, string email)
         {
-            return "";
+            string sqlUnsubscribe = string.Empty;
+
+            if (string.IsNullOrEmpty(userId) == false)
+            {
+                sqlUnsubscribe = @" UPDATE [MailList]
+                                        SET [Unsubscribe] = 1
+                                        WHERE [UserId] = " + userId;
+
+            }
+            else if (string.IsNullOrEmpty(email) == false)
+            {
+                sqlUnsubscribe = @" UPDATE [MailList]
+                                        SET [Unsubscribe] = 1
+                                        WHERE [Email] = '" + email + "' ";
+            }
+
+            object tmp = null;
+            string retVal = string.Empty;
+
+            try
+            {
+                tmp = DataBase.ExecuteNonQuery(sqlUnsubscribe);
+            }
+            catch (Exception exx)
+            {
+                string ip = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"].ToString();
+                Logs.InsertErrorLog(exx, "Users.cs/Unsubscribe", string.Empty, ip, sqlUnsubscribe);
+                retVal = "-1";
+            }
+
+            if (tmp != null)
+            {
+                retVal = tmp.ToString();
+            }
+            else
+            {
+                retVal = "-1";
+            }
+            return retVal;
+        }
+
+        public static string Subscribe(string userId, string email)
+        {
+            string sqlSubscribe = string.Empty;
+
+            if (string.IsNullOrEmpty(userId) == false)
+            {
+                sqlSubscribe = @" INSERT INTO [MailList]([Name],[Surname],[Email],[UniqueId],[UserId],[BirthDate],[Gender],[GSM],[Location],[Source],[MailSent],[Unsubscribe],[CreatedAt])
+                                      SELECT [Name],[Surname],[Email],[UniqueId],UserId,[BirthDate],[Gender],[GSM],[City],'facebook',0,0,GETDATE()
+                                      FROM Users
+                                      WHERE UserId = " + userId + " AND [Email] NOT IN (SELECT [Email] FROM [MailList]) ";
+
+            }
+            else if (string.IsNullOrEmpty(email) == false)
+            {
+                sqlSubscribe = @"   DECLARE @HasSubscribed INT
+  
+                                        SELECT @HasSubscribed=COUNT(*)
+                                        FROM MailList
+                                        WHERE Email = '" + email + @"'
+                                          
+                                        IF @HasSubscribed = 0
+                                        BEGIN
+	                                         INSERT INTO [MailList]([Email],[Source],[MailSent],[Unsubscribe],[CreatedAt])
+										                                          VALUES( '" + email + @"','Increment',0,0,GETDATE() )
+                                        END ";
+            }
+
+            object tmp = null;
+            string retVal = string.Empty;
+
+            try
+            {
+                tmp = DataBase.ExecuteNonQuery(sqlSubscribe);
+            }
+            catch (Exception exx)
+            {
+                string ip = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"].ToString();
+                Logs.InsertErrorLog(exx, "Users.cs/Subscribe", string.Empty, ip, sqlSubscribe);
+                retVal = "-1";
+            }
+
+            if (tmp != null)
+            {
+                retVal = tmp.ToString();
+            }
+            else
+            {
+                retVal = "-1";
+            }
+            return retVal;
         }
     }
 }
