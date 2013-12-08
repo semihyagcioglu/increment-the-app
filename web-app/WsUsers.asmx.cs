@@ -85,9 +85,15 @@ namespace increment_the_app
         }
 
         [WebMethod]
-        public static string UnsubscribeUser(string userId, string email)
+        public static string Subscribe(string userId, string email)
         {
-            return Users.UnsubscribeUser(userId, email);
+            return Users.Subscribe(userId, email);
+        }
+
+        [WebMethod]
+        public static string Unsubscribe(string userId, string email)
+        {
+            return Users.Unsubscribe(userId, email);
         }
     }
 }
