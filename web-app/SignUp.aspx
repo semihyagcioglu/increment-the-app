@@ -10,9 +10,7 @@
 			  	<div class="panel-heading">
 			    	<h3 class="panel-title">Sadece 10 saniyede</h3>
 			 	</div>
-			  	<div class="panel-body">
-			    	<form accept-charset="UTF-8" role="form">
-			    	  	
+			  	<div class="panel-body">	    	  	
 			    		<div class="form-group">
                             <input class="form-control" name="firstname" placeholder="Ad" type="text"
                             required autofocus />
@@ -33,7 +31,6 @@
 			    	    	</label>
 			    	    </div>
 			    		<input class="btn btn-lg btn-success btn-block" type="submit" value="Kayıt ol">
-			      	</form>
 			    </div>
 			</div>
 		</div>

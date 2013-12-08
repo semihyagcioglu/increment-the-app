@@ -11,20 +11,18 @@
 			    	<h3 class="panel-title">Giriş yapın</h3>
 			 	</div>
 			  	<div class="panel-body">
-			    	<form accept-charset="UTF-8" role="form">
 			    	  	<div class="form-group">
-			    		    <input class="form-control" placeholder="E-posta" name="email" type="text">
+			    		    <input class="form-control" placeholder="E-posta" name="email" type="email" required>
 			    		</div>
 			    		<div class="form-group">
-			    			<input class="form-control" placeholder="Şifre" name="password" type="password" value="">
+			    			<input class="form-control" placeholder="Şifre" name="password" type="password" value="" required>
 			    		</div>
 			    		<div class="checkbox">
 			    	    	<label>
-			    	    		<input name="remember" type="checkbox" value="Remember Me"> Beni hatırla
+			    	    		<input name="remember" type="checkbox" value="Remember Me" checked> Beni hatırla
 			    	    	</label>
 			    	    </div>
 			    		<input class="btn btn-lg btn-success btn-block" type="submit" value="Giriş yap">
-			      	</form>
 			    </div>
 			</div>
 		</div>
