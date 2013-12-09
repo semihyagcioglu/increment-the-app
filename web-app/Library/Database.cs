@@ -199,8 +199,9 @@ namespace increment_the_app.Library
 
             using (SqlConnection connection = new SqlConnection(GetConnectionString()))
             {
-                SqlTransaction transaction = connection.BeginTransaction();
-                SqlCommand cmd = new SqlCommand(sql, connection, transaction);
+                //SqlTransaction transaction = connection.BeginTransaction();
+                //SqlCommand cmd = new SqlCommand(sql, connection, transaction);
+                SqlCommand cmd = new SqlCommand(sql, connection);
                 try
                 {
                     if (sqlParameters != null)
@@ -223,7 +224,7 @@ namespace increment_the_app.Library
 
                     var ds = new DataSet();
                     da.Fill(ds);
-                    cmd.Transaction.Commit();
+                    //cmd.Transaction.Commit();
 
 
                     if (connection.State == ConnectionState.Open)
@@ -238,7 +239,7 @@ namespace increment_the_app.Library
                 {
                     try
                     {
-                        cmd.Transaction.Rollback();
+                        //cmd.Transaction.Rollback();
                     }
                     catch (SqlException eXR)
                     {
