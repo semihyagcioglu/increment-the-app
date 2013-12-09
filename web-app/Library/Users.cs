@@ -12,19 +12,24 @@ namespace increment_the_app.Library
     {
         public static string LogIn(string email, string password)
         {
-             string result = string.Empty;
+            string result = string.Empty;
 
             string userId = string.Empty;
             string name = string.Empty;
             string surname = string.Empty;
             string uniqueId = string.Empty;
 
+            SqlParameter[] parameters = new SqlParameter[2];
+            parameters[0] = DataBase.SetParameter("@email", SqlDbType.NVarChar, 80, "Input", email);
+            parameters[1] = DataBase.SetParameter("@password", SqlDbType.NVarChar, 16, "Input", password);
+            
             string queryUser = @" SELECT [UserId], [Name], [Surname],[UniqueId]
                                   FROM [Users]
-                                  WHERE (Email = '" + DataBase.CleanString(email) + "') AND ([Password] = '" + DataBase.CleanString(password) + "')";
+                                  WHERE (Email = @email) AND ([Password] = @password)";
+            
             try
             {
-                DataTable dtUserInfo = DataBase.GetDataTable(queryUser);
+                DataTable dtUserInfo = DataBase.ExecuteSqlWithParameters(queryUser, parameters);
                 if (dtUserInfo.Rows.Count > 0)
                 {
                     DataRow drUserInfo = dtUserInfo.Rows[0];
@@ -133,13 +138,13 @@ namespace increment_the_app.Library
             //update user info
            SqlParameter[] parameters = new SqlParameter[7];
 
-           parameters[0] = DataBase.SetParameter("@Name", SqlDbType.NVarChar, 4000, "Input", name);
-           parameters[1] = DataBase.SetParameter("@Surname", SqlDbType.NVarChar, 4000, "Input", surname);
-           parameters[2] = DataBase.SetParameter("@Email", SqlDbType.NVarChar, 4000, "Input", email);
-           parameters[3] = DataBase.SetParameter("@Gsm", SqlDbType.NVarChar, 4000, "Input", gsm);
-           parameters[4] = DataBase.SetParameter("@Gender", SqlDbType.NVarChar, 4000, "Input", gender);           
-           parameters[5] = DataBase.SetParameter("@BirthDate", SqlDbType.NVarChar, 4000, "Input", birthdate);
-           parameters[6] = DataBase.SetParameter("@UserId", SqlDbType.NVarChar, 4000, "Input", userId);
+           parameters[0] = DataBase.SetParameter("@Name", SqlDbType.NVarChar, 80, "Input", name);
+           parameters[1] = DataBase.SetParameter("@Surname", SqlDbType.NVarChar, 80, "Input", surname);
+           parameters[2] = DataBase.SetParameter("@Email", SqlDbType.NVarChar, 80, "Input", email);
+           parameters[3] = DataBase.SetParameter("@Gsm", SqlDbType.NVarChar, 100, "Input", gsm);
+           parameters[4] = DataBase.SetParameter("@Gender", SqlDbType.Int,32, "Input", gender);           
+           parameters[5] = DataBase.SetParameter("@BirthDate", SqlDbType.DateTime,0,"Input", birthdate);
+           parameters[6] = DataBase.SetParameter("@UserId", SqlDbType.Int,32, "Input", userId);
 
            string sqlUpdateUser = @"UPDATE [dbo].[Users]
                                    SET [Name] = @Name

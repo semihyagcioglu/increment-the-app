@@ -19,7 +19,7 @@ namespace increment_the_app
     {
 
         [WebMethod(EnableSession = true)]
-        public static string LogIn(string email, string password)
+        public string LogIn(string email, string password)
         {
             return Users.LogIn(email, password);
         }
@@ -43,7 +43,7 @@ namespace increment_the_app
         }
 
         [WebMethod]
-        public string UpdateUser(string userId, string name, string surname, string email, string gsm, string gender, string birthdate)
+        public static string UpdateUser(string userId, string name, string surname, string email, string gsm, string gender, string birthdate)
         {
             return Users.UpdateUser(userId, name, surname, email, gsm, gender,birthdate);
         }
