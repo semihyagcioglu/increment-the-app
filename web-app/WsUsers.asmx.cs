@@ -19,7 +19,7 @@ namespace increment_the_app
     {
 
         [WebMethod(EnableSession = true)]
-        public static string LogIn(string email, string password)
+        public string LogIn(string email, string password)
         {
             return Users.LogIn(email, password);
         }
