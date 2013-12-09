@@ -1,51 +1,44 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="increment_the_app.SignUp" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <meta charset="utf-8" />
-    <title>Sign Up - Bootsnipp.com</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <style type="text/css">
-        body
-        {
-            padding-top: 30px;
-        }
-
-        .form-control
-        {
-            margin-bottom: 10px;
-        }
-    </style>
-    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript">window.alert = function () { }</script>
+<asp:Content ID="hc" ContentPlaceHolderID="headContent" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <div class="row" style="align-content:center">
-            <div class="col-xs-12 col-sm-12 col-md-4 well well-sm">
-                <span>Sign up!</span>
-                <div class="row">
-                    <div class="col-xs-6 col-md-6">
-                        <input class="form-control" name="firstname" placeholder="First Name" type="text"
-                            required autofocus />
-                    </div>
-                    <div class="col-xs-6 col-md-6">
-                        <input class="form-control" name="lastname" placeholder="Last Name" type="text" required />
-                    </div>
-                </div>
-                <input class="form-control" name="youremail" placeholder="Your Email" type="email" />
-                <input class="form-control" name="reenteremail" placeholder="Re-enter Email" type="email" />
-                <input class="form-control" name="password" placeholder="New Password" type="password" />
+<asp:Content ID="bc" ContentPlaceHolderID="bodyContent" runat="server">
 
-                <asp:CheckBox ID="CheckBox1" runat="server" />
-                <span>I agree with the <a href="#">Terms and Conditions.</a></span>
-                <br />
-                <br />
-                <button class="btn btn-lg btn-primary btn-block" type="submit">
-                    Sign up</button>
-            </div>
-        </div>
-    <script type="text/javascript">
-    </script>
+    <div class="row">
+		<div class="col-md-4 col-md-offset-4">
+    		<div class="panel panel-default">
+			  	<div class="panel-heading">
+			    	<h3 class="panel-title">Sadece 10 saniyede</h3>
+			 	</div>
+			  	<div class="panel-body">	    	  	
+			    		<div class="form-group">
+                            <input class="form-control" name="firstname" placeholder="Ad" type="text"
+                            required autofocus />
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" name="lastname" placeholder="Soyad" type="text" required />
+			    		</div>
+			    		<div class="form-group">
+			    			<input class="form-control" name="youremail" placeholder="E-Posta" type="email" required />
+			    		</div>
+                       
+                        <div class="form-group">
+			    			<input class="form-control" name="password" placeholder="Şifre" type="password" required />
+			    		</div>
+			    		<div class="checkbox">
+			    	    	<label>
+			    	    		<input name="chkAcceptTOC" type="checkbox" value="accept" checked required> <span><a href="#">Kullanım şartlarını</a> kabul ediyorum</span>
+			    	    	</label>
+			    	    </div>
+			    		<input class="btn btn-lg btn-success btn-block" type="submit" value="Kayıt ol">
+			    </div>
+			</div>
+		</div>
+	</div>
+
+       
+    
+</asp:Content>
+
+<asp:Content ID="fc" ContentPlaceHolderID="footerContent" runat="server">
 </asp:Content>
