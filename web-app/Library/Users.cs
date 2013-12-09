@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
+using System.Data.SqlClient;
+
 
 namespace increment_the_app.Library
 {
@@ -9,20 +12,115 @@ namespace increment_the_app.Library
     {
         public static string LogIn(string email, string password)
         {
-            //check info from database
-            return "sucsess";
+             string result = string.Empty;
+
+            string userId = string.Empty;
+            string name = string.Empty;
+            string surname = string.Empty;
+            string uniqueId = string.Empty;
+
+            string queryUser = @" SELECT [UserId], [Name], [Surname],[UniqueId]
+                                  FROM [Users]
+                                  WHERE (Email = '" + DataBase.CleanString(email) + "') AND ([Password] = '" + DataBase.CleanString(password) + "')";
+            try
+            {
+                DataTable dtUserInfo = DataBase.GetDataTable(queryUser);
+                if (dtUserInfo.Rows.Count > 0)
+                {
+                    DataRow drUserInfo = dtUserInfo.Rows[0];
+
+                    //Get user specific info
+                    userId = drUserInfo["UserId"].ToString();
+                    name = drUserInfo["Name"].ToString();
+                    surname = drUserInfo["Surname"].ToString();
+                    uniqueId = drUserInfo["UniqueId"].ToString();
+
+                    //Set session timeout to 3 hours
+                    HttpContext.Current.Session.Timeout = 180;
+
+                    //Set session vars
+                    HttpContext.Current.Session["userId"] = userId;
+                    HttpContext.Current.Session["name"] = name;
+                    HttpContext.Current.Session["surname"] = surname;
+                    HttpContext.Current.Session["LoginType"] = "1";
+                    HttpContext.Current.Session["uniqueID"] = uniqueId;
+
+                    //Logs.UpdateUserAccessLog(userId);
+                    //Logs.CreateUserLoginLog(userId);
+
+                    result = userId;
+
+                }
+                else
+                {
+                    //result = Resources.CustomCodes.ERROR_USER_NOT_FOUND;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                //Exception trying to get user related info from "Users" Table
+                //result = Resources.CustomCodes.ERROR_GENERIC.ToString();
+                //string ip = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"].ToString();
+                //Logs.InsertErrorLog(ex, System.Web.HttpContext.Current.Request.Url.AbsoluteUri, userId, ip, queryUser);
+            }
+
+            return result;
+        
         }
 
         public static string LogOut(string userId)
         {
-            //close account connection to site
-            return "session closed";
+            string result = string.Empty;
+            //the kill sesion
+
+            try
+            {
+                HttpContext.Current.Session.Abandon();
+                //Logs.UpdateUserLoginLog(userId);
+                Logs.UpdateUserLoginLog(userId);
+
+            }
+
+            catch (Exception ex)
+            {
+                string ip = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"].ToString();
+                Logs.InsertErrorLog(ex, System.Web.HttpContext.Current.Request.Url.AbsoluteUri, userId, ip, string.Empty);
+                //ann erroroccured trying to abadon the session
+                result = "ERROR_USER_SESSION_NOT_DESTROYED";
+            }
+            //check info from database
+            return result;
         }
 
         public static string CheckIfIsFirstTime(string userId)
         {
             //check account if first time logged on
-            return "-1";
+            string result = string.Empty;
+
+            result = "ERROR_USER_WRONG_ID";
+            string query = "SELECT IsFirstTime FROM [Users] WHERE (UserId = '" + userId + "'); UPDATE [Users] Set IsFirstTime = 0  WHERE (UserId = '" + userId + "')";
+
+            try
+            {
+                DataTable dtUserInfo = DataBase.GetDataTable(query);
+
+                if (dtUserInfo.Rows.Count > 0)
+                {
+                    DataRow dr = dtUserInfo.Rows[0];
+                    result = dr["IsFirstTime"].ToString();
+                }
+
+            }
+            catch (Exception exx)
+            {
+                result = "-1";
+                string ip = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"].ToString();
+                Logs.InsertErrorLog(exx, "Users.cs/CheckIfIsFirstTime", userId, ip, query);
+            }
+
+
+            return result;
         }
 
         public static string LoginWithFacebook(string facebookId, string email, string firstName, string lastName, string city, string sex, string pic, string bday)
@@ -30,9 +128,34 @@ namespace increment_the_app.Library
             //use facebook for connect
             return " ";
         }
-        public static string UpdateUser(string userId, string name, string surname, string email, string gsm, string gender, string location, string birthdate)
+        public static string UpdateUser(string userId, string name, string surname, string email, string gsm, string gender,string birthdate)
         {
             //update user info
+           SqlParameter[] parameters = new SqlParameter[7];
+
+           parameters[0] = DataBase.SetParameter("@Name", SqlDbType.NVarChar, 4000, "Input", name);
+           parameters[1] = DataBase.SetParameter("@Surname", SqlDbType.NVarChar, 4000, "Input", surname);
+           parameters[2] = DataBase.SetParameter("@Email", SqlDbType.NVarChar, 4000, "Input", email);
+           parameters[3] = DataBase.SetParameter("@Gsm", SqlDbType.NVarChar, 4000, "Input", gsm);
+           parameters[4] = DataBase.SetParameter("@Gender", SqlDbType.NVarChar, 4000, "Input", gender);           
+           parameters[5] = DataBase.SetParameter("@BirthDate", SqlDbType.NVarChar, 4000, "Input", birthdate);
+           parameters[6] = DataBase.SetParameter("@UserId", SqlDbType.NVarChar, 4000, "Input", userId);
+
+           string sqlUpdateUser = @"UPDATE [dbo].[Users]
+                                   SET [Name] = @Name
+                                      ,[Surname] = @Surname                                     
+                                      ,[Email] = @Email
+                                      ,[Gender] = @Gender
+                                      ,[BirthDate] = @BirthDate                                  
+                                      ,[GSM] = @Gsm                                     
+                                 WHERE UserId= @UserId";
+
+           DataBase.ExecuteSqlWithParameters(sqlUpdateUser, parameters);
+
+
+
+
+
             return "update sucsessfull";
         }
 
@@ -146,9 +269,99 @@ namespace increment_the_app.Library
         {
             return "";
         }
-        public static string UnsubscribeUser(string userId, string email)
+        public static string Unsubscribe(string userId, string email)
         {
-            return "";
+            string sqlUnsubscribe = string.Empty;
+
+            if (string.IsNullOrEmpty(userId) == false)
+            {
+                sqlUnsubscribe = @" UPDATE [MailList]
+                                        SET [Unsubscribe] = 1
+                                        WHERE [UserId] = " + userId;
+
+            }
+            else if (string.IsNullOrEmpty(email) == false)
+            {
+                sqlUnsubscribe = @" UPDATE [MailList]
+                                        SET [Unsubscribe] = 1
+                                        WHERE [Email] = '" + email + "' ";
+            }
+
+            object tmp = null;
+            string retVal = string.Empty;
+
+            try
+            {
+                tmp = DataBase.ExecuteNonQuery(sqlUnsubscribe);
+            }
+            catch (Exception exx)
+            {
+                string ip = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"].ToString();
+                Logs.InsertErrorLog(exx, "Users.cs/Unsubscribe", string.Empty, ip, sqlUnsubscribe);
+                retVal = "-1";
+            }
+
+            if (tmp != null)
+            {
+                retVal = tmp.ToString();
+            }
+            else
+            {
+                retVal = "-1";
+            }
+            return retVal;
+        }
+
+        public static string Subscribe(string userId, string email)
+        {
+            string sqlSubscribe = string.Empty;
+
+            if (string.IsNullOrEmpty(userId) == false)
+            {
+                sqlSubscribe = @" INSERT INTO [MailList]([Name],[Surname],[Email],[UniqueId],[UserId],[BirthDate],[Gender],[GSM],[Location],[Source],[MailSent],[Unsubscribe],[CreatedAt])
+                                      SELECT [Name],[Surname],[Email],[UniqueId],UserId,[BirthDate],[Gender],[GSM],[City],'facebook',0,0,GETDATE()
+                                      FROM Users
+                                      WHERE UserId = " + userId + " AND [Email] NOT IN (SELECT [Email] FROM [MailList]) ";
+
+            }
+            else if (string.IsNullOrEmpty(email) == false)
+            {
+                sqlSubscribe = @"   DECLARE @HasSubscribed INT
+  
+                                        SELECT @HasSubscribed=COUNT(*)
+                                        FROM MailList
+                                        WHERE Email = '" + email + @"'
+                                          
+                                        IF @HasSubscribed = 0
+                                        BEGIN
+	                                         INSERT INTO [MailList]([Email],[Source],[MailSent],[Unsubscribe],[CreatedAt])
+										                                          VALUES( '" + email + @"','Increment',0,0,GETDATE() )
+                                        END ";
+            }
+
+            object tmp = null;
+            string retVal = string.Empty;
+
+            try
+            {
+                tmp = DataBase.ExecuteNonQuery(sqlSubscribe);
+            }
+            catch (Exception exx)
+            {
+                string ip = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"].ToString();
+                Logs.InsertErrorLog(exx, "Users.cs/Subscribe", string.Empty, ip, sqlSubscribe);
+                retVal = "-1";
+            }
+
+            if (tmp != null)
+            {
+                retVal = tmp.ToString();
+            }
+            else
+            {
+                retVal = "-1";
+            }
+            return retVal;
         }
     }
 }

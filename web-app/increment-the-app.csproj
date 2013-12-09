@@ -57,8 +57,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\jquery-1.10.2.min.js" />
+    <Content Include="Test.aspx" />
     <Content Include="css\jumbotron-narrow.css" />
     <Content Include="Dashboard.aspx" />
     <Content Include="Default.aspx" />
@@ -68,8 +71,6 @@
     <Content Include="img\button_googlePlay.png" />
     <Content Include="img\button_win.png" />
     <Content Include="img\slide3_3.png" />
-    <Content Include="js\bootstrap.js" />
-    <Content Include="js\bootstrap.min.js" />
     <Content Include="js\LoginSingupChecks.js" />
     <Content Include="LogIn.aspx" />
     <Content Include="SignUp.aspx" />
@@ -77,11 +78,21 @@
     <Content Include="Unsubscribe.aspx" />
     <Content Include="UserAuthorization.aspx" />
     <Content Include="UserRegistrationReports.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="WsReports.asmx" />
     <Content Include="WsUsers.asmx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Library\UI.cs" />
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -110,7 +121,9 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Library\Crypto.cs" />
     <Compile Include="Library\Database.cs" />
+    <Compile Include="Library\Logs.cs" />
     <Compile Include="Library\Recommend.cs" />
     <Compile Include="Library\Reports.cs" />
     <Compile Include="Library\Users.cs" />
@@ -183,7 +196,9 @@
   <ItemGroup>
     <Content Include="Site.Master" />
     <Content Include="Reports.Master" />
-    <Content Include="css\bootstrap.min2.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

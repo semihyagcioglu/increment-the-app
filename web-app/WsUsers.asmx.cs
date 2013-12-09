@@ -43,9 +43,9 @@ namespace increment_the_app
         }
 
         [WebMethod]
-        public static string UpdateUser(string userId, string name, string surname, string email, string gsm, string gender, string location, string birthdate)
+        public string UpdateUser(string userId, string name, string surname, string email, string gsm, string gender, string birthdate)
         {
-            return Users.UpdateUser(userId, name, surname, email, gsm, gender, location, birthdate);
+            return Users.UpdateUser(userId, name, surname, email, gsm, gender,birthdate);
         }
 
         //[WebMethod]
@@ -85,9 +85,15 @@ namespace increment_the_app
         }
 
         [WebMethod]
-        public static string UnsubscribeUser(string userId, string email)
+        public static string Subscribe(string userId, string email)
         {
-            return Users.UnsubscribeUser(userId, email);
+            return Users.Subscribe(userId, email);
+        }
+
+        [WebMethod]
+        public static string Unsubscribe(string userId, string email)
+        {
+            return Users.Unsubscribe(userId, email);
         }
     }
 }
