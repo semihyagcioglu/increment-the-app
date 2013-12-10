@@ -202,7 +202,7 @@ namespace increment_the_app.Library
 //                                                    SELECT [Name],[Surname],[Email],[UniqueId],UserId,[BirthDate],[Gender],[GSM],[City],'increment',0,0,GETDATE()
 //                                                    FROM Users
 //                                                    WHERE UserId = @UserId AND [Email] NOT IN (SELECT [Email] FROM [MailList]) ";
-                string sqlInsertUser = "dbo.GetInsertUsers";
+                string sqlInsertUser = "GetInsertUsers";
                 SqlParameter[] parameters = new SqlParameter[4];
                 parameters[0] = DataBase.SetParameter("@Name", SqlDbType.NVarChar, 80, "Input", userName);
                 parameters[1] = DataBase.SetParameter("@Surname", SqlDbType.NVarChar, 80, "Input", userSurname);
@@ -212,7 +212,7 @@ namespace increment_the_app.Library
 
                 try
                 {
-                    DataBase.ExecuteStoredProcedure(sqlInsertUser, parameters, "bravo");
+                    DataBase.ExecuteStoredProcedure(sqlInsertUser, parameters);
                 }
                 catch (Exception exx)
                 {

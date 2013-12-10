@@ -257,12 +257,13 @@ namespace increment_the_app.Library
         /// <param name="sqlParameters">Parameters of StoredProcedure</param>
         /// <param name="returnValueParameter">Stored Procedure that we have defined in the name of the return parameter.</param>
         /// <returns></returns>
-        public static int ExecuteStoredProcedure(string procedureName, SqlParameter[] sqlParameters, string returnValueParameter)
+        public static int ExecuteStoredProcedure(string procedureName, SqlParameter[] sqlParameters)
         {
             using (SqlConnection connection = new SqlConnection(GetConnectionString()))
             {
-                SqlTransaction transaction = connection.BeginTransaction();
-                SqlCommand cmd = new SqlCommand(procedureName, connection, transaction);
+                //SqlTransaction transaction = connection.BeginTransaction();
+                //SqlCommand cmd = new SqlCommand(procedureName, connection, transaction);
+                SqlCommand cmd = new SqlCommand(procedureName, connection);
                 cmd.CommandType = CommandType.StoredProcedure;
                 try
                 {
@@ -281,8 +282,8 @@ namespace increment_the_app.Library
 
                     cmd.CommandTimeout = 300;
 
-                    cmd.ExecuteNonQuery();
-                    cmd.Transaction.Commit();
+                    int result = cmd.ExecuteNonQuery();
+                    //cmd.Transaction.Commit();
 
                     if (connection.State == ConnectionState.Open)
                     {
@@ -290,13 +291,13 @@ namespace increment_the_app.Library
                         connection.Dispose();
                     }
 
-                    return Convert.ToInt32(cmd.Parameters[returnValueParameter].Value);
+                    return result ;
                 }
                 catch (SqlException ex)
                 {
                     try
                     {
-                        cmd.Transaction.Rollback();
+                        //cmd.Transaction.Rollback();
                     }
                     catch (SqlException eXR)
                     {
