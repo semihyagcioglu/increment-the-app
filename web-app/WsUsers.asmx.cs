@@ -41,7 +41,11 @@ namespace increment_the_app
         {
             return Users.LoginWithFacebook(facebookId, email, firstName, lastName, city, sex, pic, bday);
         }
-
+        [WebMethod(EnableSession = true)]
+        public string CreateNewUser(string userName, string userSurname, string email, string password)
+        {
+            return Users.CreateNewUser(userName, userSurname, email, password);
+        }
         [WebMethod]
         public string UpdateUser(string userId, string name, string surname, string email, string gsm, string gender, string birthdate)
         {

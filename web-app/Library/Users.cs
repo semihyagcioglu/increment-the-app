@@ -22,11 +22,11 @@ namespace increment_the_app.Library
             SqlParameter[] parameters = new SqlParameter[2];
             parameters[0] = DataBase.SetParameter("@email", SqlDbType.NVarChar, 80, "Input", email);
             parameters[1] = DataBase.SetParameter("@password", SqlDbType.NVarChar, 16, "Input", password);
-            
+
             string queryUser = @" SELECT [UserId], [Name], [Surname],[UniqueId]
                                   FROM [Users]
                                   WHERE (Email = @email) AND ([Password] = @password)";
-            
+
             try
             {
                 DataTable dtUserInfo = DataBase.ExecuteSqlWithParameters(queryUser, parameters);
@@ -71,7 +71,7 @@ namespace increment_the_app.Library
             }
 
             return result;
-        
+
         }
 
         public static string LogOut(string userId)
@@ -133,20 +133,20 @@ namespace increment_the_app.Library
             //use facebook for connect
             return " ";
         }
-        public static string UpdateUser(string userId, string name, string surname, string email, string gsm, string gender,string birthdate)
+        public static string UpdateUser(string userId, string name, string surname, string email, string gsm, string gender, string birthdate)
         {
             //update user info
-           SqlParameter[] parameters = new SqlParameter[7];
+            SqlParameter[] parameters = new SqlParameter[7];
 
-           parameters[0] = DataBase.SetParameter("@Name", SqlDbType.NVarChar, 80, "Input", name);
-           parameters[1] = DataBase.SetParameter("@Surname", SqlDbType.NVarChar, 80, "Input", surname);
-           parameters[2] = DataBase.SetParameter("@Email", SqlDbType.NVarChar, 80, "Input", email);
-           parameters[3] = DataBase.SetParameter("@Gsm", SqlDbType.NVarChar, 100, "Input", gsm);
-           parameters[4] = DataBase.SetParameter("@Gender", SqlDbType.Int,32, "Input", gender);           
-           parameters[5] = DataBase.SetParameter("@BirthDate", SqlDbType.DateTime,0,"Input", birthdate);
-           parameters[6] = DataBase.SetParameter("@UserId", SqlDbType.Int,32, "Input", userId);
+            parameters[0] = DataBase.SetParameter("@Name", SqlDbType.NVarChar, 80, "Input", name);
+            parameters[1] = DataBase.SetParameter("@Surname", SqlDbType.NVarChar, 80, "Input", surname);
+            parameters[2] = DataBase.SetParameter("@Email", SqlDbType.NVarChar, 80, "Input", email);
+            parameters[3] = DataBase.SetParameter("@Gsm", SqlDbType.NVarChar, 100, "Input", gsm);
+            parameters[4] = DataBase.SetParameter("@Gender", SqlDbType.Int, 32, "Input", gender);
+            parameters[5] = DataBase.SetParameter("@BirthDate", SqlDbType.DateTime, 0, "Input", birthdate);
+            parameters[6] = DataBase.SetParameter("@UserId", SqlDbType.Int, 32, "Input", userId);
 
-           string sqlUpdateUser = @"UPDATE [dbo].[Users]
+            string sqlUpdateUser = @"UPDATE [dbo].[Users]
                                    SET [Name] = @Name
                                       ,[Surname] = @Surname                                     
                                       ,[Email] = @Email
@@ -155,7 +155,7 @@ namespace increment_the_app.Library
                                       ,[GSM] = @Gsm                                     
                                  WHERE UserId= @UserId";
 
-           DataBase.ExecuteSqlWithParameters(sqlUpdateUser, parameters);
+            DataBase.ExecuteSqlWithParameters(sqlUpdateUser, parameters);
 
 
 
@@ -164,99 +164,106 @@ namespace increment_the_app.Library
             return "update sucsessfull";
         }
 
-        //public static string CreateNewUser(string userName, string userSurname, string email, string password)
-        //{
 
-        //            string returnValue = string.Empty;
-        //            string hashGuid = string.Empty;
-        //            string message = string.Empty;
-        //            string query = string.Empty;
+        public static string CreateNewUser(string userName, string userSurname, string email, string password)
+        {
 
-        //            string ip = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"].ToString();
+            string returnValue = string.Empty;
+            string hashGuid = string.Empty;
+            string message = string.Empty;
+            string query = string.Empty;
 
-        //            Guid uniqueId;
+            string ip = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"].ToString();
 
-        //            string errorState = "-1";
+            Guid uniqueId;
 
-        //            if (CheckEmail(email) == "-1")
-        //            {
+            string errorState = "-1";
 
-        //                uniqueId = Guid.NewGuid();
+            if (CheckEmail(email) == "-1")
+            {
 
-        //                string sqlInsertUser = @"	DECLARE @UserId INT
-        //
-        //	                                        INSERT INTO [Users] (Name,Surname,[User].[Password],Email,IsFirstTime,IsActive,TotalAccessCount,UniqueId,CreatedAt)
-        //                                            VALUES ('" + userName + "','" + userSurname + "','" + password + "','" + email + @"',1,1,0,'" + uniqueId + @"',GETDATE())
-        //                                        	
-        //	                                        SELECT @UserId = UserId 
-        //	                                        FROM [Users]
-        //	                                        WHERE UniqueId = '" + uniqueId + @"'
-        //                                        	
-        //	                                        INSERT INTO UserLoginTypes (UserId,LoginType)
-        //	                                        VALUES
-        //	                                        (@UserId,'1') 
-        //
-        //                                            INSERT INTO [MailList]
-        //                                            ([Name],[Surname],[Email],[UniqueId],[UserId],[BirthDate],[Gender],[GSM],[Location],[Source],[MailSent],[Unsubscribe],[CreatedAt])
-        //                                            SELECT [Name],[Surname],[Email],[UniqueId],UserId,[BirthDate],[Gender],[GSM],[City],'increment',0,0,GETDATE()
-        //                                            FROM Users
-        //                                            WHERE UserId = @UserId AND [Email] NOT IN (SELECT [Email] FROM [MailList]) ";
+                uniqueId = Guid.NewGuid();
+
+//                string sqlInsertUser = @"	DECLARE @UserId INT
+//        
+//        	                                        INSERT INTO [Users] (Name,Surname,[User].[Password],Email,IsFirstTime,IsActive,TotalAccessCount,UniqueId,CreatedAt)
+//                                                    VALUES ('" + userName + "','" + userSurname + "','" + password + "','" + email + @"',1,1,0,'" + uniqueId + @"',GETDATE())
+//                                                	
+//        	                                        SELECT @UserId = UserId 
+//        	                                        FROM [Users]
+//        	                                        WHERE UniqueId = '" + uniqueId + @"'
+//                                                	
+//        	                                        INSERT INTO UserLoginTypes (UserId,LoginType)
+//        	                                        VALUES
+//        	                                        (@UserId,'1') 
+//        
+//                                                    INSERT INTO [MailList]
+//                                                    ([Name],[Surname],[Email],[UniqueId],[UserId],[BirthDate],[Gender],[GSM],[Location],[Source],[MailSent],[Unsubscribe],[CreatedAt])
+//                                                    SELECT [Name],[Surname],[Email],[UniqueId],UserId,[BirthDate],[Gender],[GSM],[City],'increment',0,0,GETDATE()
+//                                                    FROM Users
+//                                                    WHERE UserId = @UserId AND [Email] NOT IN (SELECT [Email] FROM [MailList]) ";
+                string sqlInsertUser = "dbo.GetInsertUsers";
+                SqlParameter[] parameters = new SqlParameter[4];
+                parameters[0] = DataBase.SetParameter("@Name", SqlDbType.NVarChar, 80, "Input", userName);
+                parameters[1] = DataBase.SetParameter("@Surname", SqlDbType.NVarChar, 80, "Input", userSurname);
+                parameters[2] = DataBase.SetParameter("@Email", SqlDbType.NVarChar, 80, "Input", email);
+                parameters[3] = DataBase.SetParameter("@Password", SqlDbType.NVarChar, 100, "Input", password);
 
 
-        //                try
-        //                {
-        //                    DataBase.ExecuteNonQuery(sqlInsertUser);
-        //                }
-        //                catch (Exception exx)
-        //                {
+                try
+                {
+                    DataBase.ExecuteStoredProcedure(sqlInsertUser, parameters, "bravo");
+                }
+                catch (Exception exx)
+                {
 
-        //                    Logs.InsertErrorLog(exx, "wsUser.asmx.cs/CreateNewUser", uniqueId.ToString(), ip, sqlInsertUser);
-        //                    errorState = "1";
-        //                }
+                    Logs.InsertErrorLog(exx, "wsUser.asmx.cs/CreateNewUser", uniqueId.ToString(), ip, sqlInsertUser);
+                    errorState = "1";
+                }
 
-        //                if (errorState == "-1")
-        //                {
+                //if (errorState == "-1")
+                //{
 
-        //                    hashGuid = Functions.MD5Encode(uniqueId.ToString());
-        //                    try
-        //                    {
-        //                        Mail.SendTemplateMail(string.Empty, uniqueId.ToString(), string.Empty, string.Empty, Resources.Mail.MAIL_TEMPLATE_ACTIVATION.ToString(), email, Resources.GlobalVariables.PROJECT_CONTACT_MAIL_ADDRESS, string.Empty, string.Empty);
-        //                    }
-        //                    catch (Exception ex)
-        //                    {
+                //    hashGuid = Crypto.MD5Encode(uniqueId.ToString());
+                //    try
+                //    {
+                //        Mail.SendTemplateMail(string.Empty, uniqueId.ToString(), string.Empty, string.Empty, Resources.Mail.MAIL_TEMPLATE_ACTIVATION.ToString(), email, Resources.GlobalVariables.PROJECT_CONTACT_MAIL_ADDRESS, string.Empty, string.Empty);
+                //    }
+                //    catch (Exception ex)
+                //    {
 
-        //                        Logs.InsertErrorLog(ex, System.Web.HttpContext.Current.Request.Url.AbsoluteUri.ToString(), uniqueId.ToString(), ip, string.Empty);
+                //        Logs.InsertErrorLog(ex, System.Web.HttpContext.Current.Request.Url.AbsoluteUri.ToString(), uniqueId.ToString(), ip, string.Empty);
 
-        //                        query = "UPDATE [Users] WHERE UniqueId='" + uniqueId + "' Set IsValidated = -1";
-        //                        DataBase.ExecuteNonQuery(query);
+                //        query = "UPDATE [Users] WHERE UniqueId='" + uniqueId + "' Set IsValidated = -1";
+                //        DataBase.ExecuteNonQuery(query);
 
-        //                    }
+                //    }
 
-        //                    returnValue = LogIn(email, password);
+                //    returnValue = LogIn(email, password);
 
-        //                    if (returnValue == Resources.CustomCodes.ERROR_GENERIC.ToString())
-        //                    {
-        //                        return "-2";
-        //                    }
-        //                    else
-        //                    {
-        //                        return uniqueId.ToString();
-        //                    }
-        //                }
-        //                else if (errorState == "1")
-        //                {
-        //                    return "-2";
-        //                }
+                //    if (returnValue == Resources.CustomCodes.ERROR_GENERIC.ToString())
+                //    {
+                //        return "-2";
+                //    }
+                //    else
+                //    {
+                //        return uniqueId.ToString();
+                //    }
+                //}
+                //else if (errorState == "1")
+                //{
+                //    return "-2";
+                //}
 
-        //            }
+            }
 
-        //            return "-1";
-        //}
+            return "-1";
+        }
 
         public static string CheckEmail(string email)
         {
             //check if email in use
-            return "";
+            return "-1";
         }
         public static string CheckUserID(string guid)
         {
