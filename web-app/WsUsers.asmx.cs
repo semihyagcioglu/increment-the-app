@@ -14,7 +14,7 @@ namespace increment_the_app
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
-    // [System.Web.Script.Services.ScriptService]
+    [System.Web.Script.Services.ScriptService]
     public class WsUsers : System.Web.Services.WebService
     {
 
@@ -43,7 +43,7 @@ namespace increment_the_app
         }
 
         [WebMethod]
-        public static string UpdateUser(string userId, string name, string surname, string email, string gsm, string gender, string birthdate)
+        public string UpdateUser(string userId, string name, string surname, string email, string gsm, string gender, string birthdate)
         {
             return Users.UpdateUser(userId, name, surname, email, gsm, gender,birthdate);
         }
