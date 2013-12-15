@@ -60,8 +60,10 @@
     <Content Include="css\bootstrap.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\generic.js" />
     <Content Include="js\jquery-1.10.2.min.js" />
     <Content Include="js\login.js" />
+    <Content Include="js\master.js" />
     <Content Include="js\signup.js" />
     <Content Include="Test.aspx" />
     <Content Include="css\jumbotron-narrow.css" />
