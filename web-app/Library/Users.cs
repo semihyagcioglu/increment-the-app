@@ -10,9 +10,9 @@ namespace increment_the_app.Library
 {
     public class Users
     {
-        public static string LogIn(string email, string password)
+        public static int LogIn(string email, string password)
         {
-            string result = string.Empty;
+            int result = 0;
 
             string userId = string.Empty;
             string name = string.Empty;
@@ -53,21 +53,16 @@ namespace increment_the_app.Library
                     //Logs.UpdateUserAccessLog(userId);
                     //Logs.CreateUserLoginLog(userId);
 
-                    result = userId;
+                    result = int.Parse(userId);
 
                 }
-                else
-                {
-                    //result = Resources.CustomCodes.ERROR_USER_NOT_FOUND;
-                }
-
             }
             catch (Exception ex)
             {
                 //Exception trying to get user related info from "Users" Table
-                //result = Resources.CustomCodes.ERROR_GENERIC.ToString();
-                //string ip = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"].ToString();
-                //Logs.InsertErrorLog(ex, System.Web.HttpContext.Current.Request.Url.AbsoluteUri, userId, ip, queryUser);
+                result = -1;
+                string ip = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"].ToString();
+                Logs.InsertErrorLog(ex, System.Web.HttpContext.Current.Request.Url.AbsoluteUri, userId, ip, queryUser);
             }
 
             return result;
@@ -156,10 +151,6 @@ namespace increment_the_app.Library
                                  WHERE UserId= @UserId";
 
            DataBase.ExecuteSqlWithParameters(sqlUpdateUser, parameters);
-
-
-
-
 
             return "update sucsessfull";
         }
