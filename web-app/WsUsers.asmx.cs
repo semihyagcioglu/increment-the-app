@@ -18,8 +18,14 @@ namespace increment_the_app
     public class WsUsers : System.Web.Services.WebService
     {
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <returns>0: login failed , -1 error, above 0 success</returns>
         [WebMethod(EnableSession = true)]
-        public string LogIn(string email, string password)
+        public int LogIn(string email, string password)
         {
             return Users.LogIn(email, password);
         }
@@ -28,6 +34,18 @@ namespace increment_the_app
         public static string LogOut(string userId)
         {
             return Users.LogOut(userId);
+        }
+
+        [WebMethod]
+        public string UpdatePageIn(string userId, string page, string ip, Guid uniqueId)
+        {
+            return Logs.InsertActionLog(userId, page, ip, uniqueId);
+        }
+
+        [WebMethod]
+        public string UpdatePageOut(string userId, Guid uniqueId)
+        {
+            return Logs.UpdateActionLog(userId, uniqueId);
         }
 
         [WebMethod]

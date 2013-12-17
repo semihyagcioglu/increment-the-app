@@ -38,7 +38,7 @@ function Login(email, password) {
 
     var validated = true;
 
-   /* if (IsNullOrEmpty(email) == true) {
+    if (IsNullOrEmpty(email) == true) {
 
         $('#emailInfo').closest('.form-group').addClass("has-error");
         $('#emailInfo').focus();
@@ -61,7 +61,9 @@ function Login(email, password) {
         }
         validated = false;
     }
-    */
+    
+    //alert(email);
+    //alert(password);
 
     if (validated == true) {
         
@@ -77,18 +79,20 @@ function Login(email, password) {
             dataType: "json",
             success: function(msg) {
 
-                if (msg.d.indexOf("Böyle bir kayıt bulunamamıştır.") > -1) {
-                    $("#warningMessage").text(msg.d);
+                if (msg.d == 0) {
+                    //console.log(msg.d);
+                    $("#warningMessage").text("Kullanıcı adı ya da şifre hatalı");
                     $('#warningMessage').show();
                 }
-                else if (msg.d.indexOf("Bir hata oluştu.") > -1) {
-
-                    $("#warningMessage").text(msg.d);
+                else if (msg.d == -1) {
+                    alert("HATA");
+                    //console.log(msg.d);
+                    $("#warningMessage").text("Beklenmedik bir sorun oluştu");
                     $('#warningMessage').show();
 
                 }
                 else {
-
+                    //console.log(msg.d);
                     SetCookie("email", email, 5);
                     SetCookie("password", password, 5);
 

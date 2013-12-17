@@ -84,7 +84,7 @@ function RegisterUser(name, surname, email, password) {
 
         $.ajax({
             type: "POST",
-            url: "wsUser.asmx/CreateNewUser",
+            url: "WsUsers.asmx/CreateNewUser",
             data: "{" + "'userName':'" + name + "','userSurname':'" + surname + "','email':'" + email + "','password':'" + password + "'}",
             contentType: "application/json; charset=utf-8",
             dataType: "json",
