@@ -66,11 +66,11 @@ namespace increment_the_app
             return Users.UpdateUser(userId, name, surname, email, gsm, gender,birthdate);
         }
 
-        //[WebMethod]
-        //public static string CreateNewUser(string userName, string userSurname, string email, string password)
-        //{
-        //    return Users.CreateNewUser(userName, userSurname, email, password);
-        //}
+        [WebMethod]
+        public int CreateNewUser(string userName, string userSurname, string email, string password)
+        {
+            return Users.CreateNewUser(userName, userSurname, email, password);
+        }
 
         [WebMethod]
         public static string CheckEmail(string email)

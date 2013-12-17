@@ -261,8 +261,8 @@ namespace increment_the_app.Library
         {
             using (SqlConnection connection = new SqlConnection(GetConnectionString()))
             {
-                SqlTransaction transaction = connection.BeginTransaction();
-                SqlCommand cmd = new SqlCommand(procedureName, connection, transaction);
+                //SqlTransaction transaction = connection.BeginTransaction();
+                SqlCommand cmd = new SqlCommand(procedureName, connection);
                 cmd.CommandType = CommandType.StoredProcedure;
                 try
                 {
@@ -282,7 +282,7 @@ namespace increment_the_app.Library
                     cmd.CommandTimeout = 300;
 
                     cmd.ExecuteNonQuery();
-                    cmd.Transaction.Commit();
+                    //cmd.Transaction.Commit();
 
                     if (connection.State == ConnectionState.Open)
                     {
@@ -296,7 +296,7 @@ namespace increment_the_app.Library
                 {
                     try
                     {
-                        cmd.Transaction.Rollback();
+                        //cmd.Transaction.Rollback();
                     }
                     catch (SqlException eXR)
                     {
