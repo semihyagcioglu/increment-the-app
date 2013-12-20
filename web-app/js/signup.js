@@ -39,7 +39,9 @@ function RegisterUser(name, surname, email, password) {
         $('#nameInfo').closest('.form-group').addClass("has-error");
         $('#nameInfo').focus();
 
-        warningText = "Eksik bilgilerinizi giriniz.";
+        //$("#warningMessage").text("hata");
+        //$("#warningMessage").show();
+        warningText = "Lütfen adınızı giriniz.";
         validated = false;
     }
     if (IsNullOrEmpty(surname) == true && validated==true ) {
@@ -47,7 +49,7 @@ function RegisterUser(name, surname, email, password) {
         $('#surnameInfo').closest('.form-group').addClass("has-error");
         $('#surnameInfo').focus();
         
-        warningText = "Eksik bilgilerinizi giriniz.";
+        warningText = "Lütfen soyadınızı giriniz.";
         validated = false;
     }
     if (CheckEmailCharacters(email) == false && validated == true) {
@@ -100,7 +102,7 @@ function RegisterUser(name, surname, email, password) {
                 }
                 else {
                     //Success
-                    window.location.href = 'Default.aspx';
+                    window.location.href = 'Home.aspx';
 
                 }
 
@@ -125,7 +127,7 @@ $(document).ready(function() {
         }
     });
 
-    $("#btnSignUp").click(function() {
+    $("#btnRegister").click(function() {
 
         var name = $("#nameInfo").val();
         var surname = $("#surnameInfo").val();
