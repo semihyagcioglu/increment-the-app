@@ -157,7 +157,8 @@ namespace increment_the_app.Library
 
         public static int CreateNewUser(string userName, string userSurname, string email, string password)
         {
-            string value = "value";
+            int value = 0;
+
             SqlParameter[] parameters = new SqlParameter[5];
             parameters[0] = DataBase.SetParameter("@userName", SqlDbType.NVarChar, 80, "Input", userName);
             parameters[1] = DataBase.SetParameter("@userSurname", SqlDbType.NVarChar, 80, "Input", userSurname);
@@ -165,19 +166,8 @@ namespace increment_the_app.Library
             parameters[3] = DataBase.SetParameter("@password", SqlDbType.NVarChar, 16, "Input", password);
             parameters[4] = DataBase.SetParameter("@value", SqlDbType.Int, 32, "Output", value);
 
-            int checkMail = Convert.ToInt32(DataBase.ExecuteScalar( @"SELECT COUNT(Email)
-         FROM [IncrementDB].[dbo].[Users]
-        WHERE Email='" + email + "'"));
-            
-            if (checkMail == 0)
-            {
-                int result = DataBase.ExecuteStoredProcedure("spInsertUsers", parameters, "@value");
-                return result;
-            }
-
-            return -1;
-
-
+            int result = DataBase.ExecuteStoredProcedure("spInsertUsers", parameters, "@value");
+            return result;
 
 //            string returnValue = string.Empty;
 //            string hashGuid = string.Empty;
