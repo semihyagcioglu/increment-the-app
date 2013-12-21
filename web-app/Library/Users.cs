@@ -165,8 +165,17 @@ namespace increment_the_app.Library
             parameters[3] = DataBase.SetParameter("@password", SqlDbType.NVarChar, 16, "Input", password);
             parameters[4] = DataBase.SetParameter("@value", SqlDbType.Int, 32, "Output", value);
 
-            int result = DataBase.ExecuteStoredProcedure("spInsertUsers", parameters, "@value");
-            return result;
+            int checkMail = Convert.ToInt32(DataBase.ExecuteScalar( @"SELECT COUNT(Email)
+         FROM [IncrementDB].[dbo].[Users]
+        WHERE Email='" + email + "'"));
+            
+            if (checkMail == 0)
+            {
+                int result = DataBase.ExecuteStoredProcedure("spInsertUsers", parameters, "@value");
+                return result;
+            }
+
+            return -1;
 
 
 
