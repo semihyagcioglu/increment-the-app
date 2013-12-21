@@ -423,8 +423,8 @@ namespace increment_the_app.Library
         {
             using (SqlConnection connection = new SqlConnection(GetConnectionString()))
             {
-                SqlTransaction transaction = connection.BeginTransaction();
-                SqlCommand command = new SqlCommand(sqlCommand, connection, transaction);
+                //SqlTransaction transaction = connection.BeginTransaction();
+                SqlCommand command = new SqlCommand(sqlCommand, connection);
                 try
                 {
                     if (connection.State == ConnectionState.Closed)
@@ -435,7 +435,7 @@ namespace increment_the_app.Library
                     command.CommandTimeout = 300;
 
                     var result = command.ExecuteScalar();
-                    command.Transaction.Commit();
+                    //command.Transaction.Commit();
 
                     if (connection.State == ConnectionState.Open)
                     {
