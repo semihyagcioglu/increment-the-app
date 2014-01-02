@@ -113,5 +113,11 @@ namespace increment_the_app
         {
             return Users.Unsubscribe(userId, email);
         }
+
+        [WebMethod]
+        public string PostTask(string taskTitle, string taskDetail, string date, string location, string money, string taskStatus)
+        {
+            return Users.PostTask(taskTitle, taskDetail, date, location, money, taskStatus);
+        }
     }
 }
