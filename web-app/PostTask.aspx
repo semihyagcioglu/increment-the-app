@@ -1,72 +1,57 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PostTask.aspx.cs" Inherits="increment_the_app.PostTask" %>
 
 <asp:Content ID="hc" ContentPlaceHolderID="headContent" runat="server">
+     
+    <meta charset="utf-8">
+ <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">  
+ <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+
+    <script>
+        $(function () {
+            $("#datepicker").datepicker({ dateFormat: "yy-mm-dd" });
+        });
+  </script>
+
+
 </asp:Content>
 <asp:Content ID="bc" ContentPlaceHolderID="bodyContent" runat="server">
 
-        <h4 class="ch4"><img src="img/find_1.png" alt="Pulpit rock" width="64" height="64">Lütfen Gerekli İş Bilgileri Girin</h4>  
+        <h4 class="ch4"><img src="img/search.ico" alt="Pulpit rock" width="64" height="64">Lütfen Gerekli İş Bilgileri Girin</h4>  
         <hr width=”100%” color=”#0000F8” size=5>
     
       <form role="form">
   <div class="form-group">
-    <label class="text-primary">Yapılmak İstenen İş</label>
+    <label class="text-primary"><img src="img/title.ico" alt="Pulpit rock" width="32" height="32">Yapılmak İstenen İş</label>
     <input type="text" class="form-control" id="InputTitle" placeholder="Yapılmak istenen iş...">
   </div>
   <div class="form-group">
-    <label class="text-primary">İşin Detayı</label>
+    <label class="text-primary"><img src="img/detail.ico" alt="Pulpit rock" width="32" height="32">İşin Detayı</label>
     <textarea class="form-control" id="InputTitleDetail" placeholder="Lütfen yapılacak işin detaylarını girin..." rows="3"></textarea>
   </div>
-          </form>
-    <div class="tarih">
-               <div class="tarihlabel"><label class="text-primary">Tarih</label></div>
-        <div class="birinci"><select class="form-control" style="width:150px;">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-        </select>
-
-        </div>
-        <div class="ikinci"><select class="form-control" style="width:150px;">
-        <option>Ocak</option>
-        <option>Şubat</option>
-        <option>Mart</option>
-        <option>Nisan</option>
-        <option>Mayıs</option>
-        </select>
-
-        </div>
-
-        <div class="ucuncu"><select class="form-control" style="width:150px;">
-        <option>2014</option>
-        <option>2013</option>
-        <option>2012</option>
-        <option>2011</option>
-        <option>2010</option>
-        </select>
-
-        </div>
-
-    </div>
-             
+          </form>    
           <br />
-
-              <div class="btn-group dropup">
-  
+              <div class="btn-group dropup">  
   <form role="form">
   <div class="form-group">
-    <label class="text-primary">Nerede yapılacak ?</label>
+    <label class="text-primary"><img src="img/location.ico" alt="Pulpit rock" width="32" height="32">Nerede yapılacak ?</label>
     <input type="text" class="form-control" id="Inputlocation" placeholder="Nerede yapılsın...">
   </div>
           </form>
-  
-                  <br />
+  <label class="text-primary"><img src="img/date.ico" alt="Pulpit rock" width="32" height="32">İşin Teslim Tarihi</label>
+                  <div class="panel-body">
+        <div class="form-group">
+            <input id="datepicker" type="text" class="form-control" placeholder="Tarih Seçin" required />
+        </div>
+        
+    </div>  
+                  
                    <form role="form">
   <div class="form-group">
-    <label class="text-primary">Ücret ?</label>
+    <label class="text-primary"><img src="img/money.ico" alt="Pulpit rock" width="32" height="32">Ücret ?</label>
      <div class="input-group">
-  <input type="text" class="form-control id="InputMoney" placeholder="Ne kadar ödemeyi düşünüyosun..."">
+  <input type="text" class="form-control id="InputMoney" placeholder="Ne kadar ödemeyi düşünüyosun..."/>
   <span class="input-group-addon">.00 TL</span>
 </div>
   </div>
