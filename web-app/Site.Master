@@ -20,6 +20,9 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
     <script src="/js/jquery-1.10.2.min.js"></script>
+    
+    <script type="text/javascript" src="js/master.js" ></script>
+    <script type="text/javascript" src="js/generic.js" ></script>
 
      <script type="text/javascript">
 
@@ -38,6 +41,13 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
+
+    <input type="hidden" runat="server" id="hdnUserIpAdress" />
+    <input type="hidden" runat="server" id="hdnIsFirstTime" />
+    <input type="hidden" runat="server" id="hdnReturnUrl" />
+    <input type="hidden" runat="server" id="hdnUserId" />
+    <input type="hidden" runat="server" id="hdnSessionId" />
+
     <form accept-charset="UTF-8" role="form" id="form1" runat="server">
         
             <div class="container">

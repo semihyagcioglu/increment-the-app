@@ -139,8 +139,7 @@ namespace increment_the_app.Library
             UpdateActionLog(userId, sessionId);
             string sqlUpdatePageIn = @" INSERT INTO [ActionLogs]
                                         ([UserId],[PageName],[ActionTable],[ActionField],[ActionValue],[ActionContentField],[ActionTime],[Ip],[SessionId])
-                                        VALUES
-                                        (@userId,@pageName,@actionTable,@actionField,@actionValue,@actionContentField,GETDATE(),@ip,@sessionId) ";
+                                        VALUES                                        (@userId,@pageName,@actionTable,@actionField,@actionValue,@actionContentField,GETDATE(),@ip,@sessionId) ";
 
             string retVal;
 

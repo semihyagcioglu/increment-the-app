@@ -10,9 +10,9 @@ namespace increment_the_app.Library
 {
     public class Users
     {
-        public static string LogIn(string email, string password)
+        public static int LogIn(string email, string password)
         {
-            string result = string.Empty;
+            int result = 0;
 
             string userId = string.Empty;
             string name = string.Empty;
@@ -53,21 +53,16 @@ namespace increment_the_app.Library
                     //Logs.UpdateUserAccessLog(userId);
                     //Logs.CreateUserLoginLog(userId);
 
-                    result = userId;
+                    result = int.Parse(userId);
 
                 }
-                else
-                {
-                    //result = Resources.CustomCodes.ERROR_USER_NOT_FOUND;
-                }
-
             }
             catch (Exception ex)
             {
                 //Exception trying to get user related info from "Users" Table
-                //result = Resources.CustomCodes.ERROR_GENERIC.ToString();
-                //string ip = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"].ToString();
-                //Logs.InsertErrorLog(ex, System.Web.HttpContext.Current.Request.Url.AbsoluteUri, userId, ip, queryUser);
+                result = -1;
+                string ip = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"].ToString();
+                Logs.InsertErrorLog(ex, System.Web.HttpContext.Current.Request.Url.AbsoluteUri, userId, ip, queryUser);
             }
 
             return result;
@@ -157,101 +152,108 @@ namespace increment_the_app.Library
 
            DataBase.ExecuteSqlWithParameters(sqlUpdateUser, parameters);
 
-
-
-
-
             return "update sucsessfull";
         }
 
-        //public static string CreateNewUser(string userName, string userSurname, string email, string password)
-        //{
+        public static int CreateNewUser(string userName, string userSurname, string email, string password)
+        {
+            int value = 0;
 
-        //            string returnValue = string.Empty;
-        //            string hashGuid = string.Empty;
-        //            string message = string.Empty;
-        //            string query = string.Empty;
+            SqlParameter[] parameters = new SqlParameter[5];
+            parameters[0] = DataBase.SetParameter("@userName", SqlDbType.NVarChar, 80, "Input", userName);
+            parameters[1] = DataBase.SetParameter("@userSurname", SqlDbType.NVarChar, 80, "Input", userSurname);
+            parameters[2] = DataBase.SetParameter("@email", SqlDbType.NVarChar, 80, "Input", email);
+            parameters[3] = DataBase.SetParameter("@password", SqlDbType.NVarChar, 16, "Input", password);
+            parameters[4] = DataBase.SetParameter("@value", SqlDbType.Int, 32, "Output", value);
 
-        //            string ip = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"].ToString();
+            int result = DataBase.ExecuteStoredProcedure("spInsertUsers", parameters, "@value");
+            return result;
 
-        //            Guid uniqueId;
+//            string returnValue = string.Empty;
+//            string hashGuid = string.Empty;
+//            string message = string.Empty;
+//            string query = string.Empty;
 
-        //            string errorState = "-1";
+//            string ip = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"].ToString();
 
-        //            if (CheckEmail(email) == "-1")
-        //            {
+//            Guid uniqueId;
 
-        //                uniqueId = Guid.NewGuid();
+//            string errorState = "-1";
 
-        //                string sqlInsertUser = @"	DECLARE @UserId INT
-        //
-        //	                                        INSERT INTO [Users] (Name,Surname,[User].[Password],Email,IsFirstTime,IsActive,TotalAccessCount,UniqueId,CreatedAt)
-        //                                            VALUES ('" + userName + "','" + userSurname + "','" + password + "','" + email + @"',1,1,0,'" + uniqueId + @"',GETDATE())
-        //                                        	
-        //	                                        SELECT @UserId = UserId 
-        //	                                        FROM [Users]
-        //	                                        WHERE UniqueId = '" + uniqueId + @"'
-        //                                        	
-        //	                                        INSERT INTO UserLoginTypes (UserId,LoginType)
-        //	                                        VALUES
-        //	                                        (@UserId,'1') 
-        //
-        //                                            INSERT INTO [MailList]
-        //                                            ([Name],[Surname],[Email],[UniqueId],[UserId],[BirthDate],[Gender],[GSM],[Location],[Source],[MailSent],[Unsubscribe],[CreatedAt])
-        //                                            SELECT [Name],[Surname],[Email],[UniqueId],UserId,[BirthDate],[Gender],[GSM],[City],'increment',0,0,GETDATE()
-        //                                            FROM Users
-        //                                            WHERE UserId = @UserId AND [Email] NOT IN (SELECT [Email] FROM [MailList]) ";
+//            if (CheckEmail(email) == "-1")
+//            {
+
+//                uniqueId = Guid.NewGuid();
+
+//                string sqlInsertUser = @"	DECLARE @UserId INT
+//        
+//        	                                        INSERT INTO [Users] (Name,Surname,[User].[Password],Email,IsFirstTime,IsActive,TotalAccessCount,UniqueId,CreatedAt)
+//                                                    VALUES ('" + userName + "','" + userSurname + "','" + password + "','" + email + @"',1,1,0,'" + uniqueId + @"',GETDATE())
+//                                                	
+//        	                                        SELECT @UserId = UserId 
+//        	                                        FROM [Users]
+//        	                                        WHERE UniqueId = '" + uniqueId + @"'
+//                                                	
+//        	                                        INSERT INTO UserLoginTypes (UserId,LoginType)
+//        	                                        VALUES
+//        	                                        (@UserId,'1') 
+//        
+//                                                    INSERT INTO [MailList]
+//                                                    ([Name],[Surname],[Email],[UniqueId],[UserId],[BirthDate],[Gender],[GSM],[Location],[Source],[MailSent],[Unsubscribe],[CreatedAt])
+//                                                    SELECT [Name],[Surname],[Email],[UniqueId],UserId,[BirthDate],[Gender],[GSM],[City],'increment',0,0,GETDATE()
+//                                                    FROM Users
+//                                                    WHERE UserId = @UserId AND [Email] NOT IN (SELECT [Email] FROM [MailList]) ";
 
 
-        //                try
-        //                {
-        //                    DataBase.ExecuteNonQuery(sqlInsertUser);
-        //                }
-        //                catch (Exception exx)
-        //                {
+//                try
+//                {
+//                    DataBase.ExecuteNonQuery(sqlInsertUser);
+//                }
+//                catch (Exception exx)
+//                {
 
-        //                    Logs.InsertErrorLog(exx, "wsUser.asmx.cs/CreateNewUser", uniqueId.ToString(), ip, sqlInsertUser);
-        //                    errorState = "1";
-        //                }
+//                    Logs.InsertErrorLog(exx, "wsUser.asmx.cs/CreateNewUser", uniqueId.ToString(), ip, sqlInsertUser);
+//                    errorState = "1";
+//                }
 
-        //                if (errorState == "-1")
-        //                {
+//                if (errorState == "-1")
+//                {
 
-        //                    hashGuid = Functions.MD5Encode(uniqueId.ToString());
-        //                    try
-        //                    {
-        //                        Mail.SendTemplateMail(string.Empty, uniqueId.ToString(), string.Empty, string.Empty, Resources.Mail.MAIL_TEMPLATE_ACTIVATION.ToString(), email, Resources.GlobalVariables.PROJECT_CONTACT_MAIL_ADDRESS, string.Empty, string.Empty);
-        //                    }
-        //                    catch (Exception ex)
-        //                    {
+//                    hashGuid = Functions.MD5Encode(uniqueId.ToString());
+//                    try
+//                    {
+//                        Mail.SendTemplateMail(string.Empty, uniqueId.ToString(), string.Empty, string.Empty, Resources.Mail.MAIL_TEMPLATE_ACTIVATION.ToString(), email, Resources.GlobalVariables.PROJECT_CONTACT_MAIL_ADDRESS, string.Empty, string.Empty);
+//                    }
+//                    catch (Exception ex)
+//                    {
 
-        //                        Logs.InsertErrorLog(ex, System.Web.HttpContext.Current.Request.Url.AbsoluteUri.ToString(), uniqueId.ToString(), ip, string.Empty);
+//                        Logs.InsertErrorLog(ex, System.Web.HttpContext.Current.Request.Url.AbsoluteUri.ToString(), uniqueId.ToString(), ip, string.Empty);
 
-        //                        query = "UPDATE [Users] WHERE UniqueId='" + uniqueId + "' Set IsValidated = -1";
-        //                        DataBase.ExecuteNonQuery(query);
+//                        query = "UPDATE [Users] WHERE UniqueId='" + uniqueId + "' Set IsValidated = -1";
+//                        DataBase.ExecuteNonQuery(query);
 
-        //                    }
+//                    }
 
-        //                    returnValue = LogIn(email, password);
+//                    returnValue = LogIn(email, password);
 
-        //                    if (returnValue == Resources.CustomCodes.ERROR_GENERIC.ToString())
-        //                    {
-        //                        return "-2";
-        //                    }
-        //                    else
-        //                    {
-        //                        return uniqueId.ToString();
-        //                    }
-        //                }
-        //                else if (errorState == "1")
-        //                {
-        //                    return "-2";
-        //                }
+//                    if (returnValue == Resources.CustomCodes.ERROR_GENERIC.ToString())
+//                    {
+//                        return "-2";
+//                    }
+//                    else
+//                    {
+//                        return uniqueId.ToString();
+//                    }
+//                }
+//                else if (errorState == "1")
+//                {
+//                    return "-2";
+//                }
 
-        //            }
+//            }
 
-        //            return "-1";
-        //}
+//            return "-1";
+        }
 
         public static string CheckEmail(string email)
         {
@@ -367,6 +369,39 @@ namespace increment_the_app.Library
                 retVal = "-1";
             }
             return retVal;
+        }
+
+        public static string PostTask(string taskTitle, string taskDetail, string date, string location, string money, string taskStatus)
+        {
+            SqlParameter[] parameters = new SqlParameter[7];
+            parameters[0] = DataBase.SetParameter("@userId", SqlDbType.Int, 32, "Input", "1");
+            parameters[1] = DataBase.SetParameter("@taskTitle", SqlDbType.NVarChar, 50, "Input", taskTitle);
+            parameters[2] = DataBase.SetParameter("@taskDetail", SqlDbType.NVarChar, 350, "Input", taskDetail);
+            parameters[3] = DataBase.SetParameter("@date", SqlDbType.Date, 0, "Input", date);
+            parameters[4] = DataBase.SetParameter("@location", SqlDbType.NVarChar, 50, "Input", location);
+            parameters[5] = DataBase.SetParameter("@money", SqlDbType.Money, 0, "Input", money);
+            parameters[6] = DataBase.SetParameter("@taskStatus", SqlDbType.NVarChar, 50, "Input", taskStatus);
+
+            string taskQuery = @"INSERT INTO [dbo].[Tasks]
+                                       ([UserID]
+                                       ,[TaskTitle]
+                                       ,[TaskDetail]
+                                       ,[Date]
+                                       ,[Location]
+                                       ,[Money]
+                                       ,[TaskStatus])
+                                 VALUES
+                                       (@userId
+                                       ,@taskDetail
+                                       ,@taskDetail
+                                       ,@date
+                                       ,@location
+                                       ,@money
+                                       ,@taskStatus)";
+
+            DataBase.ExecuteSqlWithParameters(taskQuery, parameters);
+
+            return "Yeni işiniz başarıyla eklendi";
         }
     }
 }

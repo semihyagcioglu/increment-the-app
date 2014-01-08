@@ -59,8 +59,19 @@
   <ItemGroup>
     <Content Include="css\bootstrap.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="img\date.png" />
+    <Content Include="img\detail.png" />
+    <Content Include="img\location.png" />
+    <Content Include="img\money.png" />
+    <Content Include="img\search.png" />
+    <Content Include="img\title.png" />
     <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\generic.js" />
     <Content Include="js\jquery-1.10.2.min.js" />
+    <Content Include="js\login.js" />
+    <Content Include="js\master.js" />
+    <Content Include="js\signup.js" />
+    <Content Include="PostTask.aspx" />
     <Content Include="Test.aspx" />
     <Content Include="css\jumbotron-narrow.css" />
     <Content Include="Dashboard.aspx" />
@@ -71,7 +82,6 @@
     <Content Include="img\button_googlePlay.png" />
     <Content Include="img\button_win.png" />
     <Content Include="img\slide3_3.png" />
-    <Content Include="js\LoginSingupChecks.js" />
     <Content Include="LogIn.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="TaskManagement.aspx" />
@@ -86,6 +96,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Library\UI.cs" />
+    <Compile Include="PostTask.aspx.cs">
+      <DependentUpon>PostTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PostTask.aspx.designer.cs">
+      <DependentUpon>PostTask.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Test.aspx.cs">
       <DependentUpon>Test.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
