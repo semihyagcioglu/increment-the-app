@@ -371,7 +371,7 @@ namespace increment_the_app.Library
             return retVal;
         }
 
-        public static string PostTask(string taskTitle, string taskDetail, string date, string location, string money, string taskStatus)
+        public static string PostTask(string taskTitle, string taskDetail, string date, string location, string money)
         {
             SqlParameter[] parameters = new SqlParameter[7];
             parameters[0] = DataBase.SetParameter("@userId", SqlDbType.Int, 32, "Input", "1");
@@ -380,7 +380,7 @@ namespace increment_the_app.Library
             parameters[3] = DataBase.SetParameter("@date", SqlDbType.Date, 0, "Input", date);
             parameters[4] = DataBase.SetParameter("@location", SqlDbType.NVarChar, 50, "Input", location);
             parameters[5] = DataBase.SetParameter("@money", SqlDbType.Money, 0, "Input", money);
-            parameters[6] = DataBase.SetParameter("@taskStatus", SqlDbType.NVarChar, 50, "Input", taskStatus);
+            parameters[6] = DataBase.SetParameter("@taskStatus", SqlDbType.NVarChar, 50, "Input", "Aktif");
 
             string taskQuery = @"INSERT INTO [dbo].[Tasks]
                                        ([UserID]
