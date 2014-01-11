@@ -64,6 +64,7 @@
     <Content Include="img\location.png" />
     <Content Include="img\money.png" />
     <Content Include="img\search.png" />
+    <Content Include="img\slider-img-2.jpg" />
     <Content Include="img\title.png" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\generic.js" />
