@@ -13,8 +13,11 @@ namespace increment_the_app
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            OnlineTask();
+        }        
+        private void OnlineTask()
+        {
             SqlConnection conn = new SqlConnection(Library.DataBase.GetConnectionString());
-            conn.Open();
 
             string sql = @"SELECT [ID]
                                   ,[UserID] AS [Kullanıcı No]
@@ -25,21 +28,25 @@ namespace increment_the_app
                                   ,[Money] AS [İşin Ücreti]
                                   ,[TaskStatus] AS [İşin Durum]
                               FROM [Tasks]
-                                   WHERE [TaskStatus] = 'Aktif' ORDER BY ID";                                   
+                                   WHERE [TaskStatus] = 'Aktif' ORDER BY ID";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
             SqlDataAdapter adp = new SqlDataAdapter(cmd);
             DataSet dt = new DataSet();
 
+            if (conn.State == ConnectionState.Closed)
+            {
+                conn.Open();
+            }
+
             adp.Fill(dt);
             gvOnlineTask.DataSource = dt;
-            gvOnlineTask.DataBind();    
-    
-      }
+            gvOnlineTask.DataBind();
 
-        protected void lvTask_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            if (conn.State == ConnectionState.Closed)
+            {
+                conn.Close();
+            }
         }
     }
 }
