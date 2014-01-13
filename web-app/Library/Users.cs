@@ -392,7 +392,7 @@ namespace increment_the_app.Library
                                        ,[TaskStatus])
                                  VALUES
                                        (@userId
-                                       ,@taskDetail
+                                       ,@taskTitle
                                        ,@taskDetail
                                        ,@date
                                        ,@location
