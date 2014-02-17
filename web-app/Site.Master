@@ -61,7 +61,8 @@
                 </asp:ContentPlaceHolder>
 
                 <div class="footer">
-                    <p>&copy; Increment the App 2013</p>
+                    <p>&copy; Increment the App 2013 | Yardım | Üyelik Sözleşmesi</p>
+                    
                     <asp:ContentPlaceHolder ID="footerContent" runat="server">
                     </asp:ContentPlaceHolder>
                 </div>
