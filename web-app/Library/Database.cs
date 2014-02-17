@@ -19,7 +19,7 @@ namespace increment_the_app.Library
         //{
         //    cnnStr = ConfigurationManager.ConnectionStrings["IncrementDBConnection"].ConnectionString;
         //}
-
+        //Deneme.avi
         ///// <summary>
         ///// This constructors set connection string
         ///// </summary>
