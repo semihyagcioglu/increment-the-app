@@ -10,15 +10,28 @@ namespace increment_the_app.Library
 {
     public class DataBase
     {
-        private static string cnnStr = null;
+        //private static string cnnStr = null;
 
-        /// <summary>
-        /// This constructors set connection string
-        /// </summary>
-        /// <param name="cnnStrName">is a connection strings name in the application config file (app.config)</param>
-        public DataBase(string cnnStrsName)
+        ///// <summary>
+        ///// Default constructor to connect Azure database.
+        ///// </summary>
+        //public DataBase()
+        //{
+        //    cnnStr = ConfigurationManager.ConnectionStrings["IncrementDBConnection"].ConnectionString;
+        //}
+        //Deneme.avi
+        ///// <summary>
+        ///// This constructors set connection string
+        ///// </summary>
+        ///// <param name="cnnStrName">is a connection strings name in the application config file (app.config)</param>
+        //public DataBase(string cnnStrsName)
+        //{
+        //    cnnStr = ConfigurationManager.ConnectionStrings[cnnStrsName].ConnectionString;
+        //}
+
+        public static string GetConnectionString()
         {
-            cnnStr = ConfigurationManager.ConnectionStrings[cnnStrsName].ConnectionString;
+            return ConfigurationManager.ConnectionStrings["IncrementDBConnection"].ConnectionString;
         }
 
         /// <summary>
@@ -28,22 +41,27 @@ namespace increment_the_app.Library
         /// <returns><b>DataSet</b> included your query result</returns>
         public static DataSet GetDataSet(string sqlCommand)
         {
-            using (SqlConnection connection = new SqlConnection(cnnStr))
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
             {
-                SqlTransaction transaction = connection.BeginTransaction();
-                SqlCommand cmd = new SqlCommand(sqlCommand, connection, transaction);
+               // SqlTransaction transaction = connection.BeginTransaction();
+                //SqlCommand cmd = new SqlCommand(sqlCommand, connection, transaction);
+                SqlCommand cmd = new SqlCommand(sqlCommand, connection);
+                
+                var ds = new DataSet();
+
                 try
                 {
                     if (connection.State == ConnectionState.Closed)
                     {
                         connection.Open();
                     }
+
                     var da = new SqlDataAdapter(cmd);
                     da.SelectCommand.CommandTimeout = 30000;
 
-                    var ds = new DataSet();
+                    
                     da.Fill(ds);
-                    cmd.Transaction.Commit();
+                    //cmd.Transaction.Commit();
 
 
                     if (connection.State == ConnectionState.Open)
@@ -51,25 +69,27 @@ namespace increment_the_app.Library
                         connection.Close();
                         connection.Dispose();
                     }
-                    return ds;
+                    
                 }
                 catch (SqlException eX)
                 {
-                    try
-                    {
-                        cmd.Transaction.Rollback();
-                    }
-                    catch (SqlException eXR)
-                    {
-                        throw eXR;
-                    }
-                    throw eX;
+                    //try
+                    //{
+                    //   // cmd.Transaction.Rollback();
+                    //}
+                    //catch (SqlException eXR)
+                    //{
+                    //    throw eXR;
+                    //}
+                    //throw eX;
                 }
+
+                return ds;
             }
         }
 
         /// <summary>
-        /// Return a datatable in created dataset
+        /// Returns a first DataTable of the DataSet.
         /// </summary>
         /// <param name="sqlCommand"></param>
         /// <returns>First DataTable in DataSet</returns>
@@ -78,45 +98,51 @@ namespace increment_the_app.Library
             return GetDataSet(sqlCommand).Tables[0];
         }
 
-        // GetList : Gets the SQL command and retrieves a list as type of string with comma delimiter
-        public static List<string> GetList(string sqlCommand)
+        /// <summary>
+        /// Gets the SQL command and retrieves a list as type of string with comma delimiter
+        /// </summary>
+        /// <param name="sqlCommand"></param>
+        /// <returns></returns>
+        public static List<string> GetCommaSeperatedList(string sqlCommand)
         {
             DataTable dt = GetDataTable(sqlCommand);
-            //List<DataRow> list = dt.AsEnumerable().toList(); // FIX : This should be working for .NET 3.5 Framework!
             List<string> list = new List<string>();
 
             foreach (DataRow row in dt.Rows)
             {
-                string item = string.Empty; // FIX : convert it to stringbuilder!
+                StringBuilder sb = new StringBuilder();
 
                 foreach (DataColumn column in dt.Columns)
                 {
-                    item += row[column].ToString() + ",";
+                    sb.Append(row[column].ToString()).Append(",");
                 }
 
-                item = item.Remove(item.Length - 1, 1);
-
-                list.Add(item);
+                sb.Remove(sb.Length - 1, 1);
+                
+                list.Add(sb.ToString());
             }
 
             return list;
         }
 
-        //// GetList : Gets the SQL command and retrieves a list as type of DataRow
-        //public static  List<DataRow> GetList(string sqlCommand)
-        //{
-        //    DataTable dt = GetDataTable(sqlCommand);
-        //    //List<DataRow> list = dt.AsEnumerable().toList(); // FIX : This should be working for .NET 3.5 Framework!
-        //    List<DataRow> list = new List<DataRow>();
+        /// <summary>
+        /// Gets the SQL command and retrieves a list as type of DataRow
+        /// </summary>
+        /// <param name="sqlCommand"></param>
+        /// <returns></returns>
+        public static List<DataRow> GetList(string sqlCommand)
+        {
+            DataTable dt = GetDataTable(sqlCommand);
+            List<DataRow> list = dt.AsEnumerable().ToList<DataRow>();
+            /*List<DataRow> list = new List<DataRow>();
 
+            foreach (DataRow row in dt.Rows)
+            {
+                list.Add(row);
+            }*/
 
-        //    foreach (DataRow row in dt.Rows)
-        //    {
-        //        list.Add(row);
-        //    }
-
-        //    return list;
-        //}
+            return list;
+        }
 
         //SetParameter: Stored procedure için parametre hazırlar. Yönü string bir değerle
         //verilir. Daha sonra, alınan bu değer Direction değerlerinden birine çevrilir.
@@ -153,7 +179,7 @@ namespace increment_the_app.Library
             return parameter;
         }
 
-        // This function requires SqlParameters and and Sql command and returns a datatable.
+        // This function requires SqlParameters and Sql command and returns a datatable.
         // Usage is :
         //
         //    int userId = 21;
@@ -171,10 +197,11 @@ namespace increment_the_app.Library
         public static DataTable ExecuteSqlWithParameters(string sql, SqlParameter[] sqlParameters)
         {
 
-            using (SqlConnection connection = new SqlConnection(cnnStr))
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
             {
-                SqlTransaction transaction = connection.BeginTransaction();
-                SqlCommand cmd = new SqlCommand(sql, connection, transaction);
+                //SqlTransaction transaction = connection.BeginTransaction();
+                //SqlCommand cmd = new SqlCommand(sql, connection, transaction);
+                SqlCommand cmd = new SqlCommand(sql, connection);
                 try
                 {
                     if (sqlParameters != null)
@@ -197,7 +224,7 @@ namespace increment_the_app.Library
 
                     var ds = new DataSet();
                     da.Fill(ds);
-                    cmd.Transaction.Commit();
+                    //cmd.Transaction.Commit();
 
 
                     if (connection.State == ConnectionState.Open)
@@ -212,7 +239,7 @@ namespace increment_the_app.Library
                 {
                     try
                     {
-                        cmd.Transaction.Rollback();
+                        //cmd.Transaction.Rollback();
                     }
                     catch (SqlException eXR)
                     {
@@ -223,13 +250,8 @@ namespace increment_the_app.Library
             }
         }
 
-
-        //ExecuteStoredProcedure: Stored Procedure çağrılır.
-        //procedureName: Çağrılacak prosedürün adı
-        //sqlParameters: Stored Procedure gönderilecek parametre arrayi
-        //returnValueParameter: Stored Procedure içinde tanımlamış olduğumuz geri dönüş parametresinin ismi.
         /// <summary>
-        /// This method execute only stored procedure with parameters of sp
+        /// This method executes only stored procedure with parameters of sp
         /// </summary>
         /// <param name="procedureName">StoredProcedure name</param>
         /// <param name="sqlParameters">Parameters of StoredProcedure</param>
@@ -237,11 +259,10 @@ namespace increment_the_app.Library
         /// <returns></returns>
         public static int ExecuteStoredProcedure(string procedureName, SqlParameter[] sqlParameters, string returnValueParameter)
         {
-            //var connection = new SqlConnection(GetConnectionString());
-            using (SqlConnection connection = new SqlConnection(cnnStr))
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
             {
-                SqlTransaction transaction = connection.BeginTransaction();
-                SqlCommand cmd = new SqlCommand(procedureName, connection, transaction);
+                //SqlTransaction transaction = connection.BeginTransaction();
+                SqlCommand cmd = new SqlCommand(procedureName, connection);
                 cmd.CommandType = CommandType.StoredProcedure;
                 try
                 {
@@ -261,7 +282,7 @@ namespace increment_the_app.Library
                     cmd.CommandTimeout = 300;
 
                     cmd.ExecuteNonQuery();
-                    cmd.Transaction.Commit();
+                    //cmd.Transaction.Commit();
 
                     if (connection.State == ConnectionState.Open)
                     {
@@ -275,7 +296,7 @@ namespace increment_the_app.Library
                 {
                     try
                     {
-                        cmd.Transaction.Rollback();
+                        //cmd.Transaction.Rollback();
                     }
                     catch (SqlException eXR)
                     {
@@ -286,26 +307,17 @@ namespace increment_the_app.Library
             }
         }
 
-        //ExecuteStoredProcedure: Stored Procedure çağrılır.
-        //procedureName: Çağrılacak prosedürün adı
-        //sqlParameters: Stored Procedure gönderilecek parametre arrayi
-        //Sonuc olarak DataTable döndürür.
-        // Örnek kullanım -->
-
-        /* var sqlParameters = new SqlParameter[6];
-        sqlParameters[0] = DataBase.SetParameter("@parametreAdi", SqlDbType.VarChar, 32, "Input", Session["parametre"]);
-        var dt = DataBase.ExecuteStoredProcedure2DataTable("ListeGetir", sqlParameters);
-         */
         /// <summary>
-        /// 
+        /// var sqlParameters = new SqlParameter[6];
+        /// sqlParameters[0] = DataBase.SetParameter("@parameterName", SqlDbType.VarChar, 32, "Input", Session["parameter"]);
+        /// var dt = DataBase.ExecuteStoredProcedure2DataTable("GetSomeList", sqlParameters);
         /// </summary>
         /// <param name="procedureName"></param>
         /// <param name="sqlParameters"></param>
         /// <returns></returns>
         public static DataTable ExecuteStoredProcedure2DataTable(string procedureName, SqlParameter[] sqlParameters)
         {
-            //var connection = new SqlConnection(GetConnectionString());
-            using (SqlConnection connection = new SqlConnection(cnnStr))
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
             {
                 SqlTransaction transaction = connection.BeginTransaction();
                 SqlCommand command = new SqlCommand(procedureName, connection, transaction);
@@ -356,16 +368,15 @@ namespace increment_the_app.Library
             }
         }
 
-        //ExecuteNonQuery: SQL cümlesi alır. Sadece o SQL cümlesini çalıştırır.,
         /// <summary>
-        /// 
+        /// Executes a SQL query as nonquery.
         /// </summary>
         /// <param name="sqlCommand"></param>
         /// <returns></returns>
         public static int ExecuteNonQuery(string sqlCommand)
         {
             //var connection = new SqlConnection(GetConnectionString());
-            using (SqlConnection connection = new SqlConnection(cnnStr))
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
             {
                 SqlTransaction transaction = connection.BeginTransaction();
                 SqlCommand command = new SqlCommand(sqlCommand, connection, transaction);
@@ -410,10 +421,10 @@ namespace increment_the_app.Library
         /// <returns>First cell[0,0]</returns>
         public static object ExecuteScalar(string sqlCommand)
         {
-            using (SqlConnection connection = new SqlConnection(cnnStr))
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
             {
-                SqlTransaction transaction = connection.BeginTransaction();
-                SqlCommand command = new SqlCommand(sqlCommand, connection, transaction);
+                //SqlTransaction transaction = connection.BeginTransaction();
+                SqlCommand command = new SqlCommand(sqlCommand, connection);
                 try
                 {
                     if (connection.State == ConnectionState.Closed)
@@ -424,7 +435,7 @@ namespace increment_the_app.Library
                     command.CommandTimeout = 300;
 
                     var result = command.ExecuteScalar();
-                    command.Transaction.Commit();
+                    //command.Transaction.Commit();
 
                     if (connection.State == ConnectionState.Open)
                     {
@@ -449,23 +460,14 @@ namespace increment_the_app.Library
             }
         }
 
-        //CleanString: SQL cümlesini alır. İçerisindeki tırnak işaretlerini SQL'i çaktırmayacak hale getirip geri döndürür.
+        /// <summary>
+        /// Removes ' character
+        /// </summary>
+        /// <param name="sqlCommand"></param>
+        /// <returns></returns>
         public static string CleanString(string sqlCommand)
         {
             return sqlCommand.Replace("'", "''");
         }
-
-        public static string SqlFilter(string text)
-        {
-            try
-            {
-                text = text.Replace("'", "’").Replace("^", " ").Replace("<", " ").Replace(">", " ").Replace("%", " ");
-            }
-            catch
-            {
-            }
-            return text;
-        }
-
     }
 }

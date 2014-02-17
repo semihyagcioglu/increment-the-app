@@ -57,8 +57,24 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="img\date.png" />
+    <Content Include="img\detail.png" />
+    <Content Include="img\location.png" />
+    <Content Include="img\money.png" />
+    <Content Include="img\search.png" />
+    <Content Include="img\slider-img-2.jpg" />
+    <Content Include="img\title.png" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\generic.js" />
+    <Content Include="js\jquery-1.10.2.min.js" />
+    <Content Include="js\login.js" />
+    <Content Include="js\master.js" />
+    <Content Include="js\postTask.js" />
+    <Content Include="js\signup.js" />
+    <Content Include="PostTask.aspx" />
+    <Content Include="Test.aspx" />
     <Content Include="css\jumbotron-narrow.css" />
     <Content Include="Dashboard.aspx" />
     <Content Include="Default.aspx" />
@@ -68,20 +84,34 @@
     <Content Include="img\button_googlePlay.png" />
     <Content Include="img\button_win.png" />
     <Content Include="img\slide3_3.png" />
-    <Content Include="js\bootstrap.js" />
-    <Content Include="js\bootstrap.min.js" />
-    <Content Include="js\LoginSingupChecks.js" />
     <Content Include="LogIn.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="TaskManagement.aspx" />
     <Content Include="Unsubscribe.aspx" />
     <Content Include="UserAuthorization.aspx" />
     <Content Include="UserRegistrationReports.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="WsReports.asmx" />
     <Content Include="WsUsers.asmx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Library\UI.cs" />
+    <Compile Include="PostTask.aspx.cs">
+      <DependentUpon>PostTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PostTask.aspx.designer.cs">
+      <DependentUpon>PostTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -185,7 +215,9 @@
   <ItemGroup>
     <Content Include="Site.Master" />
     <Content Include="Reports.Master" />
-    <Content Include="css\bootstrap.min2.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
