@@ -318,6 +318,23 @@ namespace increment_the_app.Library
             }
             return retVal;
         }
+        public static string GetRole(int userId)
+        {
+            string sqlGetRole = @"SELECT [Name]
+                                  FROM [Roles] R
+                                  INNER JOIN Users U  ON U.RoleId = R.RoleId
+                                   WHERE U.UserId = '" + userId + "' ";
+
+            Object roleName = DataBase.ExecuteScalar(sqlGetRole);
+            if (roleName != null)
+            {
+                return roleName.ToString();
+            }
+            else
+            {
+                return "customer";//fix
+            }
+        } 
 
         public static string Subscribe(string userId, string email)
         {
