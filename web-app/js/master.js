@@ -9,7 +9,7 @@
 $(window).load(function() {
     $.ajax({
         type: "POST",
-        url: "../WsUsers.asmx/UpdatePageIn",
+        url: "WsUsers.asmx/UpdatePageIn",
         data: "{" + "'userId':'" + $("#ctl00_hdnUserId").val() + "','page':'" + document.URL + "','ip':'" + $('#ctl00_hdnUserIpAdress').val() + "','uniqueId':'" + $('#ctl00_hdnSessionId').val() + "'}",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
