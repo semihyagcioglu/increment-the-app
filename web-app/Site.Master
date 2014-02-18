@@ -44,6 +44,10 @@
                  window.location.href = "LogIn.aspx";
              });
 
+             $("#btnLogOut").click(function (e) {
+                 window.location.href = "SignOut.aspx";
+             });
+
          });
 
          
@@ -67,7 +71,7 @@
                     <div id="btnMain"  runat="server" class="btn">Anasayfa</div>
                     <div id="btnLogIn" runat="server" class="btn">Giriş Yap</div>
                     <div runat="server" class="btn btn-success" id="btnSignUp">Kayıt Ol</div>
-                    <%--<div id="btnLogOut" runat="server">Çıkış Yap</div>--%>
+                    <div id="btnLogOut" runat="server">Çıkış Yap</div>
                 </div>
                 <div class="bodyContent"><asp:ContentPlaceHolder ID="bodyContent" runat="server">
                 </asp:ContentPlaceHolder></div>
