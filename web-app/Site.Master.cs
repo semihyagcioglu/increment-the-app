@@ -16,11 +16,21 @@ namespace increment_the_app
             btnSignUp.Visible = false;
             string url = Request.Url.ToString();
 
-            if (Session["userId"] == null)
+            if (HttpContext.Current.Session["userId"] != null)
+            {
+                hdnUserId.Value = HttpContext.Current.Session["userId"].ToString();
+            }
+            else
             {
                 btnSignUp.Visible = true;
                 btnLogIn.Visible = true;
             }
+
+            //if (Session["userId"] == null)
+            //{
+            //    btnSignUp.Visible = true;
+            //    btnLogIn.Visible = true;
+            //}
             string roleId = string.Empty;
             string page = string.Empty;
             string userId = string.Empty;

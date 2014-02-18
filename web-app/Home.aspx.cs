@@ -13,7 +13,7 @@ namespace increment_the_app
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            GetUserTasks();
+           // GetUserTasks();
         }
         private void GetUserTasks()
         {

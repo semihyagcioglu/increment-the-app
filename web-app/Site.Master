@@ -37,6 +37,12 @@
              $("#btnSignUp").click(function (e) {
                  window.location.href = "SignUp.aspx";
              });
+             $("#btnMain").click(function (e) {
+                 window.location.href = "Default.aspx";
+             });
+             $("#btnLogIn").click(function (e) {
+                 window.location.href = "LogIn.aspx";
+             });
 
          });
 
@@ -58,7 +64,7 @@
         
             <div class="container">
                 <div class="header">
-                    <div id="btnMain" runat="server" class="btn">Anasayfa</div>
+                    <div id="btnMain"  runat="server" class="btn">Anasayfa</div>
                     <div id="btnLogIn" runat="server" class="btn">Giriş Yap</div>
                     <div runat="server" class="btn btn-success" id="btnSignUp">Kayıt Ol</div>
                     <%--<div id="btnLogOut" runat="server">Çıkış Yap</div>--%>
