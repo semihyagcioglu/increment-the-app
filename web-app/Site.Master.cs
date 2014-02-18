@@ -14,11 +14,13 @@ namespace increment_the_app
             hdnUserIpAdress.Value = Request.ServerVariables["REMOTE_ADDR"];
             btnLogIn.Visible = false;
             btnSignUp.Visible = false;
+            btnLogOut.Visible = false;
             string url = Request.Url.ToString();
 
             if (HttpContext.Current.Session["userId"] != null)
             {
                 hdnUserId.Value = HttpContext.Current.Session["userId"].ToString();
+                btnLogOut.Visible = true;
             }
             else
             {
