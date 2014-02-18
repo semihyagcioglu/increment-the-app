@@ -45,7 +45,7 @@
              });
 
              $("#btnLogOut").click(function (e) {
-                 window.location.href = "SignOut.aspx";
+                 window.location.href = "LogOut.aspx";
              });
 
          });
