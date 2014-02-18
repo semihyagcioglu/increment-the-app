@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="increment_the_app.Default" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/NonSessionSite.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="increment_the_app.Default" %>
 
 <asp:Content ID="hc" ContentPlaceHolderID="headContent" runat="server">
 </asp:Content>

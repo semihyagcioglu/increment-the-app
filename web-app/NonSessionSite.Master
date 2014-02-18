@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="NonSessionMaster.master.cs" Inherits="increment_the_app.NonSessionMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="NonSessionSite.Master.cs" Inherits="increment_the_app.NonSessionMaster" %>
 <!DOCTYPE html>
 <html lang="en">
 <head id="Head1" runat="server">    
