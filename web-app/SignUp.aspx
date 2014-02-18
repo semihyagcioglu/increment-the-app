@@ -38,7 +38,7 @@
 			    	    </div>
 
                         <div class="form-group">
-                           <a href="Login.aspx" class="btn btn-lg btn-link" ><span style="font-size:12px;">Zaten bir hesabın var mı?</span></a>
+                           <a href="Login.aspx" class="btn btn-lg btn-link" >Zaten hesabın var mı?</a>
                         </div>
 			    		<div id="btnRegister" class="btn btn-lg btn-success btn-block">Kayıt ol</div>
 			    </div>
