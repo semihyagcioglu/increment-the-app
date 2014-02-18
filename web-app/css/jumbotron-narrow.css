@@ -161,3 +161,25 @@ color:#777;
 
 float:right;
 }
+
+#TaskDetailsContent {
+    height:100%;
+    width:100%;
+}
+
+.firsbehind {
+ height:200px;
+}
+
+.TaskName {
+margin-bottom:10px;
+}
+.Calendar {
+float:left;
+}
+.hours {
+float:left; margin-left:20px;
+}
+#btnLogOut {
+    float:left;
+}
