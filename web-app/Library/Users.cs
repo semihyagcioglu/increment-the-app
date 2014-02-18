@@ -397,7 +397,7 @@ namespace increment_the_app.Library
             parameters[3] = DataBase.SetParameter("@date", SqlDbType.Date, 0, "Input", date);
             parameters[4] = DataBase.SetParameter("@location", SqlDbType.NVarChar, 50, "Input", location);
             parameters[5] = DataBase.SetParameter("@money", SqlDbType.Money, 0, "Input", money);
-            parameters[6] = DataBase.SetParameter("@taskStatus", SqlDbType.NVarChar, 50, "Input", "Aktif");
+            parameters[6] = DataBase.SetParameter("@taskStatus", SqlDbType.NVarChar, 50, "Input", "1");
 
             string taskQuery = @"INSERT INTO [dbo].[Tasks]
                                        ([UserID]
