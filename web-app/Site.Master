@@ -8,6 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+     <style type="text/css">
+          .bodyContent
+        {
+            margin-top : 45px;
+           
+        }</style>
     <link rel="shortcut icon" href="/img/favicon.png">
     <title>Increment the App</title>
     <!-- Bootstrap core CSS --> 
@@ -56,12 +62,13 @@
                     <div class="btn"><a href="LogIn.aspx" target="_self">Login</a></div>
                     <div class="btn btn-success" id="btnSignUp">Sign Up</div>
                 </div>
-
-                <asp:ContentPlaceHolder ID="bodyContent" runat="server">
-                </asp:ContentPlaceHolder>
+                <div class="bodyContent"><asp:ContentPlaceHolder ID="bodyContent" runat="server">
+                </asp:ContentPlaceHolder></div>
+                
 
                 <div class="footer">
-                    <p>&copy; Increment the App 2013</p>
+                    <p>&copy; Increment the App 2013 | Yardım | Üyelik Sözleşmesi</p>
+                    
                     <asp:ContentPlaceHolder ID="footerContent" runat="server">
                     </asp:ContentPlaceHolder>
                 </div>
