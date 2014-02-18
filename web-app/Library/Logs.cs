@@ -139,8 +139,7 @@ namespace increment_the_app.Library
             UpdateActionLog(userId, sessionId);
             string sqlUpdatePageIn = @" INSERT INTO [ActionLogs]
                                         ([UserId],[PageName],[ActionTable],[ActionField],[ActionValue],[ActionContentField],[ActionTime],[Ip],[SessionId])
-                                        VALUES
-                                        (@userId,@pageName,@actionTable,@actionField,@actionValue,@actionContentField,GETDATE(),@ip,@sessionId) ";
+                                        VALUES                                        (@userId,@pageName,@actionTable,@actionField,@actionValue,@actionContentField,GETDATE(),@ip,@sessionId) ";
 
             string retVal;
 
@@ -158,6 +157,11 @@ namespace increment_the_app.Library
             return retVal;
         }
 
+        public static string UpdateUserLoginLog(string userId)
+        {
+           // Will be updated
+            return userId;
+        }
 
         public static string UpdateActionLog(string userId, Guid sessionId)
         {
@@ -251,5 +255,7 @@ namespace increment_the_app.Library
 
             return arlActionVariables;
         }
+
+       
     }
 }
