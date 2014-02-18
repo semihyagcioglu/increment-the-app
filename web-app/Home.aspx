@@ -31,20 +31,7 @@
 
                 </div>
 
-                <div class="solalt">
-
-                    <div class="baslik"><span class="label label-success">Çalışan</span></div>
-                    <div class="alt-baslik"><span class="label label-success">En Son Eklenenler</span></div>
-                    <ul class="onilan">
-
-                        <li>İlan1</li>
-                        <li>İlan2</li>
-                        <li>İlan3</li>
-                        <li>İlan4</li>
-                        <li>İlan5</li>
-                    
-                    </ul>
-                </div>
+                
 
             </div>
 
@@ -76,14 +63,7 @@
                 </div>
             </div>
 
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Büyük İlanlar</h3>
-                </div>
-                <div class="panel-body">
-                    <img src="img/slider-img-2.jpg" width="470" />
-                </div>
-            </div>
+            
         </div>
 
 
