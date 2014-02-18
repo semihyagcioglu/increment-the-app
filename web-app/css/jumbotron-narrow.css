@@ -128,8 +128,11 @@ float:right; height:200px; width:200px;
 .resim { float:left;margin-top:5px; background-color:red; width:75px; height:75px; border:1px; border-radius:15px; margin-left:5px; 
 }
 
-.baslik { float:left; margin:15px 0px 0px 15px; height:50px; margin-top:30px; width:100px;
+.baslik { float:left; margin:0px 0px 0px 15px; height:50px; margin-top:2px; width:200px; overflow:hidden;
 }
+    .baslik a:hover {
+    color:white; text-decoration:none;
+    }
 
 .alt-baslik {
     float:left; color:white;margin:5px 0px 0px 15px;  width:150px;

@@ -58,9 +58,10 @@
         
             <div class="container">
                 <div class="header">
-                    <div class="btn"><a href="Default.aspx" target="_self">Home</a></div>
-                    <div class="btn"><a href="LogIn.aspx" target="_self">Login</a></div>
-                    <div class="btn btn-success" id="btnSignUp">Sign Up</div>
+                    <div id="btnMain" runat="server" class="btn">Anasayfa</div>
+                    <div id="btnLogIn" runat="server" class="btn">Giriş Yap</div>
+                    <div runat="server" class="btn btn-success" id="btnSignUp">Kayıt Ol</div>
+                    <%--<div id="btnLogOut" runat="server">Çıkış Yap</div>--%>
                 </div>
                 <div class="bodyContent"><asp:ContentPlaceHolder ID="bodyContent" runat="server">
                 </asp:ContentPlaceHolder></div>

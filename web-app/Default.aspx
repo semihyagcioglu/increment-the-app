@@ -14,9 +14,9 @@
           </div>
 
           <div id="btn" class="buttons">
-              <a href="contact.html" class="btn btn-success" style="background-image: url('./img/button_appstore.png'); background-repeat: no-repeat; background-position: center;"></a>
-              <a href="contact.html" class="btn btn-warning" style="background-image: url('./img/button_googlePlay.png'); background-repeat: no-repeat; background-position: center;"></a>
-              <a href="contact.html" class="btn btn-primary" style="background-image: url('./img/button_win.png'); background-repeat: no-repeat; background-position: center;"></a>
+              <a href="contact.html" class="btn btn-success" style="background-image: url('./img/taskwork.png'); background-repeat: no-repeat; background-position: center; height:110px;"></a>
+              <a href="contact.html" class="btn btn-warning" style="background-image: url('./img/button_googlePlay.png'); background-repeat: no-repeat; background-position: center; height:110px"></a>
+              <a href="contact.html" class="btn btn-primary" style="background-image: url('./img/button_win.png'); background-repeat: no-repeat; background-position: center; height:110px"></a>
           </div>
       </div>
         
