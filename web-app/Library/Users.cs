@@ -371,10 +371,10 @@ namespace increment_the_app.Library
             return retVal;
         }
 
-        public static string PostTask(string taskTitle, string taskDetail, string date, string location, string money)
+        public static string PostTask(string userId, string taskTitle, string taskDetail, string date, string location, string money)
         {
             SqlParameter[] parameters = new SqlParameter[7];
-            parameters[0] = DataBase.SetParameter("@userId", SqlDbType.Int, 32, "Input", "1");
+            parameters[0] = DataBase.SetParameter("@userId", SqlDbType.Int, 32, "Input", userId);
             parameters[1] = DataBase.SetParameter("@taskTitle", SqlDbType.NVarChar, 50, "Input", taskTitle);
             parameters[2] = DataBase.SetParameter("@taskDetail", SqlDbType.NVarChar, 350, "Input", taskDetail);
             parameters[3] = DataBase.SetParameter("@date", SqlDbType.Date, 0, "Input", date);

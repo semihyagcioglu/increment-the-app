@@ -12,7 +12,7 @@
 
 
             <div class="dropdown">
-                <div class="baslik"><span class="label label-success"><a href="PostTask.aspx">Yeni İş İlanı Ver !!!</a></span></div>
+                <div class="baslik"><span class="btn btn-primary"><a href="PostTask.aspx"><span style="color:#fff;">Yeni İş İlanı Ver</span></a></span></div>
                 <div class="alt-baslik"><span class="label label-success">En Son Eklenenler</span></div>
                 <div class="ilanicerik">
 
@@ -31,20 +31,7 @@
 
                 </div>
 
-                <div class="solalt">
-
-                    <div class="baslik"><span class="label label-success">Çalışan</span></div>
-                    <div class="alt-baslik"><span class="label label-success">En Son Eklenenler</span></div>
-                    <ul class="onilan">
-
-                        <li>İlan1</li>
-                        <li>İlan2</li>
-                        <li>İlan3</li>
-                        <li>İlan4</li>
-                        <li>İlan5</li>
-                    
-                    </ul>
-                </div>
+                
 
             </div>
 
@@ -76,14 +63,7 @@
                 </div>
             </div>
 
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Büyük İlanlar</h3>
-                </div>
-                <div class="panel-body">
-                    <img src="img/slider-img-2.jpg" width="470" />
-                </div>
-            </div>
+            
         </div>
 
 
