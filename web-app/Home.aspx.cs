@@ -14,9 +14,9 @@ namespace increment_the_app
         protected void Page_Load(object sender, EventArgs e)
         {
             GetUserTasks();
-        }        
+        }
         private void GetUserTasks()
-        {           
+        {
             string sql = @"SELECT [ID]
                                   ,[UserID] AS [Kullanıcı No]
                                   ,[TaskTitle] AS [İş]
