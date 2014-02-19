@@ -26,6 +26,7 @@ namespace increment_the_app
             {
                 btnSignUp.Visible = true;
                 btnLogIn.Visible = true;
+                Response.Redirect("Default.aspx");
             }
 
             //if (Session["userId"] == null)
