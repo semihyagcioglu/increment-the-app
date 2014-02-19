@@ -73,7 +73,10 @@
     <Content Include="js\master.js" />
     <Content Include="js\postTask.js" />
     <Content Include="js\signup.js" />
+    <Content Include="LogOut.aspx" />
     <Content Include="PostTask.aspx" />
+    <Content Include="Profile.aspx" />
+    <Content Include="TaskDetails.aspx" />
     <Content Include="Test.aspx" />
     <Content Include="css\jumbotron-narrow.css" />
     <Content Include="Dashboard.aspx" />
@@ -98,12 +101,40 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Library\UI.cs" />
+    <Compile Include="LogOut.aspx.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogOut.aspx.designer.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NonSessionSite.Master.cs">
+      <DependentUpon>NonSessionSite.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NonSessionSite.Master.designer.cs">
+      <DependentUpon>NonSessionSite.Master</DependentUpon>
+    </Compile>
     <Compile Include="PostTask.aspx.cs">
       <DependentUpon>PostTask.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PostTask.aspx.designer.cs">
       <DependentUpon>PostTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TaskDetails.aspx.cs">
+      <DependentUpon>TaskDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaskDetails.aspx.designer.cs">
+      <DependentUpon>TaskDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Test.aspx.cs">
       <DependentUpon>Test.aspx</DependentUpon>
@@ -218,6 +249,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="NonSessionSite.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

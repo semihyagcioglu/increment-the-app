@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-    <link rel="stylesheet" href="/resources/demos/style.css">
+  
 
     <script>
         $(function () {
@@ -20,7 +20,7 @@
 <asp:Content ID="bc" ContentPlaceHolderID="bodyContent" runat="server">
 
     <h4 class="ch4">
-        <img src="img/search.png" alt="Pulpit rock" width="64" height="64">Lütfen Gerekli İş Bilgileri Girin</h4>
+        <img src="img/search.png" alt="Pulpit rock" width="64" height="64">Lütfen Gerekli İş Bilgilerini Giriniz...</h4>
     <hr width="”100%”" color="”#0000F8”" size="5">
     <div class="form-group">
         <div id="warningMessage" class="alert alert-danger" style="display: none;"></div>
@@ -42,8 +42,9 @@
         <form role="form">
             <div class="form-group">
                 <label class="text-primary">
-                    <img src="img/location.png" alt="Pulpit rock" width="32" height="32">Nerede yapılacak ?</label>
-                <input type="text" class="form-control" id="Inputlocation" placeholder="Nerede yapılsın...">
+                    <img src="img/location.png" alt="Pulpit rock" width="32" height="32">Nerede Yapılacak</label>
+                <%--<input type="text" class="form-control" id="Inputlocation" placeholder="Nerede yapılsın...">--%>
+                <asp:DropDownList ID="ddlLocation" class="form-control" runat="server"></asp:DropDownList>
             </div>
         </form>
         <label class="text-primary">
@@ -58,7 +59,7 @@
         <form role="form">
             <div class="form-group">
                 <label class="text-primary">
-                    <img src="img/money.png" alt="Pulpit rock" width="32" height="32">Ücret ?</label>
+                    <img src="img/money.png" alt="Pulpit rock" width="32" height="32">Ücret</label>
                 <div class="input-group">
                     <input type="text" class="form-control" id="InputMoney" placeholder="Ne kadar ödemeyi düşünüyosun..." />
                     <span class="input-group-addon">.00 TL</span>

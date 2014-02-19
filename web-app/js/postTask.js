@@ -1,7 +1,7 @@
 ﻿// Filename: postTask.js
 // postTask.aspx javascript file
 
-function InsertPostTask(title, detail, location, date, money) {
+function InsertPostTask(userId, title, detail, location, date, money) {
 
     var validated = true;
     var warningText = '';
@@ -57,7 +57,7 @@ function InsertPostTask(title, detail, location, date, money) {
         $.ajax({
             type: "POST",
             url: "WsUsers.asmx/PostTask",
-            data: "{" + "'taskTitle':'" + title + "','taskDetail':'" + detail + "','date':'" + date + "','location':'" + location + "','money':'" + money + "'}",
+            data: "{" + "'userId':'" + userId + "', 'taskTitle':'" + title + "','taskDetail':'" + detail + "','date':'" + date + "','location':'" + location + "','money':'" + money + "'}",
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function (msg) {
@@ -101,11 +101,12 @@ $(document).ready(function () {
 
         var title = $("#InputTitle").val();
         var detail = $("#InputTitleDetail").val();
-        var location = $("#Inputlocation").val();
+        var location = $("#bodyContent_ddlLocation").val();
         var date = $("#datepicker").val();
         var money = $("#InputMoney").val();
+        var userId = $(hdnUserId).val();
 
-        InsertPostTask(title, detail, location, date, money);
+        InsertPostTask(userId, title, detail, location, date, money);
     });
 
 });

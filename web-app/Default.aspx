@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="increment_the_app.Default" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/NonSessionSite.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="increment_the_app.Default" %>
 
 <asp:Content ID="hc" ContentPlaceHolderID="headContent" runat="server">
 </asp:Content>
@@ -14,7 +14,7 @@
           </div>
 
           <div id="btn" class="buttons">
-              <a href="contact.html" class="btn btn-success" style="background-image: url('./img/button_appstore.png'); background-repeat: no-repeat; background-position: center; height:110px;"></a>
+              <a href="contact.html" class="btn btn-success" style="background-image: url('./img/taskwork.png'); background-repeat: no-repeat; background-position: center; height:110px;"></a>
               <a href="contact.html" class="btn btn-warning" style="background-image: url('./img/button_googlePlay.png'); background-repeat: no-repeat; background-position: center; height:110px"></a>
               <a href="contact.html" class="btn btn-primary" style="background-image: url('./img/button_win.png'); background-repeat: no-repeat; background-position: center; height:110px"></a>
           </div>
