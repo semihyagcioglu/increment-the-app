@@ -75,6 +75,7 @@
     <Content Include="js\signup.js" />
     <Content Include="LogOut.aspx" />
     <Content Include="PostTask.aspx" />
+    <Content Include="Profile.aspx" />
     <Content Include="TaskDetails.aspx" />
     <Content Include="Test.aspx" />
     <Content Include="css\jumbotron-narrow.css" />
@@ -120,6 +121,13 @@
     </Compile>
     <Compile Include="PostTask.aspx.designer.cs">
       <DependentUpon>PostTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="TaskDetails.aspx.cs">
       <DependentUpon>TaskDetails.aspx</DependentUpon>

@@ -15,12 +15,15 @@ namespace increment_the_app
             btnLogIn.Visible = false;
             btnSignUp.Visible = false;
             btnLogOut.Visible = false;
+            btnProfile.Visible = false;
             string url = Request.Url.ToString();
 
             if (HttpContext.Current.Session["userId"] != null)
             {
                 hdnUserId.Value = HttpContext.Current.Session["userId"].ToString();
                 btnLogOut.Visible = true;
+                btnProfile.Visible = true;
+                btnMain.Visible = false;
             }
             else
             {
