@@ -173,12 +173,26 @@ float:right;
 
 .TaskName {
 margin-bottom:10px;
+font-size:14px;
+font-weight:bold;
+width:600px;
 }
 .Calendar {
 float:left;
 }
 .hours {
 float:left; margin-left:20px;
+}
+.User {
+float:left;
+}
+.photomin {
+ float:right;
+ flex-align:center;
+}
+.post-explanation {
+float:left;
+font-size:12px; font-family:Arial;
 }
 #btnLogOut {
     float:right;
