@@ -9,7 +9,7 @@
             <div class="hours">Saat:</div>
             <div class="User"><a href="#">Semih Yağcıoğlu</a> tarafından</div>
             <div class="photomin"><img src="img/ornekprofile.png" /></div>
-            <div><p class="navbar-text" style="background-color:#C8C8C8;"><img src="img/TaskDetailsicon.jpg" /><span style="color:#fff; font-size:14px; font-weight:bold; margin-left:20px;">İşin Detayı</span></p></div>
+            <div><p class="navbar-text" style="background-color:#C8C8C8;"><img src="img/TaskDetailsicon.jpg" /><span style="color:#fff; font-size:14px; font-weight:bold; margin-left:10px;">İşin Detayı</span></p></div>
             <div class="post-explanation">İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek</div>
         </div>
     </div>
