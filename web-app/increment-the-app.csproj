@@ -103,6 +103,7 @@
     <Content Include="WsUsers.asmx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Library\Tasks.cs" />
     <Compile Include="Library\UI.cs" />
     <Compile Include="LogOut.aspx.cs">
       <DependentUpon>LogOut.aspx</DependentUpon>
