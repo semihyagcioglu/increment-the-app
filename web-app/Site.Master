@@ -48,9 +48,9 @@
              $("#btnLogOut").click(function (e) {
                  window.location.href = "LogOut.aspx";
              });
-             $("#btnProfile").click(function (e) {
-                 window.location.href = "Profile.aspx";
-             });
+             //$("#btnProfile").click(function (e) {
+             //    window.location.href = "Profile.aspx";
+             //});
 
          });
 
