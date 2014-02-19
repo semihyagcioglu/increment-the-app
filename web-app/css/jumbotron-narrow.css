@@ -104,3 +104,82 @@ margin: 0px 0;
 	margin-right: -65px;
 	margin-bottom: 40px;
 }
+
+/**home.aspx**/
+
+.header .btn { float:right;
+}
+
+.ustbuton {
+    width:200px; float:right;
+}
+
+.logo { width:150px; height:50px;
+}
+
+.solMenu { float:left;  width:200px; height:700px;
+}
+.sagmenu {
+float:right; height:200px; width:200px;
+}
+.ortamenu { float:left; width:auto; height:400px; width:500px;
+}
+
+.resim { float:left;margin-top:5px; background-color:red; width:75px; height:75px; border:1px; border-radius:15px; margin-left:5px; 
+}
+
+.baslik { float:left; margin:0px 0px 0px 15px; height:50px; margin-top:2px; width:200px; overflow:hidden;
+}
+    .baslik a:hover {
+    color:white; text-decoration:none;
+    }
+
+.alt-baslik {
+    float:left; color:white;margin:5px 0px 0px 15px;  width:150px;
+}
+
+.ilanicerik { 
+}
+
+.onilan {
+    height:150px; width:100px; float:left;
+}
+    .onilan li { list-style:none;
+                 margin-top:4px;
+    }
+
+.solalt {
+    float:left; height:400px; width:150px; margin-top:35px;
+}
+
+.yazi {
+
+color:#777; 
+}
+
+.yazi-text {
+
+float:right;
+}
+
+#TaskDetailsContent {
+    height:100%;
+    width:100%;
+}
+
+.firsbehind {
+ height:200px;
+}
+
+.TaskName {
+margin-bottom:10px;
+}
+.Calendar {
+float:left;
+}
+.hours {
+float:left; margin-left:20px;
+}
+#btnLogOut {
+    float:right;
+}

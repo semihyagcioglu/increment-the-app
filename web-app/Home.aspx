@@ -1,60 +1,78 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="increment_the_app.Home" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="increment_the_app.Home" %>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="img/favicon.png">
+<asp:Content ID="hc" ContentPlaceHolderID="headContent" runat="server">
 
-    <title>Increment the App</title>
+</asp:Content>
+<asp:Content ID="bc" ContentPlaceHolderID="bodyContent" runat="server">
+    
 
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap-theme.css" rel="stylesheet" />
+    <div class="main">
 
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
+        <div class="solMenu">
 
-    <!-- Custom styles for this template -->
-    <link href="css/jumbotron-narrow.css" rel="stylesheet" />
 
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+            <div class="dropdown">
+                <div class="baslik"><span class="btn btn-primary"><a href="PostTask.aspx"><span style="color:#fff;">Yeni İş İlanı Ver</span></a></span></div>
+                <div class="alt-baslik"><span class="label label-success">En Son Eklenenler</span></div>
+                <div class="ilanicerik">
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-</head>
 
-<body>
+                    <ul class="onilan">
 
-    <div class="container">
-        <div class="header">
-            <div class="btn"><a href="LogIn.aspx" target="_self">Login</a></div>
-            <div class="btn btn-success">Sign Up</div>
-        </div>
+                        <li>İlan1</li>
+                        <li>İlan2</li>
+                        <li>İlan3</li>
+                        <li>İlan4</li>
+                        <li>İlan5</li>
 
-        <div class="jumbotron">
+
+                    </ul>
+
+
+                </div>
+
+                
+
+            </div>
 
         </div>
 
-        <div class="row marketing">
+        <div class="ortamenu">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">Ayın En Başarılı Çalışanı</div>
+                <div class="panel-body">
+                    Ahmet Mehmet
+                    <br />
+                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Ayın En Hızlı Çalışanı</h3>
+                </div>
+                <div class="panel-body">
+                    Ali Veli
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">Aktif Olan İşler</div>
+                <div class="panel-body">
+                    <asp:GridView ID="gvOnlineTask" runat="server" Width="471px"></asp:GridView>
+                </div>
+            </div>
+
+            
         </div>
 
-        <div class="footer">
-            <p>&copy; Increment the App 2013</p>
-        </div>
 
     </div>
-    <!-- /container -->
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-</body>
-</html>
+    <div class="row marketing">
+    </div>
+
+</asp:Content>
+<asp:Content ID="fc" ContentPlaceHolderID="footerContent" runat="server">
+</asp:Content>

@@ -4,15 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using increment_the_app.Library;
 
 namespace increment_the_app
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class NonSessionMaster : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

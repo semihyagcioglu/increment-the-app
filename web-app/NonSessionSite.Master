@@ -1,8 +1,7 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="increment_the_app.Site" %>
-
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="NonSessionSite.Master.cs" Inherits="increment_the_app.NonSessionMaster" %>
 <!DOCTYPE html>
 <html lang="en">
-<head runat="server">    
+<head id="Head1" runat="server">    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,16 +43,9 @@
                  window.location.href = "LogIn.aspx";
              });
 
-             $("#btnLogOut").click(function (e) {
-                 window.location.href = "LogOut.aspx";
-             });
-             $("#btnProfile").click(function (e) {
-                 window.location.href = "Profile.aspx";
-             });
-
          });
 
-         
+
      </script>
 
     <asp:ContentPlaceHolder ID="headContent" runat="server">
@@ -74,8 +66,7 @@
                     <div id="btnMain"  runat="server" class="btn">Anasayfa</div>
                     <div id="btnLogIn" runat="server" class="btn">Giriş Yap</div>
                     <div runat="server" class="btn btn-success" id="btnSignUp">Kayıt Ol</div>
-                    <div id="btnLogOut" class="btn btn-danger" runat="server">Çıkış Yap</div>
-                    <div id="btnProfile"  runat="server" ></div>
+                    <%--<div id="btnLogOut" runat="server">Çıkış Yap</div>--%>
                 </div>
                 <div class="bodyContent"><asp:ContentPlaceHolder ID="bodyContent" runat="server">
                 </asp:ContentPlaceHolder></div>
@@ -92,3 +83,4 @@
     </form>
 </body>
 </html>
+
