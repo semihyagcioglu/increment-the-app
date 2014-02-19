@@ -127,7 +127,7 @@ namespace increment_the_app {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton btnProfile;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl btnProfile;
         
         /// <summary>
         /// bodyContent control.
