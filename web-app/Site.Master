@@ -75,7 +75,20 @@
                     <div id="btnLogIn" runat="server" class="btn">Giriş Yap</div>
                     <div runat="server" class="btn btn-success" id="btnSignUp">Kayıt Ol</div>
                     <div id="btnLogOut" class="btn btn-danger" runat="server">Çıkış Yap</div>
-                    <div id="btnProfile" runat="server" ></div>
+                    <div class="btn-group">
+  <button type="button" class="btn btn-danger" id="btnProfile"></button>
+  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+    <span class="caret"></span>
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div>
                 </div>
                 <div class="bodyContent"><asp:ContentPlaceHolder ID="bodyContent" runat="server">
                 </asp:ContentPlaceHolder></div>
