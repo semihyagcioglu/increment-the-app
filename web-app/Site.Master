@@ -66,7 +66,7 @@
     <input type="hidden" runat="server" id="hdnReturnUrl" />
     <input type="hidden" runat="server" id="hdnUserId" />
     <input type="hidden" runat="server" id="hdnSessionId" />
-
+    <input type="hidden" runat="server" id="hdnUsername" />
     <form accept-charset="UTF-8" role="form" id="form1" runat="server">
         
             <div class="container">
@@ -75,7 +75,20 @@
                     <div id="btnLogIn" runat="server" class="btn">Giriş Yap</div>
                     <div runat="server" class="btn btn-success" id="btnSignUp">Kayıt Ol</div>
                     <div id="btnLogOut" class="btn btn-danger" runat="server">Çıkış Yap</div>
-                    <div id="btnProfile"  runat="server" ></div>
+                    <div class="btn-group">
+  <button type="button" class="btn btn-danger"><div id="btnProfile" runat="server"></div></button>
+  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+    <span class="caret"></span>
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="#">Ayarlar</a></li>
+    <li><a href="#">Bildirimler</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li class="divider"></li>
+    <li><a href="#">Çıkış Yap</a></li>
+  </ul>
+</div>
                 </div>
                 <div class="bodyContent"><asp:ContentPlaceHolder ID="bodyContent" runat="server">
                 </asp:ContentPlaceHolder></div>

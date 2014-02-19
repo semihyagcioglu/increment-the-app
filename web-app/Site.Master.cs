@@ -24,6 +24,10 @@ namespace increment_the_app
                 btnLogOut.Visible = true;
                 btnProfile.Visible = true;
                 btnMain.Visible = false;
+                hdnUsername.Value = HttpContext.Current.Session["name"].ToString() + " " + HttpContext.Current.Session["surname"].ToString();
+                //btnProfile.InnerText = hdnUsername.Value;
+                btnProfile.InnerHtml = hdnUsername.Value;
+                
             }
             else
             {
@@ -56,5 +60,7 @@ namespace increment_the_app
             }
             hdnSessionId.Value = sessionId.ToString();
         }
+
+       
     }
 }
