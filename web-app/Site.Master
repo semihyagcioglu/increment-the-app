@@ -76,7 +76,7 @@
                     <div runat="server" class="btn btn-success" id="btnSignUp">Kayıt Ol</div>
                     <div id="btnLogOut" class="btn btn-danger" runat="server">Çıkış Yap</div>
                     <div class="btn-group">
-  <button type="button" class="btn btn-danger" id="btnProfile"></button>
+  <button type="button" class="btn btn-danger" id="btnProfile" runat="server"></button>
   <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
     <span class="caret"></span>
     <span class="sr-only">Toggle Dropdown</span>

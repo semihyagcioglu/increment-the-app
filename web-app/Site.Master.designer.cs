@@ -121,6 +121,15 @@ namespace increment_the_app {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl btnLogOut;
         
         /// <summary>
+        /// btnProfile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnProfile;
+        
+        /// <summary>
         /// bodyContent control.
         /// </summary>
         /// <remarks>
