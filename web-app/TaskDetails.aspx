@@ -7,7 +7,7 @@
             <div style="height:200px; width:100px; float:right;">
             <div class="photomins"><img src="img/ornekprofile.png" /></div>
                 <div style="margin-top:20px; float:left;"> <span class="label label-danger" style="margin-left:20px; margin-top:20px;">Fiyat</span></div>
-               <div style="margin-top:20px; float:left;"> <span class="label label-info" style="margin-left:15px; margin-top:20px;">20.00 TL</span></div>
+               <div style="margin-top:20px; float:left;"> <span class="label label-info" style="margin-left:7px; margin-top:20px;font-size:16px;">20.00 TL</span></div>
 
             </div>
             <div class="TaskName">İş Tanımı :</div>
