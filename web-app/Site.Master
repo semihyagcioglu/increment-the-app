@@ -70,6 +70,8 @@
                     <div id="btnMain"  runat="server" class="btn">Anasayfa</div>
                     <div id="btnLogIn" runat="server" class="btn">Giriş Yap</div>
                     <div runat="server" class="btn btn-success" id="btnSignUp">Kayıt Ol</div>
+                    <div runat="server" class="btn btn-success" id="btnSearch">Arama Yap</div>
+
                     
                     <div class="btn-group">
   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="btnProfile" runat="server"><span class="caret"></span>
