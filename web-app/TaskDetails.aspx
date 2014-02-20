@@ -7,7 +7,7 @@
             <div class="TaskName">İş Tanımı :</div>
             <div class="Calendar">Tarih:</div>
             <div class="hours">Saat:</div>
-            <div class="User"><a href="#">Semih Yağcıoğlu</a> tarafından</div>
+            <div class="User"><a href="#">Semih Yağcıoğlu</a> tarafından</div><br />
             <div class="photomin"><img src="img/ornekprofile.png" /></div>
             <div><p class="navbar-text" style="background-color:#C8C8C8; float:none;"><span style="color:#fff; font-size:14px; font-weight:bold; margin-left:10px;"><img src="img/TaskDetailsicon.jpg" />İşin Detayı</span></p></div>
             <div class="post-explanation" style="float:none;">İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek</div>
