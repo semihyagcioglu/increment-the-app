@@ -31,6 +31,8 @@
                     </div>
                     <div id="btnLogin" class="btn btn-lg btn-success btn-block">Giriş yap</div>
                 </div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:HyperLink ID="hypResetPass" runat="server" NavigateUrl="~/ResetPassword.aspx"><div class="Password-forgat">Şifremi Unuttum</div></asp:HyperLink>
             </div>
         </div>
     </div>

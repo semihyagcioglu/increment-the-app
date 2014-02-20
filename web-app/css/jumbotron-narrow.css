@@ -194,6 +194,12 @@ float:left;
 float:left;
 font-size:12px; font-family:Arial;
 }
+.Password-forgat {
+ text-align:center;
+}
+    .Password-forgat a {
+        text-decoration:none;
+    }
 #btnLogOut {
     float:right;
 }

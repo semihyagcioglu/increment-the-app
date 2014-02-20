@@ -79,6 +79,7 @@
     <Content Include="LogOut.aspx" />
     <Content Include="PostTask.aspx" />
     <Content Include="Profile.aspx" />
+    <Content Include="ResetPassword.aspx" />
     <Content Include="TaskDetails.aspx" />
     <Content Include="Test.aspx" />
     <Content Include="css\jumbotron-narrow.css" />
@@ -132,6 +133,13 @@
     </Compile>
     <Compile Include="Profile.aspx.designer.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="TaskDetails.aspx.cs">
       <DependentUpon>TaskDetails.aspx</DependentUpon>

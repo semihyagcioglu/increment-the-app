@@ -139,7 +139,7 @@ namespace increment_the_app.Library
             UpdateActionLog(userId, sessionId);
             string sqlUpdatePageIn = @" INSERT INTO [ActionLogs]
                                         ([UserId],[PageName],[ActionTable],[ActionField],[ActionValue],[ActionContentField],[ActionTime],[Ip],[SessionId])
-                                        VALUES                                        (@userId,@pageName,@actionTable,@actionField,@actionValue,@actionContentField,GETDATE(),@ip,@sessionId) ";
+                                        VALUES(@userId,@pageName,@actionTable,@actionField,@actionValue,@actionContentField,GETDATE(),@ip,@sessionId) ";
 
             string retVal;
 
@@ -176,8 +176,8 @@ namespace increment_the_app.Library
 
             string sqlUpdatePageOut = @"UPDATE [ActionLogs]
                                         SET [Milliseconds] = CONVERT(INT,DATEDIFF ( millisecond , ActionTime , GETDATE())) ,[OriginalMilliseconds] = CONVERT(INT,DATEDIFF ( millisecond , ActionTime , GETDATE())), [Minutes] =  CAST( CAST(DATEDIFF ( millisecond , ActionTime , GETDATE() ) AS FLOAT)/60000 AS DECIMAL(18,2))
-                                        WHERE ObjectId IN (
-                                                           SELECT ObjectId FROM ActionLogs 
+                                        WHERE Id IN (
+                                                           SELECT Id FROM ActionLogs 
 							                               WHERE ( UserId = @userId OR [SessionId]= @sessionId ) AND Milliseconds IS NULL AND Minutes IS NULL 
                                                            ) 
                                         

@@ -18,6 +18,7 @@
     <title>Increment the App</title>
     <!-- Bootstrap core CSS --> 
     <link href="css/bootstrap.min.css" rel="stylesheet" />
+   
     <!-- Custom styles for this template -->
     <link href="css/jumbotron-narrow.css" rel="stylesheet" />
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -26,7 +27,7 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
     <script src="/js/jquery-1.10.2.min.js"></script>
-    
+     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/master.js" ></script>
     <script type="text/javascript" src="js/generic.js" ></script>
 
@@ -47,9 +48,9 @@
              $("#btnLogOut").click(function (e) {
                  window.location.href = "LogOut.aspx";
              });
-             $("#btnProfile").click(function (e) {
-                 window.location.href = "Profile.aspx";
-             });
+             //$("#btnProfile").click(function (e) {
+             //    window.location.href = "Profile.aspx";
+             //});
 
          });
 
@@ -76,17 +77,14 @@
                     <div runat="server" class="btn btn-success" id="btnSignUp">Kayıt Ol</div>
                     <div id="btnLogOut" class="btn btn-danger" runat="server">Çıkış Yap</div>
                     <div class="btn-group">
-  <button type="button" class="btn btn-danger"><div id="btnProfile" runat="server"></div></button>
-  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
-    <span class="caret"></span>
-    <span class="sr-only">Toggle Dropdown</span>
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="btnProfile" runat="server"><span class="caret"></span>
   </button>
   <ul class="dropdown-menu" role="menu">
-    <li><a href="#">Ayarlar</a></li>
-    <li><a href="#">Bildirimler</a></li>
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
     <li><a href="#">Something else here</a></li>
     <li class="divider"></li>
-    <li><a href="#">Çıkış Yap</a></li>
+    <li><a href="#">Separated link</a></li>
   </ul>
 </div>
                 </div>
