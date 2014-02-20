@@ -189,6 +189,8 @@ float:left;
 .photomins {
  float:right;
  flex-align:center;
+ width:100px;
+ height:100px;
 }
 .post-explanation {
 float:left;
