@@ -45,9 +45,9 @@
                  window.location.href = "LogIn.aspx";
              });
 
-             $("#btnLogOut").click(function (e) {
-                 window.location.href = "LogOut.aspx";
-             });
+             //$("#btnLogOut").click(function (e) {
+             //    window.location.href = "LogOut.aspx";
+             //});
              //$("#btnProfile").click(function (e) {
              //    window.location.href = "Profile.aspx";
              //});
@@ -75,16 +75,16 @@
                     <div id="btnMain"  runat="server" class="btn">Anasayfa</div>
                     <div id="btnLogIn" runat="server" class="btn">Giriş Yap</div>
                     <div runat="server" class="btn btn-success" id="btnSignUp">Kayıt Ol</div>
-                    <div id="btnLogOut" class="btn btn-danger" runat="server">Çıkış Yap</div>
+                    
                     <div class="btn-group">
   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="btnProfile" runat="server"><span class="caret"></span>
   </button>
   <ul class="dropdown-menu" role="menu">
-    <li><a href="#">Action</a></li>
-    <li><a href="#">Another action</a></li>
+    <li><a href="#">Profilim</a></li>
+    <li><a href="#"></a></li>
     <li><a href="#">Something else here</a></li>
     <li class="divider"></li>
-    <li><a href="#">Separated link</a></li>
+   <li><a href="LogOut.aspx">Çıkış Yap</a></li>
   </ul>
 </div>
                 </div>

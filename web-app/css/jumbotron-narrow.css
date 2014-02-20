@@ -201,5 +201,13 @@ font-size:12px; font-family:Arial;
         text-decoration:none;
     }
 #btnLogOut {
-    float:right;
+background-color:red;
+}
+
+.btn-group {
+float:right;
+}
+
+#btn-group {
+float:right;
 }
