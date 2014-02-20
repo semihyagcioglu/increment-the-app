@@ -45,12 +45,7 @@
                  window.location.href = "LogIn.aspx";
              });
 
-             //$("#btnLogOut").click(function (e) {
-             //    window.location.href = "LogOut.aspx";
-             //});
-             //$("#btnProfile").click(function (e) {
-             //    window.location.href = "Profile.aspx";
-             //});
+      
 
          });
 
@@ -81,8 +76,11 @@
   </button>
   <ul class="dropdown-menu" role="menu">
     <li><a href="#">Profilim</a></li>
-    <li><a href="#"></a></li>
-    <li><a href="#">Something else here</a></li>
+      <li><a href="#">Bildirimler</a></li>
+      <li class="divider"></li>
+    <li><a href="#">İşlerim</a></li>
+    <li><a href="#">İş Ara</a></li>
+    <li><a href="#">Favori İşlerim</a></li>
     <li class="divider"></li>
    <li><a href="LogOut.aspx">Çıkış Yap</a></li>
   </ul>
