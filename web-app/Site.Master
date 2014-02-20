@@ -45,7 +45,9 @@
                  window.location.href = "LogIn.aspx";
              });
 
-      
+             $("#btnProfile").click(function (e) {
+                 window.location.href = "SearchTask.aspx";
+             });
 
          });
 
@@ -81,7 +83,7 @@
       <li><a href="#">Bildirimler</a></li>
       <li class="divider"></li>
     <li><a href="#">İşlerim</a></li>
-    <li><a href="#">İş Ara</a></li>
+    <li><a href="SearchTask.aspx">İş Ara</a></li>
     <li><a href="#">Favori İşlerim</a></li>
     <li class="divider"></li>
    <li><a href="LogOut.aspx">Çıkış Yap</a></li>
