@@ -13,5 +13,11 @@ namespace increment_the_app
         {
 
         }
+
+        protected void btnSendPassword_Click(object sender, EventArgs e)
+        {
+            string mail = txtEmail.Text;
+
+        }
     }
 }
