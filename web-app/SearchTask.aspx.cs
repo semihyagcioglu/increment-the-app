@@ -16,8 +16,8 @@ namespace increment_the_app
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            string keyword = txtSearch.Text;
-            Library.Tasks.SearchTask(keyword);
+            //string keyword = txtSearch.Text;
+            //Library.Tasks.SearchTask(keyword);
         }
     }
 }

@@ -43,23 +43,6 @@ namespace increment_the_app.Library
             return dtTasks;
 
         }
-        private DataTable SearchTask(string keyword)
-        {    
-            string sql = @"        [ID]
-                                  ,[UserID] AS [Kullanıcı No]
-                                  ,[TaskTitle] AS [İş]
-                                  ,[TaskDetail] AS [İşin Detayı]
-                                  ,[Date] AS [Tarih]
-                                  ,[Location] AS [Yapılacak Yer]
-                                  ,[Money] AS [İşin Ücreti]
-                                  ,[TaskStatus] AS [İşin Durum]
-                              FROM [Tasks]
-                               WHERE [TaskStatus] = '1' AND ([TaskTitle] LIKE  '%" + keyword + "%' OR [TaskDetail] LIKE  '%" + keyword + "%')";
-            DataTable dtTasks = Library.DataBase.GetDataTable(sql);
-
-            return dtTasks;
-
-         }   
         
     }
 }
