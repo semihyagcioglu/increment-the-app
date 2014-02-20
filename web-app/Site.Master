@@ -45,7 +45,7 @@
                  window.location.href = "LogIn.aspx";
              });
 
-             $("#btnProfile").click(function (e) {
+             $("#btnSearch").click(function (e) {
                  window.location.href = "SearchTask.aspx";
              });
 
