@@ -8,7 +8,7 @@ namespace increment_the_app.Library
 {
     public class Tasks
     {
-        private DataTable GetLastTask(int count)
+        public static DataTable GetLastTask(int count)
         {
             string sql = @"SELECT TOP (" + count + @")[ID]
                                   ,[UserID] AS [Kullanıcı No]
@@ -24,8 +24,23 @@ namespace increment_the_app.Library
             DataTable dtTasks = Library.DataBase.GetDataTable(sql);
 
             return dtTasks;
+        }
 
+        public static DataTable SearchTask(string keyword)
+        {
+            string sql = @"        [ID]
+                                   ,[UserID] AS [Kullanıcı No]
+                                  ,[TaskTitle] AS [İş]
+                                  ,[TaskDetail] AS [İşin Detayı]
+                                   ,[Date] AS [Tarih]
+                                   ,[Location] AS [Yapılacak Yer]
+                                   ,[Money] AS [İşin Ücreti]
+                                  ,[TaskStatus] AS [İşin Durum]
+                               FROM [Tasks]
+                                WHERE [TaskStatus] = '1' AND ([TaskTitle] LIKE  '%" + keyword + "%' OR [TaskDetail] LIKE  '%" + keyword + "%')";
+            DataTable dtTasks = Library.DataBase.GetDataTable(sql);
 
+            return dtTasks;
 
         }
         private DataTable SearchTask(string keyword)
@@ -47,6 +62,4 @@ namespace increment_the_app.Library
          }   
         
     }
-    
-
 }
