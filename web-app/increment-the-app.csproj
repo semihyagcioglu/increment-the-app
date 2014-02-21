@@ -63,8 +63,11 @@
     <Content Include="img\detail.png" />
     <Content Include="img\location.png" />
     <Content Include="img\money.png" />
+    <Content Include="img\ornekprofile.png" />
     <Content Include="img\search.png" />
     <Content Include="img\slider-img-2.jpg" />
+    <Content Include="img\TaskDetailsicon.jpg" />
+    <Content Include="img\taskwork.png" />
     <Content Include="img\title.png" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\generic.js" />
@@ -97,10 +100,12 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="SearchTask.aspx" />
     <Content Include="WsReports.asmx" />
     <Content Include="WsUsers.asmx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Library\Tasks.cs" />
     <Compile Include="Library\UI.cs" />
     <Compile Include="LogOut.aspx.cs">
       <DependentUpon>LogOut.aspx</DependentUpon>
@@ -241,6 +246,13 @@
     </Compile>
     <Compile Include="UserRegistrationReports.aspx.designer.cs">
       <DependentUpon>UserRegistrationReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchTask.aspx.cs">
+      <DependentUpon>SearchTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchTask.aspx.designer.cs">
+      <DependentUpon>SearchTask.aspx</DependentUpon>
     </Compile>
     <Compile Include="WsReports.asmx.cs">
       <DependentUpon>WsReports.asmx</DependentUpon>

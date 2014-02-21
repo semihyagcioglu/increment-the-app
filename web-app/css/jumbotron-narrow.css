@@ -163,8 +163,8 @@ float:right;
 }
 
 #TaskDetailsContent {
-    height:100%;
-    width:100%;
+   
+   margin-top:10px;
 }
 
 .firsbehind {
@@ -173,6 +173,9 @@ float:right;
 
 .TaskName {
 margin-bottom:10px;
+font-size:14px;
+font-weight:bold;
+width:600px;
 }
 .Calendar {
 float:left;
@@ -180,6 +183,40 @@ float:left;
 .hours {
 float:left; margin-left:20px;
 }
+.User {
+float:left;
+}
+.photomins {
+ float:right;
+ flex-align:center;
+ width:100px;
+ height:100px;
+}
+.post-explanation {
+float:left;
+font-size:12px; font-family:Arial;
+}
+.Password-forgat {
+ text-align:center;
+}
+    .Password-forgat a {
+        text-decoration:none;
+    }
 #btnLogOut {
-    float:right;
+background-color:red;
+}
+
+.btn-group {
+float:right;
+}
+
+#btn-group {
+float:right;
+}
+
+#bodyContent_InputSearch {
+    
+}
+#btnSearch {
+float:left;
 }

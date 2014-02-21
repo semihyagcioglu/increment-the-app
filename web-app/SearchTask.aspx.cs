@@ -7,16 +7,10 @@ using System.Web.UI.WebControls;
 
 namespace increment_the_app
 {
-    public partial class ResetPassword : System.Web.UI.Page
+    public partial class WebForm2 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-
-        protected void btnSendPassword_Click(object sender, EventArgs e)
-        {
-            string mail = txtEmail.Text;
 
         }
     }

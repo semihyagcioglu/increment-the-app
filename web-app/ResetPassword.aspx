@@ -7,13 +7,19 @@
 
 
 <asp:Content ID="bc" ContentPlaceHolderID="bodyContent" runat="server">
-    <asp:Label ID="lblEmail" runat="server" Text="Label"></asp:Label>
+    <br />
+    <asp:Label ID="lblEmail" runat="server" Text="Email :" Font-Bold="True"></asp:Label>
 
-    <asp:TextBox ID="txtEmail" runat="server" Width="347px"></asp:TextBox>
+    &nbsp;<asp:TextBox ID="txtEmail" runat="server" Width="355px" Height="24px"></asp:TextBox>
     <br />
     <br />
-    <div id="btnGonder" class="btn btn-success"></div>
-
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <asp:Button ID="btnSendPassword" runat="server" CssClass="btn" Height="32px" OnClick="btnSendPassword_Click" Text="Gönder" Width="81px" />
+    <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <br />
+    <br />
+    
 </asp:Content>
 
 <asp:Content ID="fc" ContentPlaceHolderID="footerContent" runat="server">

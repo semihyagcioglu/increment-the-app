@@ -67,6 +67,15 @@ namespace increment_the_app {
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden hdnSessionId;
         
         /// <summary>
+        /// hdnUsername control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hdnUsername;
+        
+        /// <summary>
         /// form1 control.
         /// </summary>
         /// <remarks>
@@ -103,13 +112,13 @@ namespace increment_the_app {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl btnSignUp;
         
         /// <summary>
-        /// btnLogOut control.
+        /// btnSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl btnLogOut;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl btnSearch;
         
         /// <summary>
         /// btnProfile control.
@@ -118,7 +127,7 @@ namespace increment_the_app {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl btnProfile;
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnProfile;
         
         /// <summary>
         /// bodyContent control.
