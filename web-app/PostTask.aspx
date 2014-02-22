@@ -36,8 +36,7 @@
             <input type="text" class="form-control" id="InputTitle" placeholder="Yapılmak istenen iş...">
         </div>
         <div class="form-group">
-            <label class="text-primary">
-                <img src="img/detail.png" alt="Pulpit rock" width="32" height="32">İşin Detayı</label>
+            <label class="text-primary">İşin Detayı</label>
             <textarea class="form-control" id="InputTitleDetail" placeholder="Lütfen yapılacak işin detaylarını girin..." rows="3"></textarea>
         </div>
     </form>  
