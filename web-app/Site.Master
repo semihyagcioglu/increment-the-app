@@ -76,7 +76,7 @@
 
                     
                     <div class="btn-group">
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="btnProfile" runat="server"><span class="caret"></span>
+  <button type="button" class="btn btn-info dropdown-toggle" style="font-style:inherit;" data-toggle="dropdown" id="btnProfile" runat="server"><span class="caret"></span>
   </button>
   <ul class="dropdown-menu" role="menu">
     <li><a href="#">Profilim</a></li>
