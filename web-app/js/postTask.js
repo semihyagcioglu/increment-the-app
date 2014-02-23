@@ -1,7 +1,7 @@
 ﻿// Filename: postTask.js
 // postTask.aspx javascript file
 
-function InsertPostTask(userId, title, detail, location, date, money) {
+function InsertPostTask(userId, title, detail, privateNotes, location, date, hour, money) {
 
     var validated = true;
     var warningText = '';
@@ -24,8 +24,8 @@ function InsertPostTask(userId, title, detail, location, date, money) {
     }
     if (IsNullOrEmpty(location) == true && validated == true) {
 
-        $('#Inputlocation').closest('.form-group').addClass("has-error");
-        $('#Inputlocation').focus();
+        $('#Location').closest('.form-group').addClass("has-error");
+        $('#Location').focus();
 
         warningText = "Lütfen işin yapılmasını istediğiniz yeri seçiniz..";
         validated = false;
@@ -40,8 +40,8 @@ function InsertPostTask(userId, title, detail, location, date, money) {
     }
     if (IsNullOrEmpty(money) == true && validated == true) {
 
-        $('#InputMoney').closest('.form-group').addClass("has-error");
-        $('#InputMoney').focus();
+        $('#taskPrice').closest('.form-group').addClass("has-error");
+        $('#taskPrice').focus();
 
         warningText = "Lütfen Ne kadar Ödemeyi Düşündüğünüzü Girin...";
         validated = false;
@@ -57,7 +57,7 @@ function InsertPostTask(userId, title, detail, location, date, money) {
         $.ajax({
             type: "POST",
             url: "WsUsers.asmx/PostTask",
-            data: "{" + "'userId':'" + userId + "', 'taskTitle':'" + title + "','taskDetail':'" + detail + "','date':'" + date + "','location':'" + location + "','money':'" + money + "'}",
+            data: "{" + "'userId':'" + userId + "','taskTitle':'" + title + "','taskDetail':'" + detail + "','privateNotes':'" + privateNotes + "', 'date':'" + date + "','hour':'" + hour + "','location':'" + location + "','money':'" + money + "'}",
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function (msg) {
@@ -101,12 +101,14 @@ $(document).ready(function () {
 
         var title = $("#InputTitle").val();
         var detail = $("#InputTitleDetail").val();
-        var location = $("#bodyContent_ddlLocation").val();
+        var privateNotes = $("#PrivateNotes").val();
+        var location = $("#Location").val();
         var date = $("#datepicker").val();
-        var money = $("#InputMoney").val();
+        var hour = $("#InsertHour").val();
+        var money = $("#taskPrice").val();
         var userId = $(hdnUserId).val();
 
-        InsertPostTask(userId, title, detail, location, date, money);
+        InsertPostTask(userId, title, detail, privateNotes, location, date, hour, money);
     });
 
 });

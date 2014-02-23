@@ -11,8 +11,8 @@
   
     <script>
         $(document).ready(function () {
-            $("#PrivateNotes").click(function () {
-                $("#Notes").slideToggle("slow");
+            $("#Notes").click(function () {
+                $("#PrivateNotes").slideToggle("slow");
             });
         })
 
@@ -43,15 +43,16 @@
 
     <form role="form">
         <div class="form-group">           
-            <span class="label label-info" id="PrivateNotes">İşiniz için gizli notunuz var mı?</span>
-           <textarea class="form-control" style="display:none;" id="Notes" placeholder="Gizli notunuz varsa lütfen belirtin..." rows="3"></textarea>
+            <span class="label label-info" id="Notes">İşiniz için gizli notunuz var mı?</span>
+           <textarea class="form-control" style="display:none;" id="PrivateNotes" placeholder="Gizli notunuz varsa lütfen belirtin..." rows="3"></textarea>
         </div>        
     </form> 
     
         <form role="form">
             <div class="form-group">
                 <label class="text-primary">Nerede Yapılacak</label>
-                <input type="text" class="form-control" id="Inputlocation" placeholder="Nerede yapılsın...">
+                <input id="Location" class="form-control" placeholder="Nerede yapılsın..." type="text" />
+                <%--<input type="text" class="form-control" id="Inputlocation" placeholder="Nerede yapılsın..." />--%>
                 <%--<asp:DropDownList ID="ddlLocation" class="form-control" runat="server"></asp:DropDownList>--%>
             </div>
         </form>
@@ -68,7 +69,7 @@
             <div class="form-group" id="hour" style="float:left; width:263px; margin-left:40px; ">
         <label class="text-primary">İşin Teslim Saati</label>      
             <div class="form-group">
-                <select id="InsertHour" class="form-control" placeholder="Saat seçiniz.">
+                <select id="InsertHour" class="form-control">
                     <option>00:00</option>
                     <option>01:00</option>
                     <option>02:00</option>
@@ -104,7 +105,7 @@
             <div class="form-group" id="money" style="width:600px; margin-top:auto;">
                 
                 <label class="text-primary">Ücret</label>
-               <div class="text-primary"><input class="numeric integer optional" style="height:40px; width:50px; margin-left:5px; text-align:center;" id="task_named_price" name="task[named_price]" step="1" type="number" value="20" />
+               <div class="text-primary"><input class="numeric integer optional" style="height:40px; width:50px; margin-left:5px; text-align:center;" id="taskPrice" name="task[named_price]" step="1" type="number" value="20" />
                   
                    <label for="task_named_price">(TL) Bu iş için ne kadar ödemeyi düşnüyorsun?</label>
              
