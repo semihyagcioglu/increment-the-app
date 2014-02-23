@@ -43,17 +43,15 @@
 
     <form role="form">
         <div class="form-group">           
-            <span class="label label-info" id="Notes">İşiniz için gizli notunuz var mı?</span>
-           <textarea class="form-control" style="display:none;" id="PrivateNotes" placeholder="Gizli notunuz varsa lütfen belirtin..." rows="3"></textarea>
+            <span class="label label-info" id="Notes">İşiniz için özel notunuz var mı?</span>
+           <textarea class="form-control" style="display:none;" id="PrivateNotes" placeholder="Özel notunuz varsa lütfen belirtin..." rows="3"></textarea>
         </div>        
     </form> 
     
         <form role="form">
             <div class="form-group">
                 <label class="text-primary">Nerede Yapılacak</label>
-                <input id="Location" class="form-control" placeholder="Nerede yapılsın..." type="text" />
-                <%--<input type="text" class="form-control" id="Inputlocation" placeholder="Nerede yapılsın..." />--%>
-                <%--<asp:DropDownList ID="ddlLocation" class="form-control" runat="server"></asp:DropDownList>--%>
+                <input id="Location" class="form-control" placeholder="Nerede yapılsın..." type="text" />              
             </div>
         </form>
     <form role="form">
@@ -95,8 +93,7 @@
                     <option>22:00</option>
                     <option>23:00</option>
 
-                </select>
-               <%-- <input id="InsertHour" type="text" class="form-control" placeholder="Saati seçiniz" required />--%>
+                </select>              
             </div>
                 </div>
         </form>
@@ -108,7 +105,6 @@
                <div class="text-primary"><input class="numeric integer optional" style="height:40px; width:50px; margin-left:5px; text-align:center;" id="taskPrice" name="task[named_price]" step="1" type="number" value="20" />
                   
                    <label for="task_named_price">(TL) Bu iş için ne kadar ödemeyi düşnüyorsun?</label>
-             
 
                </div>            
             </div>            
