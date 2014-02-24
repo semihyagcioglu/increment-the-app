@@ -29,7 +29,7 @@
                     <input type="text" class="form-control" placeholder="Adres"><br />
                     <input type="text" class="form-control" style=" height:100px;" placeholder="Hakkımda"><br />
                     </div>
-                <button type="submit" class="btn btn-default">Değişiklikleri Kaydet</button><br />
+                <button type="submit" class="btn btn-default">Değişiklikleri Kaydet</button><br /><br />
                 </form>         
 
             </div>
