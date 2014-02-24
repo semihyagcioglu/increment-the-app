@@ -20,7 +20,7 @@ namespace increment_the_app
     {
 
         [WebMethod]
-        public DataTable SearchTask(string task)
+        public List<DataRow> SearchTask(string task)
         {
             return Tasks.SearchTask(task);
         }
