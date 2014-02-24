@@ -10,12 +10,17 @@
     <div id="ProfileContent">
         <div class="ProfileHeader">
 
-            <div class="ProfileName"><form class="navbar-form navbar-left" role="search">
-  <div class="form-group">
-    <input type="text" class="form-control" placeholder="Search">
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>
-</form></div>
+            <div class="ProfileName">
+                    <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Ad">
+                    <input type="text" class="form-control" placeholder="Soyad">
+                    <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                <button type="submit" class="btn btn-default">Değişiklikleri Kaydet</button>
+                </form>         
+
+            </div>
 
         </div>
 
