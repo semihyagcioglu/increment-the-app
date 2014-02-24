@@ -14,7 +14,7 @@
                 <div class="row">
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
-      <img data-src="holder.js/300x200" alt="...">
+      <img src="img/ornekprofile.png" alt="...">
       <div class="caption">
         <h3>Profil Resmi</h3>
         <p>...</p>
