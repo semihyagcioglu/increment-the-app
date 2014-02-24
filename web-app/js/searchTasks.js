@@ -1,32 +1,29 @@
-﻿function   SearchTask(task) {
+﻿function SearchTask(task) {
 
     var validated = true;
     var warningText = '';
 
-    if (IsNullOrEmpty(task) == true) {
+    if (IsNullOrEmpty(task) == true && validated == true) {
 
         $('#InputSearchTask').closest('.form-group').addClass("has-error");
         $('#InputSearchTask').focus();
 
-        warningText = "Lütfen Yapılmak İstenen İş Giriniz...";
+        warningText = "Lütfen aranacak anahtar kelimeyi girin..";
         validated = false;
     }
     else {
+        alert(task);
 
         $.ajax({
             type: "POST",
             url: "WsTasks.asmx/SearchTask",
-            data: "{" + "'searchTask':'" + task + "'}",
+            data: "{" + "'task':'" + task + "'}",
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function (msg) {
-
-           
-                    //Success
-                    window.location.href = 'Home.aspx';
-
                 
-
+                    window.location.href = 'Home.aspx';
+                
             },
             error: function () {
                 //some error occured
