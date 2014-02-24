@@ -23,14 +23,13 @@
 </div>
                     <form class="navbar-form navbar-left" role="search">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Ad"><br />
-                    <input type="text" class="form-control" placeholder="Soyad"><br />
+                    <input type="text" class="form-control" placeholder="Ad Soyad"><br />
                     <input type="text" class="form-control" placeholder="Mail Adresi"><br />
                     <input type="text" class="form-control" placeholder="Telefon"><br />
-                    <input type="text" class="form-control" placeholder="Şifre"><br />
-                    <input type="text" class="form-control" placeholder="Şifre Tekrar">
+                    <input type="text" class="form-control" placeholder="Adres"><br />
+                    <input type="text" class="form-control" style=" height:100px;" placeholder="Hakkımda"><br />
                     </div>
-                <button type="submit" class="btn btn-default">Değişiklikleri Kaydet</button>
+                <button type="submit" class="btn btn-default">Değişiklikleri Kaydet</button><br />
                 </form>         
 
             </div>
