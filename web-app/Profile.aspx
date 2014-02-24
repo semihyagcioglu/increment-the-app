@@ -7,7 +7,13 @@
 
 
 <asp:Content ID="bc" ContentPlaceHolderID="bodyContent" runat="server">
+    <div id="ProfileContent">
+        <div class="ProfileHeader">
 
+            <div style="">Uzman Profili</div>
+        </div>
+
+    </div>
 </asp:Content>
 
 <asp:Content ID="fc" ContentPlaceHolderID="footerContent" runat="server">
