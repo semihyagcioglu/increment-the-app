@@ -102,6 +102,7 @@
     </Content>
     <Content Include="SearchTask.aspx" />
     <Content Include="WsReports.asmx" />
+    <Content Include="WsTasks.asmx" />
     <Content Include="WsUsers.asmx" />
   </ItemGroup>
   <ItemGroup>
@@ -256,6 +257,10 @@
     </Compile>
     <Compile Include="WsReports.asmx.cs">
       <DependentUpon>WsReports.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WsTasks.asmx.cs">
+      <DependentUpon>WsTasks.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="WsUsers.asmx.cs">
