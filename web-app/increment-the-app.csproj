@@ -76,6 +76,7 @@
     <Content Include="js\master.js" />
     <Content Include="js\postTask.js" />
     <Content Include="js\signup.js" />
+    <Content Include="js\searchTasks.js" />
     <Content Include="LogOut.aspx" />
     <Content Include="PostTask.aspx" />
     <Content Include="Profile.aspx" />
