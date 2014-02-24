@@ -23,12 +23,25 @@ namespace increment_the_app.Library
 
             DataTable dtTasks = Library.DataBase.GetDataTable(sql);
 
-            return dtTasks;
+            return dtTasks;            
+        }
 
+        private DataTable SearchTask(string searchTask)
+        {
+            string searchQuery = @"SELECT [ID]
+                                          ,[UserID]
+                                          ,[TaskTitle]
+                                          ,[TaskDetail]
+                                          ,[Date]
+                                          ,[Money]
+                                          ,[Location]
+                                          ,[TaskStatus]
+                                      FROM [Tasks] WHERE [TaskTitle] like '%" + searchTask + "%'";
 
+            DataTable dtSearch = Library.DataBase.GetDataTable(searchQuery);
+
+            return dtSearch;
 
         }
     }
-    
-
 }
