@@ -16,9 +16,8 @@
     <div class="thumbnail">
       <img src="img/ornekprofile.png" alt="...">
       <div class="caption">
-        <h3>Profil Resmi</h3>
         <p>...</p>
-        <p><a href="#" class="btn btn-primary" role="button">Değiştir</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+        <p><a href="#" class="btn btn-primary" role="button">Değiştir</a></p>
       </div>
     </div>
   </div>
