@@ -26,7 +26,7 @@ namespace increment_the_app.Library
             return dtTasks;            
         }
 
-        private DataTable SearchTask(string searchTask)
+        public DataTable SearchTask(string searchTask)
         {
             string searchQuery = @"SELECT [ID]
                                           ,[UserID]
