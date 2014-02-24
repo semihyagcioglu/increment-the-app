@@ -14,9 +14,8 @@
                 <div class="row">
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
-      <img src="img/ornekprofile.png" alt="...">
+      <img src="img/ornekprofile.png" height="200" width="300" alt="">
       <div class="caption">
-        <p>...</p>
         <p><a href="#" class="btn btn-primary" role="button">Değiştir</a></p>
       </div>
     </div>
