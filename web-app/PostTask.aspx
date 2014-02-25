@@ -12,7 +12,7 @@
     <script>
         $(document).ready(function () {
             $("#Notes").click(function () {
-                $("#PrivateNotes").slideToggle("slow");
+                $("#PrivateNotes").slideToggle();
             });
         })
 
@@ -24,33 +24,32 @@
 </asp:Content>
 <asp:Content ID="bc" ContentPlaceHolderID="bodyContent" runat="server">
 
-    <h4 class="ch4">
-        <img src="img/search.png" alt="Pulpit rock" width="64" height="64">Lütfen Gerekli İş Bilgilerini Giriniz...</h4>
+    <h4 class="ch4">Lütfen Gerekli İş Bilgilerini Giriniz...</h4>
   <hr />
     <div class="form-group">
         <div id="warningMessage" class="alert alert-danger" style="display: none;"></div>
     </div>
     <form role="form">
         <div class="form-group">
-            <label class="text-primary">Yapılmak İstenen İş</label>
+            <%--<label class="text-primary">Yapılmak İstenen İş</label>--%>
             <input type="text" class="form-control" id="InputTitle" placeholder="Yapılmak istenen iş...">
         </div>
         <div class="form-group">
-            <label class="text-primary">İşin Detayı</label>
+           <%-- <label class="text-primary">İşin Detayı</label>--%>
             <textarea class="form-control" id="InputTitleDetail" placeholder="Lütfen yapılacak işin detaylarını girin..." rows="3"></textarea>
         </div>
     </form>  
 
     <form role="form">
         <div class="form-group">           
-            <span class="label label-info" id="Notes">İşiniz için özel notunuz var mı?</span>
+            <span class="label label-info" id="Notes">+ İşiniz için özel notunuz var mı?</span>
            <textarea class="form-control" style="display:none;" id="PrivateNotes" placeholder="Özel notunuz varsa lütfen belirtin..." rows="3"></textarea>
         </div>        
     </form> 
     
         <form role="form">
             <div class="form-group">
-                <label class="text-primary">Nerede Yapılacak</label>
+                <%--<label class="text-primary">Nerede Yapılacak</label>--%>
                 <input id="Location" class="form-control" placeholder="Nerede yapılsın..." type="text" />              
             </div>
         </form>
