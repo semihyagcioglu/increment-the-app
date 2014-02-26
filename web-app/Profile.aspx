@@ -26,6 +26,7 @@
    Profiliniz %40 dolu...
   </div>
 </div>
+                    <div style="float:right;">
                     <form class="navbar-form navbar-left" role="search">
                 <div class="form-group">
                     <input type="text" id="InputName" class="form-control" placeholder="Ad" size="30"><br />
@@ -37,7 +38,7 @@
                     </div>
                 <button type="submit" id="btnUpdateProfile" class="btn btn-default">Değişiklikleri Kaydet</button><br /><br />
                 </form>         
-
+                </div>
             </div>
 
         </div>
