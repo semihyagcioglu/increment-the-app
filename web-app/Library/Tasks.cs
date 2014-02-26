@@ -8,7 +8,7 @@ namespace increment_the_app.Library
 {
     public class Tasks
     {
-        private DataTable GetLastTask(int count)
+        public static DataTable GetLastTask(int count)
         {
             string sql = @"SELECT TOP (" + count + @")[ID]
                                   ,[UserID] AS [Kullanıcı No]
