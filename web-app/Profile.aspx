@@ -28,12 +28,12 @@
 </div>
                     <form class="navbar-form navbar-left" role="search">
                 <div class="form-group">
-                    <input type="text" id="InputName" class="form-control" placeholder="Ad"><br />
+                    <input type="text" id="InputName" class="form-control" placeholder="Ad" size="30"><br />
                     <input type="text" id="InputSurname" class="form-control" placeholder="Soyad"><br />
                     <input type="text" id="InputMail" class="form-control" placeholder="Mail Adresi"><br />
                     <input type="text" id="InputPhone" class="form-control" placeholder="Telefon"><br />
                     <input type="text" id="InputAdress" class="form-control" placeholder="Adres"><br />
-                    <input type="text" id="InputAbout" class="form-control" style=" height:100px;" placeholder="Hakkımda"><br />
+                    <textarea id="InputAbout" class="form-control" style=" height:100px;" placeholder="Hakkımda"></textarea><br />
                     </div>
                 <button type="submit" id="btnUpdateProfile" class="btn btn-default">Değişiklikleri Kaydet</button><br /><br />
                 </form>         
