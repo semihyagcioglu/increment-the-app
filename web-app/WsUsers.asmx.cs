@@ -115,9 +115,9 @@ namespace increment_the_app
         }
 
         [WebMethod]
-        public string PostTask(string userId, string taskTitle, string taskDetail, string date, string location, string money)
+        public string PostTask(string userId, string taskTitle, string taskDetail, string privateNotes, string date, string hour, string location, string money)
         {
-            return Users.PostTask(userId, taskTitle, taskDetail, date, location, money);
+            return Users.PostTask(userId, taskTitle, taskDetail, privateNotes, date, hour, location, money);
         }
     }
 }

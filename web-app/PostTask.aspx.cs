@@ -14,25 +14,25 @@ namespace increment_the_app
         {
             if (!IsPostBack)
             {
-                SelectCity();
+                //SelectCity();
             }
         }
 
-        private void SelectCity()
-        {
-            try
-            {
-                string city = @"SELECT [Id]
-                                  ,[Name]
-                              FROM [City]";
+//        private void SelectCity()
+//        {
+//            try
+//            {
+//                string city = @"SELECT [Id]
+//                                  ,[Name]
+//                              FROM [City]";
 
-                DataTable dtCity = Library.DataBase.GetDataTable(city);
-                Library.UI.Bind2Ddl(ddlLocation, dtCity, "Name", "Id");
-            }
-            catch
-            {
+//                DataTable dtCity = Library.DataBase.GetDataTable(city);
+//                Library.UI.Bind2Ddl(ddlLocation, dtCity, "Name", "Id");
+//            }
+//            catch
+//            {
 
-            }
-        }
+//            }
+//        }
     }
 }

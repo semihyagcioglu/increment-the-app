@@ -8,7 +8,7 @@ namespace increment_the_app.Library
 {
     public class Tasks
     {
-        private DataTable GetLastTask(int count)
+        public static DataTable GetLastTask(int count)
         {
             string sql = @"SELECT TOP (" + count + @")[ID]
                                   ,[UserID] AS [Kullanıcı No]
@@ -23,12 +23,25 @@ namespace increment_the_app.Library
 
             DataTable dtTasks = Library.DataBase.GetDataTable(sql);
 
-            return dtTasks;
+            return dtTasks;            
+        }
 
+        public static List<DataRow> SearchTask(string searchTask)
+        {
+            string searchQuery = @"SELECT [ID]
+                                          ,[UserID]
+                                          ,[TaskTitle]
+                                          ,[TaskDetail]
+                                          ,[Date]
+                                          ,[Money]
+                                          ,[Location]
+                                          ,[TaskStatus]
+                                      FROM [Tasks] WHERE [TaskTitle] like '%" + searchTask + "%'";
 
+            List<DataRow> dtSearch = Library.DataBase.GetList(searchQuery);
+
+            return dtSearch;
 
         }
     }
-    
-
 }
