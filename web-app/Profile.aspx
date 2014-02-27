@@ -35,7 +35,7 @@
                     <input type="text" id="InputPhone" class="form-control" placeholder="Telefon"><br />
                     <input type="text" id="InputAdress" class="form-control" placeholder="Adres"><br />
                     <input type="text" id="InputBirtDay" class="form-control" placeholder="Doğum Tarihi"><br />
-                    div class="input-group">
+                    <div class="input-group">
       <span class="input-group-addon">
         <input type="checkbox">
       </span>
