@@ -39,7 +39,11 @@
       <span class="input-group-addon">
         <input type="checkbox">
       </span>
-      <input type="text" class="form-control">
+                        
+  <span class="input-group-addon">
+        <input type="checkbox">
+      </span>
+     
     </div><!-- /input-group -->
                     <textarea id="InputAbout" class="form-control" style=" height:100px;" placeholder="Hakkımda"></textarea><br />
                     </div>
