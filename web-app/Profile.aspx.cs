@@ -20,7 +20,7 @@ namespace increment_the_app
         private void ProfileDetails()
         {
             int userID = int.Parse(Session["UserId"].ToString());
-            string selectUser = @"Select [Name],[Surname],[Email],[Gsm],[Location]                                      
+            string selectUser = @"Select [Name],[Surname],[Email],[Phone],[Location]                                      
                                      From [Users]                                 
                                      WHERE UserId= '" + userID+"'";
 
@@ -29,7 +29,7 @@ namespace increment_the_app
             InputName.Value = userProfile.Rows[0]["Name"].ToString();
             InputSurname.Value = userProfile.Rows[0]["Surname"].ToString();
             InputEmail.Value = userProfile.Rows[0]["Email"].ToString();
-            InputPhone.Value = userProfile.Rows[0]["Gsm"].ToString();
+            InputPhone.Value = userProfile.Rows[0]["Phone"].ToString();
             InputAdress.Value = userProfile.Rows[0]["Location"].ToString();
 
 
