@@ -12,8 +12,7 @@ namespace increment_the_app
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-        
-            
+                    
                 ProfileDetails();
             
         }
@@ -21,14 +20,9 @@ namespace increment_the_app
         private void ProfileDetails()
         {
             int userID = int.Parse(Session["UserId"].ToString());
-            string selectUser = @"Select [dbo].[Users]
-                                   SET [Name] = @Name
-                                      ,[Surname] = @Surname                                     
-                                      ,[Email] = @Email
-                                      ,[Gender] = @Gender
-                                      ,[BirthDate] = @BirthDate                                  
-                                      ,[GSM] = @Gsm                                     
-                                 WHERE UserId= '"+userID+"'";
+            string selectUser = @"Select [Name],[Surname],[Email],[Gsm],[Location]                                      
+                                     From [Users]                                 
+                                     WHERE UserId= '" + userID+"'";
 
             DataTable userProfile = Library.DataBase.GetDataTable(selectUser);
 
@@ -36,7 +30,7 @@ namespace increment_the_app
             InputSurname.Value = userProfile.Rows[0]["Surname"].ToString();
             InputEmail.Value = userProfile.Rows[0]["Email"].ToString();
             InputPhone.Value = userProfile.Rows[0]["Gsm"].ToString();
-            //InputAdress.Value = userProfile.Rows[0]["Adress"].ToString();
+            InputAdress.Value = userProfile.Rows[0]["Location"].ToString();
 
 
         }
