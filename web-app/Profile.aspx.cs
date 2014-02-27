@@ -28,15 +28,15 @@ namespace increment_the_app
                                       ,[Gender] = @Gender
                                       ,[BirthDate] = @BirthDate                                  
                                       ,[GSM] = @Gsm                                     
-                                 WHERE UserId= @UserId";
+                                 WHERE UserId= '"+userID+"'";
 
             DataTable userProfile = Library.DataBase.GetDataTable(selectUser);
 
             InputName.Value = userProfile.Rows[0]["Name"].ToString();
-            InputSurname.Value = "";
-            InputEmail.Value = "";
-            InputPhone.Value = "";
-            InputAdress.Value = "";
+            InputSurname.Value = userProfile.Rows[0]["Surname"].ToString();
+            InputEmail.Value = userProfile.Rows[0]["Email"].ToString();
+            InputPhone.Value = userProfile.Rows[0]["Gsm"].ToString();
+            //InputAdress.Value = userProfile.Rows[0]["Adress"].ToString();
 
 
         }
