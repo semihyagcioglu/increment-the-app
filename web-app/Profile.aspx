@@ -34,6 +34,13 @@
                     <input type="text" id="InputMail" class="form-control" placeholder="Mail Adresi"><br />
                     <input type="text" id="InputPhone" class="form-control" placeholder="Telefon"><br />
                     <input type="text" id="InputAdress" class="form-control" placeholder="Adres"><br />
+                    <input type="text" id="InputBirtDay" class="form-control" placeholder="Doğum Tarihi"><br />
+                    div class="input-group">
+      <span class="input-group-addon">
+        <input type="checkbox">
+      </span>
+      <input type="text" class="form-control">
+    </div><!-- /input-group -->
                     <textarea id="InputAbout" class="form-control" style=" height:100px;" placeholder="Hakkımda"></textarea><br />
                     </div>
                 <button type="submit" id="btnUpdateProfile" class="btn btn-default">Değişiklikleri Kaydet</button><br /><br />
