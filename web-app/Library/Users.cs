@@ -128,7 +128,7 @@ namespace increment_the_app.Library
             //use facebook for connect
             return " ";
         }
-        public static string UpdateUser(string userId, string name, string surname, string email, string gsm, string gender,string birthdate)
+        public static string UpdateUser(string userId, string name, string surname, string email, string phone, string gender,string birthdate, string about)
         {
             //update user info
            SqlParameter[] parameters = new SqlParameter[7];
@@ -136,7 +136,7 @@ namespace increment_the_app.Library
            parameters[0] = DataBase.SetParameter("@Name", SqlDbType.NVarChar, 80, "Input", name);
            parameters[1] = DataBase.SetParameter("@Surname", SqlDbType.NVarChar, 80, "Input", surname);
            parameters[2] = DataBase.SetParameter("@Email", SqlDbType.NVarChar, 80, "Input", email);
-           parameters[3] = DataBase.SetParameter("@Gsm", SqlDbType.NVarChar, 100, "Input", gsm);
+           parameters[3] = DataBase.SetParameter("@Gsm", SqlDbType.NVarChar, 100, "Input", phone);
            parameters[4] = DataBase.SetParameter("@Gender", SqlDbType.Int,32, "Input", gender);           
            parameters[5] = DataBase.SetParameter("@BirthDate", SqlDbType.DateTime,0,"Input", birthdate);
            parameters[6] = DataBase.SetParameter("@UserId", SqlDbType.Int,32, "Input", userId);
