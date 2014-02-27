@@ -17,7 +17,7 @@
         $.ajax({
             type: "POST",
             url: "WsTasks.asmx/SearchTask",
-            data: "{" + "'task':'" + task + "'}",
+            data: "{" + "'searchTask':'" + task + "'}",
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function (msg) {
