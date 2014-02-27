@@ -26,7 +26,7 @@ namespace increment_the_app.Library
             return dtTasks;            
         }
 
-        public static List<DataRow> SearchTask(string searchTask)
+        public static string SearchTask(string searchTask)
         {
             string searchQuery = @"SELECT [ID]
                                           ,[UserID]
@@ -38,9 +38,10 @@ namespace increment_the_app.Library
                                           ,[TaskStatus]
                                       FROM [Tasks] WHERE [TaskTitle] like '%" + searchTask + "%'";
 
-            List<DataRow> dtSearch = Library.DataBase.GetList(searchQuery);
+            DataTable dtSearch = Library.DataBase.GetDataTable(searchQuery);
+            string jsonData = Library.Data.DataTableToJSON(dtSearch);
 
-            return dtSearch;
+            return jsonData;
 
         }
     }

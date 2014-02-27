@@ -65,6 +65,7 @@
     <Content Include="img\location.png" />
     <Content Include="img\money.png" />
     <Content Include="img\ornekprofile.png" />
+    <Content Include="img\poster.png" />
     <Content Include="img\search.png" />
     <Content Include="img\slider-img-2.jpg" />
     <Content Include="img\TaskDetailsicon.jpg" />
@@ -109,6 +110,7 @@
     <Content Include="WsUsers.asmx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Library\Data.cs" />
     <Compile Include="Library\Tasks.cs" />
     <Compile Include="Library\UI.cs" />
     <Compile Include="LogOut.aspx.cs">

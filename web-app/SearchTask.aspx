@@ -10,13 +10,13 @@
     <div>
     <form class="navbar-form navbar-left" role="search">
   <div class="form-group">
-    <input type="text" class="form-control" id="InputSearchTask" style="width:500px; margin-right:10px; float:left;" placeholder="Aranacak anahtar kelimeyi giriniz...">
+    <input type="text" class="form-control" runat="server" id="InputSearchTask" style="width:500px; margin-right:10px; float:left;" placeholder="Aranacak anahtar kelimeyi giriniz...">
       <button type="button" style="width:100px;" id="btnSearchTask" class="btn btn-success">Ara</button>
   </div>  
 </form>
 
 </div>
-
+    <asp:Panel ID="pnlSearchTask" runat="server"></asp:Panel>
 </asp:Content>
 <asp:Content ID="fc" ContentPlaceHolderID="footerContent" runat="server">
 </asp:Content>
