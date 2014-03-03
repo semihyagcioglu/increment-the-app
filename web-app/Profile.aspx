@@ -29,12 +29,12 @@
                     
                     <form class="navbar-form navbar-left" role="search">
                 <div class="form-group">
-                    <input type="text" id="InputName" runat="server" class="form-control" placeholder="Ad" style="height:15px;"><br />
-                    <input type="text" id="InputSurname" runat="server" class="form-control" placeholder="Soyad" style="height:15px;"><br />
-                    <input type="text" id="InputEmail" runat="server" class="form-control" placeholder="Email" style="height:15px;"><br />
-                    <input type="text" id="InputPhone" runat="server" class="form-control" placeholder="Telefon" style="height:15px;"><br />
-                    <input type="text" id="InputAdress" runat="server" class="form-control" placeholder="Adres" style="height:15px;"><br />
-                    <input type="text" id="InputBirtDay" runat="server" class="form-control" placeholder="Doğum Tarihi" style="height:15px;"><br />
+                    <input type="text" id="InputName" runat="server" class="form-control" placeholder="Ad" style="height:30px;"><br />
+                    <input type="text" id="InputSurname" runat="server" class="form-control" placeholder="Soyad" style="height:30px;"><br />
+                    <input type="text" id="InputEmail" runat="server" class="form-control" placeholder="Email" style="height:30px;"><br />
+                    <input type="text" id="InputPhone" runat="server" class="form-control" placeholder="Telefon" style="height:30px;"><br />
+                    <input type="text" id="InputAdress" runat="server" class="form-control" placeholder="Adres" style="height:30px;"><br />
+                    <input type="text" id="InputBirtDay" runat="server" class="form-control" placeholder="Doğum Tarihi" style="height:30px;"><br />
                     
                     <div class="input-group" style="width:300px;">
                         <span>Cinsiyet : </span>
