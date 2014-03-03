@@ -11,7 +11,7 @@
 	</div>
 
 </asp:Content>
-<asp:Content ID="fc" ContentPlaceHolderID="footerContent" runat="server">
+<asp:Content ID="fc" ContentPlaceHolderID="fc" runat="server">
 </asp:Content>
           
        
