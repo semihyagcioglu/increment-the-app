@@ -378,17 +378,18 @@ namespace increment_the_app.Library
             //var connection = new SqlConnection(GetConnectionString());
             using (SqlConnection connection = new SqlConnection(GetConnectionString()))
             {
-                SqlTransaction transaction = connection.BeginTransaction();
-                SqlCommand command = new SqlCommand(sqlCommand, connection, transaction);
+               
                 try
                 {
                     if (connection.State == ConnectionState.Closed)
                     {
                         connection.Open();
                     }
-
+ SqlTransaction transaction = connection.BeginTransaction();
+SqlCommand command = new SqlCommand(sqlCommand, connection, transaction);
                     command.CommandTimeout = 300;
 
+                
                     var result = command.ExecuteNonQuery();
                     command.Transaction.Commit();
 
@@ -404,6 +405,8 @@ namespace increment_the_app.Library
                 {
                     try
                     {
+                        SqlTransaction transaction = connection.BeginTransaction();
+                        SqlCommand command = new SqlCommand(sqlCommand, connection, transaction);
                         command.Transaction.Rollback();
                     }
                     catch (SqlException eXR)
