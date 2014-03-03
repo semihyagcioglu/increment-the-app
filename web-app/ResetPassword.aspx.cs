@@ -44,7 +44,7 @@ namespace increment_the_app
                 //hata bölümü
                 }
 
-
+                Response.Redirect("Home.aspx");
             }
 
         }
