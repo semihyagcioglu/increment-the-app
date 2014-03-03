@@ -426,5 +426,22 @@ namespace increment_the_app.Library
 
             return "Yeni işiniz başarıyla eklendi";
         }
+        public static int ChangePassword(string password,string userId)
+        {   
+            string  sqlChangePassword = @" UPDATE [Users]
+                                        SET [Password] = "+password+@"
+                                        WHERE [UserId] = " + userId +"";
+
+            DataBase.ExecuteNonQuery(sqlChangePassword);
+
+            return 1;
+
+        }
+            
+
+        
+
+       
+
     }
 }
