@@ -4,14 +4,12 @@
 <asp:Content ID="bc" ContentPlaceHolderID="bodyContent" runat="server">
     
     <form class="navbar-form navbar-left" role="search" style="margin-top:30px;">
-        <div class="panel-heading">
-                    <h3 class="panel-title">Şifre Değiştir</h3>
-                </div>
+         <label for="change_password">Şifre Değiştir</label>
                 <div class="form-group">
                     <input type="password" id="OldPassword" runat="server" class="form-control" placeholder="Eski Şifre" style="height:30px; width:400px;"><br />
                     <input type="password" id="NewPassword" runat="server" class="form-control" placeholder="Yeni Şifre" style="height:30px;width:400px;"><br />
                     <input type="password" id="NewPasswordAgain" runat="server" class="form-control" placeholder="Yeni Şifre Tekrar" style="height:30px;width:400px;"><br />
-                     <button type="submit" id="btnChangePassword" class="btn btn-default">Değiştir</button><br /><br />
+                     <div id="btnLogin" class="btn btn-lg btn-success btn-block" style="width:420px;">Değiştir</div><br /><br />
                     <br /></div></form>
 
 </asp:Content>
