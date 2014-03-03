@@ -35,16 +35,21 @@
                     <input type="text" id="InputPhone" runat="server" class="form-control" placeholder="Telefon"><br />
                     <input type="text" id="InputAdress" runat="server" class="form-control" placeholder="Adres"><br />
                     <input type="text" id="InputBirtDay" runat="server" class="form-control" placeholder="Doğum Tarihi"><br />
-                    <div class="input-group">
+                    
+                    <div class="input-group" style="width:300px;">
+                        <span>Cinsiyet : </span>
       <span class="input-group-addon">
-        <input type="checkbox">
+        <input type="radio">
+          <span>Erkek</span>
       </span>
                         
-  <span class="input-group-addon">
-        <input type="checkbox">
+  <span class="input-group-addon" style="margin-left:5px;"> 
+      <input type="radio">
+          <span>Kadın</span>
       </span>
      
-    </div><!-- /input-group -->
+    </div><!-- /input-group --><br />
+
                     <textarea id="InputAbout" class="form-control" style=" height:100px;" placeholder="Hakkımda"></textarea><br />
                     </div>
                 <button type="submit" id="btnUpdateProfile" class="btn btn-default">Değişiklikleri Kaydet</button><br /><br />
