@@ -19,7 +19,7 @@ namespace increment_the_app {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText OldPassword;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword OldPassword;
         
         /// <summary>
         /// NewPassword control.
@@ -28,7 +28,7 @@ namespace increment_the_app {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText NewPassword;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword NewPassword;
         
         /// <summary>
         /// NewPasswordAgain control.
@@ -37,6 +37,6 @@ namespace increment_the_app {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText NewPasswordAgain;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword NewPasswordAgain;
     }
 }
