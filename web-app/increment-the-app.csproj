@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ChangePassword.aspx" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\datepicker.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -110,6 +111,13 @@
     <Content Include="WsUsers.asmx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Library\Data.cs" />
     <Compile Include="Library\Tasks.cs" />
     <Compile Include="Library\UI.cs" />
