@@ -19,7 +19,7 @@ namespace increment_the_app.Library
                                   ,[Money] AS [İşin Ücreti]
                                   ,[TaskStatus] AS [İşin Durum]
                               FROM [Tasks]
-                                   WHERE [TaskStatus] = '1' ORDER BY DESC";
+                                   WHERE [TaskStatus] = '1' ORDEjR BY DESC";
 
             DataTable dtTasks = Library.DataBase.GetDataTable(sql);
 
@@ -44,5 +44,7 @@ namespace increment_the_app.Library
             return jsonData;
 
         }
+
+
     }
 }
