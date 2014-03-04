@@ -39,18 +39,18 @@
                     <div class="input-group" style="width:300px;">
                         <span>Cinsiyet : </span>
       <span class="input-group-addon">
-        <input type="radio" id="InputMale">
+        <input type="radio" runat="server" id="InputMale">
           <span>Erkek</span>
       </span>
                         
   <span class="input-group-addon" style="margin-left:5px;"> 
-      <input type="radio" id="InputFemale">
+      <input type="radio" runat="server" id="InputFemale">
           <span>Kadın</span>
       </span>
      
     </div><!-- /input-group --><br />
 
-                    <textarea id="InputAbout" class="form-control" style=" height:100px;" placeholder="Hakkımda"></textarea><br />
+                    <textarea id="InputAbout" runat="server" class="form-control" style=" height:100px;" placeholder="Hakkımda"></textarea><br />
                     </div>
                 <button type="button" id="btnUpdateProfile" class="btn btn-default">Değişiklikleri Kaydet</button><br /><br />
                 </form>         

@@ -22,7 +22,7 @@ namespace increment_the_app
         private void ProfileDetails()
         {
             int userID = int.Parse(Session["UserId"].ToString());
-            string selectUser = @"Select [Name],[Surname],[Email],[Phone],[Location]                                      
+            string selectUser = @"Select [Name],[Surname],[Email],[Phone],[Location],[BirthDate],[About],[Gender]                                      
                                      From [Users]                                 
                                      WHERE UserId= '" + userID + "'";
 
@@ -33,7 +33,18 @@ namespace increment_the_app
             InputEmail.Value = userProfile.Rows[0]["Email"].ToString();
             InputPhone.Value = userProfile.Rows[0]["Phone"].ToString();
             InputAdress.Value = userProfile.Rows[0]["Location"].ToString();
+            InputBirtDay.Value = userProfile.Rows[0]["BirthDate"].ToString();
+            InputAbout.Value = userProfile.Rows[0]["About"].ToString();
 
+            string gender = userProfile.Rows[0]["Gender"].ToString();
+            if (gender=="1")
+            {
+                InputMale.Checked = true;
+            }
+            else
+            {
+                InputFemale.Checked = true;
+            }
 
         }
     }
