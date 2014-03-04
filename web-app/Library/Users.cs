@@ -138,8 +138,8 @@ namespace increment_the_app.Library
             parameters[2] = DataBase.SetParameter("@Email", SqlDbType.NVarChar, 80, "Input", email);
             parameters[3] = DataBase.SetParameter("@Address", SqlDbType.NVarChar, 250, "Input", address);
             parameters[4] = DataBase.SetParameter("@Phone", SqlDbType.NVarChar, 100, "Input", phone);
-            parameters[5] = DataBase.SetParameter("@Gender", SqlDbType.Int, 32, "Input", gender);
-            parameters[6] = DataBase.SetParameter("@BirthDate", SqlDbType.NVarChar, 15, "Input", birthdate);
+            parameters[5] = DataBase.SetParameter("@Gender", SqlDbType.NVarChar, 50, "Input", gender);
+            parameters[6] = DataBase.SetParameter("@BirthDate", SqlDbType.NVarChar, 50, "Input", birthdate);
             parameters[7] = DataBase.SetParameter("@About", SqlDbType.NVarChar, 350, "Input", about);
             parameters[8] = DataBase.SetParameter("@UserId", SqlDbType.Int, 32, "Input", userId);
 

@@ -38,7 +38,7 @@ function UpdateProfile(userId, name, surname, email, phone, address, about, birt
         //}
     else {
 
-        //alert(userId);
+        alert(gender);
 
         $.ajax({
             type: "POST",
@@ -101,13 +101,13 @@ $(document).ready(function () {
     $("#btnUpdateProfile").click(function () {
 
         var userId = $("#hdnUserId").val();
-        var name = $("#InputName").val();
-        var surname = $("#InputSurname").val();
-        var email = $("#InputEmail").val();
-        var phone = $("#InputPhone").val();
-        var address = $("#InputAdress").val();
+        var name = $("#bodyContent_InputName").val();
+        var surname = $("#bodyContent_InputSurname").val();
+        var email = $("#bodyContent_InputEmail").val();
+        var phone = $("#bodyContent_InputPhone").val();
+        var address = $("#bodyContent_InputAdress").val();
         var about = $("#InputAbout").val();
-        var birthdate = $("#InputBirthDate").val();
+        var birthdate = $("#bodyContent_InputBirtDay").val();
         var gender;
         //alert($("#InputMale").val());
 
@@ -117,7 +117,6 @@ $(document).ready(function () {
         };
 
         if ($("#InputFemale").val() == 'true') {
-
             gender.val('2');
         }
 
