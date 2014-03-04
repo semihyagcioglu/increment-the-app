@@ -14,27 +14,27 @@ namespace increment_the_app
         {
             if (Session["userId"] != null)
             {
-                //ProfileDetails();
+                ProfileDetails();
             }
             
         }
 
-//        private void ProfileDetails()
-//        {
-//            int userID = int.Parse(Session["UserId"].ToString());
-//            string selectUser = @"Select [Name],[Surname],[Email],[Phone],[Location]                                      
-//                                     From [Users]                                 
-//                                     WHERE UserId= '" + userID+"'";
+        private void ProfileDetails()
+        {
+            int userID = int.Parse(Session["UserId"].ToString());
+            string selectUser = @"Select [Name],[Surname],[Email],[Phone],[Location]                                      
+                                     From [Users]                                 
+                                     WHERE UserId= '" + userID + "'";
 
-//            DataTable userProfile = Library.DataBase.GetDataTable(selectUser);
+            DataTable userProfile = Library.DataBase.GetDataTable(selectUser);
 
-//            InputName.Value = userProfile.Rows[0]["Name"].ToString();
-//            InputSurname.Value = userProfile.Rows[0]["Surname"].ToString();
-//            InputEmail.Value = userProfile.Rows[0]["Email"].ToString();
-//            InputPhone.Value = userProfile.Rows[0]["Phone"].ToString();
-//            InputAdress.Value = userProfile.Rows[0]["Location"].ToString();
+            InputName.Value = userProfile.Rows[0]["Name"].ToString();
+            InputSurname.Value = userProfile.Rows[0]["Surname"].ToString();
+            InputEmail.Value = userProfile.Rows[0]["Email"].ToString();
+            InputPhone.Value = userProfile.Rows[0]["Phone"].ToString();
+            InputAdress.Value = userProfile.Rows[0]["Location"].ToString();
 
 
-//        }
+        }
     }
 }

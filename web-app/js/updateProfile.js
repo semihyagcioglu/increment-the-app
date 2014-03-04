@@ -8,37 +8,35 @@ function UpdateProfile(userId, name, surname, email, phone, address, about, birt
 
     if (IsNullOrEmpty(name) == true) {
 
-        $('#InputName').closest('.form-group').addClass("has-error");
-        $('#InputName').focus();
+        $('#bodyContent_InputName').closest('.form-group').addClass("has-error");
+        $('#bodyContent_InputName').focus();
 
         warningText = "Lütfen adınızı girin";
         validated = false;
     }
     if (IsNullOrEmpty(surname) == true && validated == true) {
 
-        $('#InputSurname').closest('.form-group').addClass("has-error");
-        $('#InputSurname').focus();
+        $('#bodyContent_InputSurname').closest('.form-group').addClass("has-error");
+        $('#bodyContent_InputSurname').focus();
 
         warningText = "Lütfen soyadınızı girin...";
         validated = false;
     }
     if (IsNullOrEmpty(email) == true && validated == true) {
 
-        $('#InputEmail').closest('.form-group').addClass("has-error");
-        $('#InputEmail').focus();
+        $('#bodyContent_InputEmail').closest('.form-group').addClass("has-error");
+        $('#bodyContent_InputEmail').focus();
 
         warningText = "Lütfen email adresinizi girin..";
         validated = false;
     }
 
-        //if (validated == false) {
+        if (validated == false) {
 
-        //    $("#warningMessage").text(warningText);
-        //    $("#warningMessage").show();
-        //}
+            $("#warningMessage").text(warningText);
+            $("#warningMessage").show();
+        }
     else {
-
-        alert(gender);
 
         $.ajax({
             type: "POST",
@@ -47,7 +45,7 @@ function UpdateProfile(userId, name, surname, email, phone, address, about, birt
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function (msg) {
-                alert(data);
+               
                 if (msg.d == -1) {
                     $("#warningMessage").text('Profil güncelleme sırasında hata oluştu...');
                     $("#warningMessage").show();
@@ -57,9 +55,9 @@ function UpdateProfile(userId, name, surname, email, phone, address, about, birt
                     $("#warningMessage").show();
                 }
                 else {
-                    //Success
-                    //window.location.href = 'Home.aspx';
+                    //Success                   
                     alert('Güncelleme işlemi tamamlandı...');
+                    window.location.href = 'Profile.aspx';
 
                 }
 
@@ -75,7 +73,7 @@ function UpdateProfile(userId, name, surname, email, phone, address, about, birt
 }
 $(document).ready(function () {
 
-    $('#InputName').focus();
+    $('#bodyContent_InputName').focus();
 
     //enter key event
     $("body").keypress(function (e) {
@@ -109,15 +107,15 @@ $(document).ready(function () {
         var about = $("#InputAbout").val();
         var birthdate = $("#bodyContent_InputBirtDay").val();
         var gender;
-        //alert($("#InputMale").val());
 
-        if ($("#InputMale").val() == 'true') {
-            gender.val('1');
-            //alert('Erkek');
-        };
+        if ($("#InputMale").val() == 'on') {
 
-        if ($("#InputFemale").val() == 'true') {
-            gender.val('2');
+            gender = 1;//Erkek            
+        }
+
+        if ($("#InputFeMale").val() == 'on') {
+
+            gender = 2;//Kadın     
         }
 
         UpdateProfile(userId, name, surname, email, phone, address, about, birthdate, gender);
