@@ -17,7 +17,7 @@ namespace increment_the_app
 
         protected void btnSendPassword_Click(object sender, EventArgs e)
         {
-            string enteredEmail=txtEmail.Text;
+            string enteredEmail = Email.Value;
             string email=string.Empty;
             string quary=@"SELECT [Email]
                                   FROM [Users]
