@@ -61,9 +61,9 @@ namespace increment_the_app
         }
 
         [WebMethod]
-        public string UpdateUser(string userId, string name, string surname, string email, string gsm, string gender, string birthdate)
+        public string UpdateUser(string userId, string name, string surname, string email, string address, string phone, string gender, string birthdate, string about)
         {
-            return Users.UpdateUser(userId, name, surname, email, gsm, gender,birthdate);
+            return Users.UpdateUser(userId, name, surname, email, address, phone, gender, birthdate, about);
         }
 
         [WebMethod]
@@ -77,7 +77,7 @@ namespace increment_the_app
         {
             return Users.CheckEmail(email);
         }
-
+         
         [WebMethod]
         public static string CheckUserID(string guid)
         {

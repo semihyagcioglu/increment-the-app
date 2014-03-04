@@ -8,18 +8,14 @@
 
 <asp:Content ID="bc" ContentPlaceHolderID="bodyContent" runat="server">
     <br />
-    <asp:Label ID="lblEmail" runat="server" Text="Email :" Font-Bold="True"></asp:Label>
-
-    &nbsp;<asp:TextBox ID="txtEmail" runat="server" Width="355px" Height="24px"></asp:TextBox>
-    <br />
-    <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:Button ID="btnSendPassword" runat="server" CssClass="btn" Height="32px" OnClick="btnSendPassword_Click" Text="Gönder" Width="81px" />
-    <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <br />
-    <br />
+    <div style="width:700px; height:150px; overflow:hidden;">
+   
+    &nbsp;<input type="password" id="OldPassword" runat="server" class="form-control" placeholder="E-Mail" style="height:30px; width:400px; float:left;">
     
+
+    <div id="btnLogin" class="btn btn-lg btn-success btn-block" style="width:120px;">Gönderr</div>
+    
+    </div>
 </asp:Content>
 
 <asp:Content ID="fc" ContentPlaceHolderID="footerContent" runat="server">

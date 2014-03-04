@@ -10,7 +10,7 @@
 namespace increment_the_app {
     
     
-    public partial class ResetPassword {
+    public partial class WebForm3 {
         
         /// <summary>
         /// OldPassword control.
@@ -20,5 +20,23 @@ namespace increment_the_app {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword OldPassword;
+        
+        /// <summary>
+        /// NewPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword NewPassword;
+        
+        /// <summary>
+        /// NewPasswordAgain control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword NewPasswordAgain;
     }
 }

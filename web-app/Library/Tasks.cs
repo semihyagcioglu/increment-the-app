@@ -19,14 +19,14 @@ namespace increment_the_app.Library
                                   ,[Money] AS [İşin Ücreti]
                                   ,[TaskStatus] AS [İşin Durum]
                               FROM [Tasks]
-                                   WHERE [TaskStatus] = '1' ORDER BY DESC";
+                                   WHERE [TaskStatus] = '1' ORDEjR BY DESC";
 
             DataTable dtTasks = Library.DataBase.GetDataTable(sql);
 
             return dtTasks;            
         }
 
-        public static List<DataRow> SearchTask(string searchTask)
+        public static string SearchTask(string searchTask)
         {
             string searchQuery = @"SELECT [ID]
                                           ,[UserID]
@@ -38,10 +38,13 @@ namespace increment_the_app.Library
                                           ,[TaskStatus]
                                       FROM [Tasks] WHERE [TaskTitle] like '%" + searchTask + "%'";
 
-            List<DataRow> dtSearch = Library.DataBase.GetList(searchQuery);
+            DataTable dtSearch = Library.DataBase.GetDataTable(searchQuery);
+            string jsonData = Library.Data.DataTableToJSON(dtSearch);
 
-            return dtSearch;
+            return jsonData;
 
         }
+
+
     }
 }

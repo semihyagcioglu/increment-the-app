@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ChangePassword.aspx" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\datepicker.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -65,6 +66,7 @@
     <Content Include="img\location.png" />
     <Content Include="img\money.png" />
     <Content Include="img\ornekprofile.png" />
+    <Content Include="img\poster.png" />
     <Content Include="img\search.png" />
     <Content Include="img\slider-img-2.jpg" />
     <Content Include="img\TaskDetailsicon.jpg" />
@@ -109,6 +111,14 @@
     <Content Include="WsUsers.asmx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Library\Data.cs" />
     <Compile Include="Library\Tasks.cs" />
     <Compile Include="Library\UI.cs" />
     <Compile Include="LogOut.aspx.cs">

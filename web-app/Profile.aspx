@@ -29,11 +29,27 @@
                     
                     <form class="navbar-form navbar-left" role="search">
                 <div class="form-group">
-                    <input type="text" id="InputName" class="form-control" placeholder="Ad" size="30"><br />
-                    <input type="text" id="InputSurname" class="form-control" placeholder="Soyad"><br />
-                    <input type="text" id="InputMail" class="form-control" placeholder="Mail Adresi"><br />
-                    <input type="text" id="InputPhone" class="form-control" placeholder="Telefon"><br />
-                    <input type="text" id="InputAdress" class="form-control" placeholder="Adres"><br />
+                    <input type="text" id="InputName" runat="server" class="form-control" placeholder="Ad" style="height:30px;"><br />
+                    <input type="text" id="InputSurname" runat="server" class="form-control" placeholder="Soyad" style="height:30px;"><br />
+                    <input type="text" id="InputEmail" runat="server" class="form-control" placeholder="Email" style="height:30px;"><br />
+                    <input type="text" id="InputPhone" runat="server" class="form-control" placeholder="Telefon" style="height:30px;"><br />
+                    <input type="text" id="InputAdress" runat="server" class="form-control" placeholder="Adres" style="height:30px;"><br />
+                    <input type="text" id="InputBirtDay" runat="server" class="form-control" placeholder="Doğum Tarihi" style="height:30px;"><br />
+                    
+                    <div class="input-group" style="width:300px;">
+                        <span>Cinsiyet : </span>
+      <span class="input-group-addon">
+        <input type="radio">
+          <span>Erkek</span>
+      </span>
+                        
+  <span class="input-group-addon" style="margin-left:5px;"> 
+      <input type="radio">
+          <span>Kadın</span>
+      </span>
+     
+    </div><!-- /input-group --><br />
+
                     <textarea id="InputAbout" class="form-control" style=" height:100px;" placeholder="Hakkımda"></textarea><br />
                     </div>
                 <button type="submit" id="btnUpdateProfile" class="btn btn-default">Değişiklikleri Kaydet</button><br /><br />

@@ -128,29 +128,33 @@ namespace increment_the_app.Library
             //use facebook for connect
             return " ";
         }
-        public static string UpdateUser(string userId, string name, string surname, string email, string gsm, string gender,string birthdate)
+        public static string UpdateUser(string userId, string name, string surname, string email, string address, string phone, string gender, string birthdate, string about)
         {
             //update user info
-           SqlParameter[] parameters = new SqlParameter[7];
+            SqlParameter[] parameters = new SqlParameter[9];
 
-           parameters[0] = DataBase.SetParameter("@Name", SqlDbType.NVarChar, 80, "Input", name);
-           parameters[1] = DataBase.SetParameter("@Surname", SqlDbType.NVarChar, 80, "Input", surname);
-           parameters[2] = DataBase.SetParameter("@Email", SqlDbType.NVarChar, 80, "Input", email);
-           parameters[3] = DataBase.SetParameter("@Gsm", SqlDbType.NVarChar, 100, "Input", gsm);
-           parameters[4] = DataBase.SetParameter("@Gender", SqlDbType.Int,32, "Input", gender);           
-           parameters[5] = DataBase.SetParameter("@BirthDate", SqlDbType.DateTime,0,"Input", birthdate);
-           parameters[6] = DataBase.SetParameter("@UserId", SqlDbType.Int,32, "Input", userId);
+            parameters[0] = DataBase.SetParameter("@Name", SqlDbType.NVarChar, 80, "Input", name);
+            parameters[1] = DataBase.SetParameter("@Surname", SqlDbType.NVarChar, 80, "Input", surname);
+            parameters[2] = DataBase.SetParameter("@Email", SqlDbType.NVarChar, 80, "Input", email);
+            parameters[3] = DataBase.SetParameter("@Address", SqlDbType.NVarChar, 250, "Input", address);
+            parameters[4] = DataBase.SetParameter("@Phone", SqlDbType.NVarChar, 100, "Input", phone);
+            parameters[5] = DataBase.SetParameter("@Gender", SqlDbType.Int, 32, "Input", gender);
+            parameters[6] = DataBase.SetParameter("@BirthDate", SqlDbType.NVarChar, 15, "Input", birthdate);
+            parameters[7] = DataBase.SetParameter("@About", SqlDbType.NVarChar, 350, "Input", about);
+            parameters[8] = DataBase.SetParameter("@UserId", SqlDbType.Int, 32, "Input", userId);
 
-           string sqlUpdateUser = @"UPDATE [dbo].[Users]
+            string sqlUpdateUser = @"UPDATE [Users]
                                    SET [Name] = @Name
                                       ,[Surname] = @Surname                                     
                                       ,[Email] = @Email
+                                      ,[Location] = @Address  
                                       ,[Gender] = @Gender
                                       ,[BirthDate] = @BirthDate                                  
-                                      ,[GSM] = @Gsm                                     
+                                      ,[Phone] = @Phone  
+                                      ,[About] = @About                                   
                                  WHERE UserId= @UserId";
 
-           DataBase.ExecuteSqlWithParameters(sqlUpdateUser, parameters);
+            DataBase.ExecuteSqlWithParameters(sqlUpdateUser, parameters);
 
             return "update sucsessfull";
         }
@@ -426,5 +430,22 @@ namespace increment_the_app.Library
 
             return "Yeni işiniz başarıyla eklendi";
         }
+        public static int ChangePassword(string password,string userId)
+        {   
+            string  sqlChangePassword = @" UPDATE [Users]
+                                        SET [Password] = "+password+@"
+                                        WHERE [UserId] = " + userId +"";
+
+            DataBase.ExecuteNonQuery(sqlChangePassword);
+
+            return 1;
+
+        }
+            
+
+        
+
+       
+
     }
 }
