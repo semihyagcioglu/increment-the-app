@@ -13,7 +13,7 @@
     &nbsp;<input type="password" id="OldPassword" runat="server" class="form-control" placeholder="E-Mail" style="height:30px; width:400px; float:left;">
     
 
-    <div id="btnLogin" class="btn btn-lg btn-success btn-block" style="width:120px;">Gönder</div>
+    <div id="btnLogin" class="btn btn-lg btn-success btn-block" style="width:120px;">Gönderr</div>
     
     </div>
 </asp:Content>
