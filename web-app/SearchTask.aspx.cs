@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.Services;
 using System.Web.UI.WebControls;
 
 namespace increment_the_app
@@ -15,12 +16,12 @@ namespace increment_the_app
 
         }
 
+        [WebMethod]
         private void SearchTask2Json(string task)
         {
            DataTable dtSearchTask = Library.Data.JSONToDataTable(task);
            int searchTotal = dtSearchTask.Rows.Count;
-           
-           
+                      
             for (int i = 0; i < searchTotal; i++)
            {
                ImageButton imgBtn = new ImageButton();

@@ -5,14 +5,14 @@
 
     if (IsNullOrEmpty(task) == true && validated == true) {
 
-        $('#InputSearchTask').closest('.form-group').addClass("has-error");
-        $('#InputSearchTask').focus();
+        $('#bodyContent_InputSearchTask').closest('.form-group').addClass("has-error");
+        $('#bodyContent_InputSearchTask').focus();
 
         warningText = "Lütfen aranacak anahtar kelimeyi girin..";
         validated = false;
     }
     else {
-        alert(task);
+        //alert(task);
 
         $.ajax({
             type: "POST",
@@ -22,7 +22,12 @@
             dataType: "json",
             success: function (msg) {
                 
-                    window.location.href = 'Home.aspx';
+                PageMethods.set_path("SearchTask.aspx");
+                PageMethods.SearchTask2Json = function (msg) {
+                    PageMethods._staticInstance.SearchTask2Json(msg.d);
+                }
+
+                    //window.location.href = 'Home.aspx';
                 
             },
             error: function () {
@@ -36,7 +41,7 @@
 
 $(document).ready(function () {
 
-    $('#InputSearchTask').focus();
+    $('#bodyContent_InputSearchTask').focus();
 
     //enter key event
     $("body").keypress(function (e) {
@@ -47,7 +52,7 @@ $(document).ready(function () {
 
     $("#btnSearchTask").click(function () {
 
-        var task = $("#InputSearchTask").val();       
+        var task = $("#bodyContent_InputSearchTask").val();
 
         SearchTask(task);
     });
