@@ -10,10 +10,10 @@
     <br />
     <div style="width:700px; height:150px; overflow:hidden;">
    
-    &nbsp;<input type="password" id="OldPassword" runat="server" class="form-control" placeholder="E-Mail" style="height:30px; width:400px; float:left;">
+    &nbsp;<input type="password" id="ResetPasswordMail" runat="server" class="form-control" placeholder="E-Mail" style="height:30px; width:400px; float:left;">
     
 
-    <div id="btnLogin" class="btn btn-lg btn-success btn-block" style="width:120px;">Gönderr</div>
+    <div id="btnResetPassword" class="btn btn-lg btn-success btn-block" style="width:120px;">Gönderr</div>
     
     </div>
 </asp:Content>
