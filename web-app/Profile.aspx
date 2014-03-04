@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="Profile.aspx.cs" Inherits="increment_the_app.Profile" %>
 
 <asp:Content ID="hc" ContentPlaceHolderID="headContent" runat="server">
-
+    <script src="js/updateProfile.js"></script>
 
 </asp:Content>
 
@@ -39,12 +39,12 @@
                     <div class="input-group" style="width:300px;">
                         <span>Cinsiyet : </span>
       <span class="input-group-addon">
-        <input type="radio">
+        <input type="radio" id="InputMale">
           <span>Erkek</span>
       </span>
                         
   <span class="input-group-addon" style="margin-left:5px;"> 
-      <input type="radio">
+      <input type="radio" id="InputFemale">
           <span>Kadın</span>
       </span>
      
@@ -52,7 +52,7 @@
 
                     <textarea id="InputAbout" class="form-control" style=" height:100px;" placeholder="Hakkımda"></textarea><br />
                     </div>
-                <button type="submit" id="btnUpdateProfile" class="btn btn-default">Değişiklikleri Kaydet</button><br /><br />
+                <button type="button" id="btnUpdateProfile" class="btn btn-default">Değişiklikleri Kaydet</button><br /><br />
                 </form>         
 
             </div>
