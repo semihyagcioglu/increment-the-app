@@ -444,11 +444,25 @@ namespace increment_the_app.Library
 
         }
 
-        ////public static int InsertTrafficSource(string via, string source)
-        ////{
-            
+        public static int InsertTrafficSource(string via, string source)
+        {
+            SqlParameter[] parameters = new SqlParameter[2];
+            parameters[0] = DataBase.SetParameter("@via", SqlDbType.NVarChar, 150, "Input", via);
+            parameters[1] = DataBase.SetParameter("@source", SqlDbType.NVarChar, 150, "Input", source);
+            string trafficQuery = @"INSERT INTO [TrafficSource]
+                                       ([Via]
+                                       ,[Source]
+                                       )
+                                 VALUES
+                                       (@via
+                                       ,@source)";
+            int result = DataBase.ExecuteNonQueryWithParameters(trafficQuery, parameters);
 
-        ////}
+            return result;
+                                      
+
+
+        }
             
 
         
