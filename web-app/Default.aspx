@@ -21,9 +21,8 @@
       </div>
         
       <div class="row marketing">
-          <!-- Windows azure deployment test-->
+          <!-- Windows azure deployment test for build-->
       </div>
-
 </asp:Content>
 <asp:Content ID="fc" ContentPlaceHolderID="footerContent" runat="server">
 </asp:Content>
