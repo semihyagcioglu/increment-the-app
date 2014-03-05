@@ -39,11 +39,11 @@ namespace increment_the_app
             string gender = userProfile.Rows[0]["Gender"].ToString();
             if (gender=="1")
             {
-                InputMale.Checked = true;
+                Male.Checked = true;
             }
             else
             {
-                InputFemale.Checked = true;
+                Female.Checked = true;
             }
 
         }

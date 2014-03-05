@@ -67,22 +67,22 @@ namespace increment_the_app {
         protected global::System.Web.UI.HtmlControls.HtmlInputText InputBirtDay;
         
         /// <summary>
-        /// InputMale control.
+        /// Male control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton InputMale;
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton Male;
         
         /// <summary>
-        /// InputFemale control.
+        /// Female control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton InputFemale;
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton Female;
         
         /// <summary>
         /// InputAbout control.

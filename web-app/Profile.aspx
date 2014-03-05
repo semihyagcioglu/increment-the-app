@@ -1,6 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="Profile.aspx.cs" Inherits="increment_the_app.Profile" %>
 
 <asp:Content ID="hc" ContentPlaceHolderID="headContent" runat="server">
+    
+    <script src="js/jquery-1.10.2.min.js"></script>
     <script src="js/updateProfile.js"></script>
 
 </asp:Content>
@@ -39,12 +41,12 @@
                     <div class="input-group" style="width:300px;">
                         <span>Cinsiyet : </span>
       <span class="input-group-addon">
-        <input type="radio" runat="server" id="InputMale">
+        <input type="radio" runat="server" id="Male">
           <span>Erkek</span>
       </span>
                         
   <span class="input-group-addon" style="margin-left:5px;"> 
-      <input type="radio" runat="server" id="InputFemale">
+      <input type="radio" runat="server" id="Female">
           <span>Kadın</span>
       </span>
      

@@ -84,15 +84,15 @@ $(document).ready(function () {
 
     //var gender = "1";
 
-    $('#InputMale').click(function () {
-        $('#InputFemale').prop('checked', false);
-        //alert('erkek');
+    $('#bodyContent_Male').click(function () {
+        //$('#bodyContent_Female').prop('checked', false);
+        alert('erkek');
     });
 
-    $('#InputFemale').click(function () {
+    $('#bodyContent_Female').click(function () {
 
-        $('#InputMale').prop('checked', false);
-        // alert('kız');
+        //$('#bodyContent_Male').prop('checked', false);
+         alert('kız');
 
     });
 
@@ -104,19 +104,26 @@ $(document).ready(function () {
         var email = $("#bodyContent_InputEmail").val();
         var phone = $("#bodyContent_InputPhone").val();
         var address = $("#bodyContent_InputAdress").val();
-        var about = $("#InputAbout").val();
+        var about = $("#bodyContent_InputAbout").val();
         var birthdate = $("#bodyContent_InputBirtDay").val();
         var gender;
 
-        if ($("#InputMale").val() == 'on') {
-
-            gender = 1;//Erkek            
+        if (document.getElementById('bodyContent_Male').checked) {
+            gender = 1;//Erkek     
+        } else {
+            gender = 2;//Kadın  
         }
 
-        if ($("#InputFeMale").val() == 'on') {
 
-            gender = 2;//Kadın     
-        }
+        //if ($("#bodyContent_Male").val() == 'checked') {
+
+        //    gender = 1;//Erkek            
+        //}
+
+        //if ($("#bodyContent_Female").val() == 'checked') {
+
+        //    gender = 2;//Kadın     
+        //}
 
         UpdateProfile(userId, name, surname, email, phone, address, about, birthdate, gender);
     });
