@@ -250,6 +250,78 @@ namespace increment_the_app.Library
             }
         }
 
+
+        // This function requires SqlParameters and Sql command and returns a datatable.
+        // Usage is :
+        //
+        //    int userId = 21;
+        //    string sql = "SELECT * FROM Users WHERE UserID = @id";
+        //    SqlParameter[] parameters = new SqlParameter[1];
+        //    parameters[0] = DataBase.SetParameter("@id", System.Data.SqlDbType.Int, 4, "Input", userId);
+        //    int result = DataBase.ExecuteSqlWithParameters(sql, parameters);
+        //
+        /// <summary>
+        /// This method execute query string with parameters
+        /// </summary>
+        /// <param name="sql">Your query</param>
+        /// <param name="sqlParameters">parameters of query</param>
+        /// <returns></returns>
+        public static int ExecuteNonQueryWithParameters(string sql, SqlParameter[] sqlParameters)
+        {
+            int result = 0 ;
+            using (SqlConnection connection = new SqlConnection(GetConnectionString()))
+            {
+                //SqlTransaction transaction = connection.BeginTransaction();
+                //SqlCommand cmd = new SqlCommand(sql, connection, transaction);
+                SqlCommand cmd = new SqlCommand(sql, connection);
+                try
+                {
+                    if (sqlParameters != null)
+                    {
+                        foreach (var parameter in sqlParameters)
+                        {
+                            cmd.Parameters.Add(parameter);
+                        }
+                    }
+                   
+
+                    if (connection.State == ConnectionState.Closed)
+                    {
+                        connection.Open();
+                    }
+                 
+                 cmd.CommandTimeout = 300;
+
+                
+                     result = cmd.ExecuteNonQuery();
+                    
+
+                    if (connection.State == ConnectionState.Open)
+                    {
+                        connection.Close();
+                        connection.Dispose();
+                    }
+
+                    return result;
+                }
+                catch (SqlException ex)
+                {
+                    try
+                    {
+                        //cmd.Transaction.Rollback();
+                    }
+                    catch (SqlException eXR)
+                    {
+                        throw eXR;
+                    }
+                    throw ex;
+                }
+            }
+        }
+
+
+
+
         /// <summary>
         /// This method executes only stored procedure with parameters of sp
         /// </summary>

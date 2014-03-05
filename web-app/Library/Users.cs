@@ -392,8 +392,9 @@ namespace increment_the_app.Library
             return retVal;
         }
 
-        public static string PostTask(string userId, string taskTitle, string taskDetail, string privateNotes, string date, string hour, string location, string money)
+        public static int PostTask(string userId, string taskTitle, string taskDetail, string privateNotes, string date, string hour, string location, string money)
         {
+            
             SqlParameter[] parameters = new SqlParameter[9];
             parameters[0] = DataBase.SetParameter("@userId", SqlDbType.Int, 32, "Input", userId);
             parameters[1] = DataBase.SetParameter("@taskTitle", SqlDbType.NVarChar, 50, "Input", taskTitle);
@@ -426,10 +427,11 @@ namespace increment_the_app.Library
                                        ,@money
                                        ,@taskStatus)";
 
-            DataBase.ExecuteSqlWithParameters(taskQuery, parameters);
+            int result= DataBase.ExecuteNonQueryWithParameters(taskQuery, parameters);
 
-            return "Yeni işiniz başarıyla eklendi";
+            return result;
         }
+
         public static int ChangePassword(string password,string userId)
         {   
             string  sqlChangePassword = @" UPDATE [Users]
@@ -441,6 +443,12 @@ namespace increment_the_app.Library
             return 1;
 
         }
+
+        ////public static int InsertTrafficSource(string via, string source)
+        ////{
+            
+
+        ////}
             
 
         
