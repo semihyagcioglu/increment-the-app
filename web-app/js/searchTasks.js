@@ -20,24 +20,108 @@
             data: "{" + "'searchTask':'" + task + "'}",
             contentType: "application/json; charset=utf-8",
             dataType: "json",
-            success: function (msg) {
-                
-                PageMethods.set_path("SearchTask.aspx");
-                PageMethods.SearchTask2Json = function (msg) {
-                    PageMethods._staticInstance.SearchTask2Json(msg.d);
-                }
+            success: function (data) {
 
-                    //window.location.href = 'Home.aspx';
-                
+                //alert(data.d);
+                //Write functionality to display data
+                $("#searchResult").append(CreateTableView(data.d, 'CssClassName', true));
             },
-            error: function () {
-                //some error occured
-                $("#warningMessage").text('Kayıt sırasında beklenmeyen bir hata oluştu.');
-                $("#warningMessage").show();
+            error: function (result) {
+                alert("Error: " + result);
             }
         });
     }
+
+    // This function creates a standard table with column/rows
+    // Parameter Information
+    // objArray = Anytype of object array, like JSON results
+    // theme (optional) = A css class to add to the table (e.g. <table class="<theme>">
+    // enableHeader (optional) = Controls if you want to hide/show, default is show
+    function CreateTableView(objArray, theme, enableHeader) {
+
+        // set optional theme parameter
+        if (theme === undefined) {
+            theme = ''; //default theme
+        }
+
+        if (enableHeader === undefined) {
+            enableHeader = true; //default enable headers
+        }
+
+        // If the returned data is an object do nothing, else try to parse
+        var array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
+
+        var str = '<div class="' + theme + '">';
+
+        // table head
+        //if (enableHeader) {
+        //    str += '<thead><table><tbody><tr>';
+        //    for (var index in array[0]) {
+        //        str += '<th scope="col">' + index + '</th>';
+        //        break;
+        //    }
+        //    str += '</tr></tbody></table></thead>';
+        //}
+
+
+    //    <div class="result">
+
+    //  <div class="result-avatar">
+    //    <img alt="Ydnr5yfbjch" src="https://d3bzqalhiutipz.cloudfront.net/avatars/396910/tiny/yDnr5YfbJCH.png">
+    //  </div>
+
+    //  <div class="title">
+    //    <a href="/tasks/pickup-and-deliver-soup-care-pkg-to-sick-friend">Pickup and deliver soup &amp; care pkg to sick friend</a>
+    //  </div>
+
+    //  <div class="result-content">
+    //    I'm in California and my BFF is sick. I'd love to send a task rabbit to bring a care package :)...
+    //  </div>
+
+    //</div>
+
+        // table body
+        str += '';
+        for (var i = 0; i < array.length; i++) {
+            str += (i % 2 == 0) ? '<div class="result">' : '<div class="result">';
+
+            for (var index in array[i]) {
+
+               
+                if (array[i][index] == null) {
+                    str += '<div> </div>';
+                }
+                else {
+                    if (index === 'TaskTitle') {
+
+                        str +='<div class="result-avatar"><img src="http://localhost:22073/img/poster.png" style="width:50px; height:50px;"> </div>'; 
+                    }
+
+                    
+
+                    if (index === 'TaskTitle')
+                    {
+
+                        str += '<div class="title"><a href="/tasks.aspx?id=' + array[i]['ID'] + '">' + array[i][index] + '</a></div>';  
+                       
+                    }
+
+                    if (index === 'TaskDetail') {
+
+                        str += '<div class="detail"> ' + array[i][index] + ' </div><hr>';
+
+                    }
+                
+                }
+            }
+            str += '</div>';
+        }
+        str += '</div>';
+        return str;
+    }
 }
+
+
 
 $(document).ready(function () {
 

@@ -14,8 +14,8 @@
       <button type="button" style="width:100px;" id="btnSearchTask" class="btn btn-success">Ara</button>
   </div>  
 </form>
-
 </div>
+    <table id="searchResult"></table>
     <asp:Panel ID="pnlSearchTask" runat="server"></asp:Panel>
 </asp:Content>
 <asp:Content ID="fc" ContentPlaceHolderID="footerContent" runat="server">

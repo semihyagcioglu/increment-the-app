@@ -67,7 +67,8 @@
     <input type="hidden" runat="server" id="hdnUsername" />
     <form accept-charset="UTF-8" role="form" id="form1" runat="server">
         
-            <div class="container">
+        
+            <div class="container">                
                 <div class="header">
                     <div id="btnMain"  runat="server" class="btn">Anasayfa</div>
                     <div id="btnLogIn" runat="server" class="btn">Giriş Yap</div>
@@ -90,6 +91,7 @@
   </ul>
 </div>
                 </div>
+                 
                 <div class="bodyContent"><asp:ContentPlaceHolder ID="bodyContent" runat="server">
                 </asp:ContentPlaceHolder></div>
                 

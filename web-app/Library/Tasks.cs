@@ -28,14 +28,9 @@ namespace increment_the_app.Library
 
         public static string SearchTask(string searchTask)
         {
-            string searchQuery = @"SELECT [ID]
-                                          ,[UserID]
+            string searchQuery = @"SELECT [ID]                                         
                                           ,[TaskTitle]
-                                          ,[TaskDetail]
-                                          ,[Date]
-                                          ,[Money]
-                                          ,[Location]
-                                          ,[TaskStatus]
+                                          ,[TaskDetail]                                         
                                       FROM [Tasks] WHERE [TaskTitle] like '%" + searchTask + "%'";
 
             DataTable dtSearch = Library.DataBase.GetDataTable(searchQuery);
@@ -44,7 +39,5 @@ namespace increment_the_app.Library
             return jsonData;
 
         }
-
-
     }
 }
