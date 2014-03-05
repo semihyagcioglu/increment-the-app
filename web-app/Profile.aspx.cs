@@ -14,14 +14,14 @@ namespace increment_the_app
         {
             if (Session["userId"] != null)
             {
-                ProfileDetails();
+                ProfileDetails(int.Parse(Session["UserId"].ToString()));
             }
             
         }
 
-        private void ProfileDetails()
+        private void ProfileDetails(int userID)
         {
-            int userID = int.Parse(Session["UserId"].ToString());
+           
             string selectUser = @"Select [Name],[Surname],[Email],[Phone],[Location],[BirthDate],[About],[Gender]                                      
                                      From [Users]                                 
                                      WHERE UserId= '" + userID + "'";
