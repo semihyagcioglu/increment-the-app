@@ -54,7 +54,7 @@
 
                     <textarea id="InputAbout" runat="server" class="form-control" style=" height:100px;" placeholder="Hakkımda"></textarea><br />
                     </div>
-                <button type="button" id="btnUpdateProfile" class="btn btn-default">Değişiklikleri Kaydet</button><br /><br />
+                <button type="button" id="btnUpdateProfile" >Değişiklikleri Kaydet</button><br /><br />
                 </form>         
 
             </div>
