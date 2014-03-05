@@ -8,14 +8,16 @@
 
 <asp:Content ID="bc" ContentPlaceHolderID="bodyContent" runat="server">
     <br />
-    <div style="width:700px; height:150px; overflow:hidden;">
-   
-    &nbsp;<input type="text" id="Email" runat="server" class="form-control" placeholder="E-Mail" style="height:30px; width:400px; float:left;">
-    
 
-    <div id="btnResetPassword" class="btn btn-lg btn-success btn-block" style="width:120px;">Gönderr</div>
-    
+     <div class="form-group">
+        <div id="warningMessage" class="alert alert-danger" style="display: none;"></div>
     </div>
+
+    <form class="navbar-form navbar-left">
+  <div class="form-group">
+    <input type="text" class="form-control" runat="server" id="Email" style="width:500px; margin-right:10px; float:left;" placeholder="Lütfen şifre sıfırlama için email adresinizi giriniz">
+      <button type="button" style="width:100px;" id="btnResetPassword" class="btn btn-success">Gönder</button>
+  </div>
 </asp:Content>
 
 <asp:Content ID="fc" ContentPlaceHolderID="footerContent" runat="server">

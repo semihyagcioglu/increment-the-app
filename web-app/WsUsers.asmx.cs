@@ -31,6 +31,12 @@ namespace increment_the_app
         }
 
         [WebMethod]
+        public static int RestPassword(string email)
+        {
+            return Users.ResetPassword(email);
+        }
+
+        [WebMethod]
         public static string LogOut(string userId)
         {
             return Users.LogOut(userId);

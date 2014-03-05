@@ -10,6 +10,46 @@ namespace increment_the_app.Library
 {
     public class Users
     {
+        public static int ResetPassword(string email)
+        {
+            int returnedResult = 0;
+
+            string mail = string.Empty;
+            string quary = @"SELECT [Email]
+                                  FROM [Users]
+                                  WHERE Email ='" + email + "'";
+
+            DataTable dt = Library.DataBase.GetDataTable(quary);
+            mail = dt.Rows.Count.ToString();
+
+            if (email.Length > 0)
+            {
+                Random rand = new Random();
+                int password = rand.Next(1000, 1002);
+
+                string sqlQuery = @"UPDATE [users]
+   SET [Password] = '" + password + "'WHERE Email='" + email + "'";
+
+                int result = Library.DataBase.ExecuteNonQuery(sqlQuery);
+
+                if (result > 0)
+                {
+                    //mail gönderme bölümü
+
+                   returnedResult = 1;
+                }
+                else
+                {
+                    //hata bölümü
+
+                    returnedResult = -1;
+                }
+
+            }
+
+            return returnedResult;
+        }
+        
         public static int LogIn(string email, string password)
         {
             int result = 0;
