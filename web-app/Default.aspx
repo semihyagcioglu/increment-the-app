@@ -21,8 +21,7 @@
       </div>
         
       <div class="row marketing">
-          
-		
+          <!-- Windows azure deployment test-->
       </div>
 
 </asp:Content>
