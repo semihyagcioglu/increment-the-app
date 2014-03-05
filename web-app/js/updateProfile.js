@@ -85,14 +85,14 @@ $(document).ready(function () {
     //var gender = "1";
 
     $('#bodyContent_Male').click(function () {
-        //$('#bodyContent_Female').prop('checked', false);
-        alert('erkek');
+        $('#bodyContent_Female').prop('checked', false);
+        //alert('erkek');
     });
 
     $('#bodyContent_Female').click(function () {
 
-        //$('#bodyContent_Male').prop('checked', false);
-         alert('kız');
+        $('#bodyContent_Male').prop('checked', false);
+         //alert('kız');
 
     });
 
