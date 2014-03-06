@@ -94,7 +94,7 @@
                 else {
                     if (index === 'TaskTitle') {
 
-                        str += '<hr><div class="result-avatar" style="float:left; margin-right:10px; "><img src="http://localhost:22073/img/poster.png" style="width:50px; height:50px;"> </div>';
+                        str += '<hr><div class="result-avatar" style="float:left; margin-right:10px; "><img src="/img/poster.png" style="width:50px; height:50px;"> </div>';
                     }
 
                     
