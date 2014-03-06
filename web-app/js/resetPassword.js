@@ -5,8 +5,8 @@
 
     if (IsNullOrEmpty(email) == true && validated == true) {
 
-        $('#Email').closest('.form-group').addClass("has-error");
-        $('#Email').focus();
+        $('#bodyContent_Email').closest('.form-group').addClass("has-error");
+        $('#bodyContent_Email').focus();
 
         warningText = "Mail Adresi Bulunamadı";
         validated = false;
@@ -16,7 +16,7 @@
 
         $.ajax({
             type: "POST",
-            url: "WsUsers.asmx/RestPassword",
+            url: "WsUsers.asmx/ResetPassword",
             data: "{" + "'email':'" + email + "'}",
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -38,7 +38,7 @@
 
 $(document).ready(function () {
 
-    $('#Email').focus();
+    $('#bodyContent_Email').focus();
 
     //enter key event
     $("body").keypress(function (e) {
@@ -49,7 +49,7 @@ $(document).ready(function () {
 
     $("#btnResetPassword").click(function () {
 
-        var email = $("#Email").val();
+        var email = $("#bodyContent_Email").val();
 
         ResetPassword(email);
     });

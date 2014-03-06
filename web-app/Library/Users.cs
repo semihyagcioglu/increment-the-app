@@ -20,7 +20,8 @@ namespace increment_the_app.Library
                                   WHERE Email ='" + email + "'";
 
             DataTable dt = Library.DataBase.GetDataTable(quary);
-            mail = dt.Rows.Count.ToString();
+            //mail = dt.Rows.Count.ToString();
+            mail = dt.Rows[0]["Email"].ToString();
 
             if (email.Length > 0)
             {
