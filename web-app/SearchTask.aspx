@@ -2,11 +2,15 @@
 <asp:Content ID="hc" ContentPlaceHolderID="headContent" runat="server">
     <style type="text/css">
         #result-avatar {
-        display:inline-block;
+        float:left;
         }
           #title {
-        display:inline-block;
+        float:left;
         }
+        .temizle {
+        clear:both;
+        }
+
     </style>
     <script src="js/searchTasks.js"></script>
 </asp:Content>
@@ -26,6 +30,7 @@
     <table id="searchResult">
 
     </table>
+    <div class="temizle"></div>
     <asp:Panel ID="pnlSearchTask" runat="server"></asp:Panel>
 </asp:Content>
 <asp:Content ID="fc" ContentPlaceHolderID="footerContent" runat="server">
