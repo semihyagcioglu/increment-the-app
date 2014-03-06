@@ -39,5 +39,23 @@ namespace increment_the_app.Library
             return jsonData;
 
         }
+
+        public static string TaksDetails(string TaskId)
+        {
+            string taskDetails = @"SELECT [ID]
+      ,[UserID]
+      ,[TaskTopic]
+      ,[TaskContent]
+      ,[Date]
+      ,[Money]
+      ,[TaskStatus]
+  FROM [Tasks]
+  WHERE [ID] = '"+TaskId+"'";
+
+            DataTable dtSearch = Library.DataBase.GetDataTable(taskDetails);
+            string jsonData = Library.Data.DataTableToJSON(dtSearch);
+            return jsonData;
+
+        }
     }
 }
