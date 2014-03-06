@@ -94,7 +94,7 @@
                 else {
                     if (index === 'TaskTitle') {
 
-                        str +='<div class="result-avatar"><img src="http://localhost:22073/img/poster.png" style="width:50px; height:50px;"> </div>'; 
+                        str +='<div class="result-avatar" style="float:left;"><img src="http://localhost:22073/img/poster.png" style="width:50px; height:50px;"> </div>'; 
                     }
 
                     
@@ -102,7 +102,7 @@
                     if (index === 'TaskTitle')
                     {
 
-                        str += '<div class="title"><a href="/tasks.aspx?id=' + array[i]['ID'] + '">' + array[i][index] + '</a></div>';  
+                        str += '<div class="title" style="float:left;"><a href="/tasks.aspx?id=' + array[i]['ID'] + '">' + array[i][index] + '</a></div>';
                        
                     }
 
