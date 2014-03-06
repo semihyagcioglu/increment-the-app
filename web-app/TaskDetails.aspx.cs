@@ -12,7 +12,7 @@ namespace increment_the_app
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString != null)
+            if (Request.QueryString["id"] != null)
             {
                 string id = Request.QueryString["id"].ToString();
                 TaskDetails(id);
