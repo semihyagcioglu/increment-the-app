@@ -94,7 +94,7 @@
                 else {
                     if (index === 'TaskTitle') {
 
-                        str +='<div class="result-avatar" style="float:left; margin-right:10px; "><img src="http://localhost:22073/img/poster.png" style="width:50px; height:50px;"> </div>'; 
+                        str += '<hr><div class="result-avatar" style="float:left; margin-right:10px; "><img src="http://localhost:22073/img/poster.png" style="width:50px; height:50px;"> </div>';
                     }
 
                     
@@ -102,13 +102,13 @@
                     if (index === 'TaskTitle')
                     {
 
-                        str += '<div class="title" style="float:left; margin-top:3px; "><a href="/TaskDetails.aspx?id=' + array[i]['ID'] + '">' + array[i][index] + '</a></div>';
+                        str += '<div class="title" style="float:left; "><a href="/TaskDetails.aspx?id=' + array[i]['ID'] + '">' + array[i][index] + '</a></div><br>';
                        
                     }
 
                     if (index === 'TaskDetail') {
 
-                        str += '<div class="detail" style="display:block;"> ' + array[i][index] + ' </div><hr>';
+                        str += '<div class="detail" style="display:block;"> ' + array[i][index] + ' </div>';
 
                     }
                 
