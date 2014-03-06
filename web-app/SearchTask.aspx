@@ -1,8 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SearchTask.aspx.cs" Inherits="increment_the_app.WebForm2" %>
 <asp:Content ID="hc" ContentPlaceHolderID="headContent" runat="server">
     <style type="text/css">
-        #searchResult {
-        float:left;
+        #result-avatar {
+        display:inline-block;
+        }
+          #title {
+        display:inline-block;
         }
     </style>
     <script src="js/searchTasks.js"></script>
@@ -20,7 +23,9 @@
   </div>  
 </form>
 </div>
-    <table id="searchResult"></table>
+    <table id="searchResult">
+
+    </table>
     <asp:Panel ID="pnlSearchTask" runat="server"></asp:Panel>
 </asp:Content>
 <asp:Content ID="fc" ContentPlaceHolderID="footerContent" runat="server">
