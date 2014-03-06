@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SearchTask.aspx.cs" Inherits="increment_the_app.WebForm2" %>
 <asp:Content ID="hc" ContentPlaceHolderID="headContent" runat="server">
+    <style type="text/css">
+        #searchResult {
+        float:left;
+        }
+    </style>
     <script src="js/searchTasks.js"></script>
 </asp:Content>
 <asp:Content ID="bc" ContentPlaceHolderID="bodyContent" runat="server">
