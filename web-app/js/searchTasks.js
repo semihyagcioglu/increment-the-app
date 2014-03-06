@@ -102,7 +102,7 @@
                     if (index === 'TaskTitle')
                     {
 
-                        str += '<div class="title" style="float:left; margin-top:3px; "><a href="/tasks.aspx?id=' + array[i]['ID'] + '">' + array[i][index] + '</a></div>';
+                        str += '<div class="title" style="float:left; margin-top:3px; "><a href="/TaskDetails.aspx?id=' + array[i]['ID'] + '">' + array[i][index] + '</a></div>';
                        
                     }
 

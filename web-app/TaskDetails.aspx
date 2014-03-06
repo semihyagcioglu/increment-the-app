@@ -10,12 +10,15 @@
                <div style="margin-top:20px; float:left;"> <span class="label label-info" style="margin-left:7px; margin-top:20px;font-size:16px;">20.00 TL</span></div>
 
             </div>
-            <div class="TaskName">İş Tanımı :</div>
+            <div class="TaskName">İş Tanımı :<asp:Label ID="lblTaskTitle" runat="server" Text=" "></asp:Label>
+            </div>
             <div class="Calendar">Tarih:</div>
             <div class="hours">Saat:</div>
             <div class="User"><a href="#">Semih Yağcıoğlu</a> tarafından</div><br /><br />
             &nbsp;<div><p class="navbar-text" style="background-color:#C8C8C8; float:none; width:400px; margin-left:1px;"><span style="color:#fff; font-size:14px; font-weight:bold; margin-left:10px;">İşin Detayı</span></p></div>
-            <div class="post-explanation" style="float:none; margin-bottom:10px; width:560px;">İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek İşin Açıklaması buraya gelecek</div>
+            <div class="post-explanation" style="float:none; margin-bottom:10px; width:560px;">
+                <asp:Label ID="lblTaskDetails" runat="server"></asp:Label>
+            </div>
         </div>
     </div>
 </asp:Content>
