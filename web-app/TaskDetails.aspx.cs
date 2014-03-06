@@ -14,8 +14,8 @@ namespace increment_the_app
         {
             if (Request.QueryString["id"] != null)
             {
-                string id = Request.QueryString["id"].ToString();
-                TaskDetails(id);
+                string TaskId = Request.QueryString["id"].ToString();
+                TaskDetails(TaskId);
             }
 
             else
@@ -28,18 +28,21 @@ namespace increment_the_app
         private void TaskDetails(string TaskId)
         {
             string taskDetails = @"SELECT [ID]
-      ,[UserID]
-      ,[TaskTopic]
-      ,[TaskContent]
+      ,U.[Name]
+      ,T.[UserID]
+      ,[TaskTitle]
+      ,[TaskDetail]
       ,[Date]
       ,[Money]
       ,[TaskStatus]
-  FROM [Tasks]
+  FROM [Tasks] AS T INNER JOIN [Users] AS U ON T.[UserId] = U.[UserId]
   WHERE [ID] = '" + TaskId + "'";
 
             DataTable dtSearch = Library.DataBase.GetDataTable(taskDetails);
-            lblTaskTitle.Text = dtSearch.Rows[0]["TaskTitle"].ToString();
-            lblTaskDetails.Text = dtSearch.Rows[0]["TaskDetails"].ToString();
+            taskTitle.Text = dtSearch.Rows[0]["TaskTitle"].ToString();
+            lblTaskDetails.Text = dtSearch.Rows[0]["TaskDetail"].ToString();
+            lblPrice.Text = dtSearch.Rows[0]["Money"].ToString();
+            lblUser.Text = dtSearch.Rows[0]["Name"].ToString();
 
         }
 
