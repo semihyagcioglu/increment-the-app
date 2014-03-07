@@ -24,14 +24,14 @@
 
                 if (msg.d == -1) {
 
-                    $("#warningMessage").text('Mail adresi bulunamadı..');
+                    $("#warningMessage").text(email + ' adresi bulunamadı..');
                     $("#warningMessage").show();
                     $("#successMessage").hide();
                 }
                 else {
 
 
-                    $("#successMessage").text('Mail adresinize yeni parolanız gönderilmiştir...');
+                    $("#successMessage").text(email + ' adresinize yeni parolanız gönderilmiştir...');
                     $("#successMessage").show();
                     $("#warningMessage").hide();
                 }

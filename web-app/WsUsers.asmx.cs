@@ -31,7 +31,7 @@ namespace increment_the_app
         }
 
         [WebMethod]
-        public static int ResetPassword(string email)
+        public int ResetPassword(string email)
         {
             return Users.ResetPassword(email);
         }
