@@ -9,9 +9,10 @@
     <div class="main">
 
         <div class="solMenu">
-            <button type="button" style="width:100px;" id="btnPostedTask" class="btn btn-success">Gönderilen İşler</button>
-            <button type="button" style="width:100px;" id="btnTaskRabbits" class="btn btn-success">İşlerim</button>
-            <button type="button" style="width:100px;" id="btnTransaction" class="btn btn-success">Hareketlerim</button>
+            <button type="button" style="width:120px; margin-bottom:5px;" id="btnPostedTask"  class="btn btn-success" >Gönderilen İşler</button>
+            <button type="button" style="width:120px; margin-bottom:5px;" id="btnTaskRabbits" class="btn btn-success">İşlerim</button>
+            <button type="button" style="width:120px;margin-bottom:5px;" id="btnTransaction" class="btn btn-success">Hareketlerim</button>
+            <button type="button" style="width:120px;" id="btnGuideline" class="btn btn-success">Kurallarımız</button>
 
             </div>
 
@@ -23,6 +24,7 @@
             
 
         </div>
+
  <div class="dropdown">
                 <div class="baslik"><span class="btn btn-primary"><a href="PostTask.aspx"><span style="color:#fff;" >Yeni İş İlanı Ver</span></a></span></div>
                 <div class="ilanicerik">
