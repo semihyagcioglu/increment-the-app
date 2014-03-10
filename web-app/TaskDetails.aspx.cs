@@ -41,7 +41,7 @@ namespace increment_the_app
             DataTable dtSearch = Library.DataBase.GetDataTable(taskDetails);
             taskTitle.Text = dtSearch.Rows[0]["TaskTitle"].ToString();
             lblTaskDetails.Text = dtSearch.Rows[0]["TaskDetail"].ToString();
-            lblPrice.Text = dtSearch.Rows[0]["Money"].ToString();
+            //lblPrice.Value = dtSearch.Rows[0]["Money"].ToString();
             lblUser.Text = dtSearch.Rows[0]["Name"].ToString();
 
         }
