@@ -31,6 +31,11 @@ body {
   border-top: 1px solid #e5e5e5;
 }
 
+#btnHome {
+float:left;
+height:16px;
+}
+
 /* Customize container */
 @media (min-width: 768px) {
   .container {
