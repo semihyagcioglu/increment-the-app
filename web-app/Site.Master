@@ -81,8 +81,9 @@
   </button>
   <ul class="dropdown-menu" role="menu">
     <li><a href="Profile.aspx">Profilim</a></li>
-      <li><a href="#">Bildirimler</a></li>
-      <li class="divider"></li>
+    <li><a href="Home.aspx">Anasayfa</a></li>
+    <li><a href="#">Bildirimler</a></li>
+    <li class="divider"></li>
     <li><a href="#">İşlerim</a></li>
     <li><a href="SearchTask.aspx">İş Ara</a></li>
     <li><a href="#">Favori İşlerim</a></li>
