@@ -12,8 +12,8 @@
             <div style="height:200px; width:100px; float:right;">
             <div class="photomins"></div>
                <div style="margin-top:20px; float:left; width: 91px;"> 
-                   <%--<asp:Label ID="lblPrice" runat="server"></asp:Label>--%>
-                   <span class="lblPrice" style="margin-left:7px; margin-top:20px;font-size:12px; height:10px;"></span></div>
+                   <asp:Label ID="lblPrice" runat="server"></asp:Label>
+                   <span runat="server"  class="lblPrice" style="margin-left:7px; margin-top:20px;font-size:12px; height:10px;"></span></div>
                    <span class="label label-info" style="margin-left:7px; margin-top:20px;font-size:12px; height:10px;">&nbsp;TL</span></div>
             <br />
             </div>
