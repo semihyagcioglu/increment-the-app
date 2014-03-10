@@ -22,7 +22,7 @@
 
         </div>
  <div class="dropdown">
-                <div class="baslik"><span class="btn btn-primary"><a href="PostTask.aspx"><span style="color:#fff;margin-bottom:150px;" >Yeni İş İlanı Ver</span></a></span></div>
+                <div class="baslik"><span class="btn btn-primary"><a href="PostTask.aspx"><span style="color:#fff;" >Yeni İş İlanı Ver</span></a></span></div>
                 <div class="ilanicerik">
 
     </div>
