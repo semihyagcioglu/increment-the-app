@@ -9,7 +9,7 @@
                     <input type="password" id="OldPassword" runat="server" class="form-control" placeholder="Eski Şifre" style="height:30px; width:400px;"><br />
                     <input type="password" id="NewPassword" runat="server" class="form-control" placeholder="Yeni Şifre" style="height:30px;width:400px;"><br />
                     <input type="password" id="NewPasswordAgain" runat="server" class="form-control" placeholder="Yeni Şifre Tekrar" style="height:30px;width:400px;"><br />
-                     <div id="btnLogin" class="btn btn-lg btn-success btn-block" style="width:420px;">Değiştir</div><br /><br />
+                     <div id="btnChangePassword" class="btn btn-lg btn-success btn-block" style="width:420px;">Değiştir</div><br /><br />
                     <br /></div></form>
 
 </asp:Content>
