@@ -13,8 +13,8 @@
             <div class="photomins"></div>
                <div style="margin-top:20px; float:left; width: 91px;"> 
                    <%--<asp:Label ID="lblPrice" runat="server"></asp:Label>--%>
-                   <span class="lblPrice" style="margin-left:7px; margin-top:20px;font-size:12px; height:10px;"></span></div>
-                   <span class="label label-info" style="margin-left:7px; margin-top:20px;font-size:12px; height:10px;">&nbsp;TL</span></div>
+                   <span class="lblPrice" style="margin-left:7px; margin-top:20px;font-size:12px; height:10px; float:right;"></span></div>
+                   <span class="label label-info" style="margin-left:7px; margin-top:20px;font-size:12px; height:10px; float:right;">&nbsp;TL</span></div>
 
             </div>
             <div class="TaskName"><span class="auto-style1">İş Tanımı :</span><asp:Label ID="lblTaskTitle" runat="server" Text=" "></asp:Label>
