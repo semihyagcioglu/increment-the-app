@@ -71,10 +71,10 @@ function InsertPostTask(userId, title, detail, privateNotes, location, date, hou
                     $("#warningMessage").show();
                 }
                 else {
-                    $("#warningMessagePostedTask").show();
+                    $("#warningMessagePostedTask").fadeIn();
                     setTimeout(function () {
                         window.location.href = 'Home.aspx';
-                    }, 5000);
+                    }, 3000);
 
 
                 }
