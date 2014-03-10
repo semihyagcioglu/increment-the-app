@@ -21,7 +21,7 @@
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function (data) {
-                $("#searchResult").text("");
+                $("#searchResult").html(''); //clear search results
                 //alert(data.d);
                 //Write functionality to display data
                 $("#searchResult").append(CreateTableView(data.d, 'CssClassName', true));
