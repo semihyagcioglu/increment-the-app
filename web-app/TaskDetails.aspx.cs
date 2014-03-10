@@ -35,6 +35,7 @@ namespace increment_the_app
       ,[Date]
       ,[Money]
       ,[TaskStatus]
+,[Hour]
   FROM [Tasks] AS T INNER JOIN [Users] AS U ON T.[UserId] = U.[UserId]
   WHERE [ID] = '" + TaskId + "'";
 
@@ -43,6 +44,8 @@ namespace increment_the_app
             lblTaskDetails.Text = dtSearch.Rows[0]["TaskDetail"].ToString();
             lblPrice.Text = dtSearch.Rows[0]["Money"].ToString();
             lblUser.Text = dtSearch.Rows[0]["Name"].ToString();
+            lblDate.Text = dtSearch.Rows[0]["Date"].ToString();
+            lblHour.Text = dtSearch.Rows[0]["Hour"].ToString();
 
         }
 

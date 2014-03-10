@@ -11,10 +11,10 @@
         <div class="firstbehind">
             <div style="height:200px; width:100px; float:right;">
             <div class="photomins"></div>
-               <div style="margin-top:20px; float:left; width: 91px;"> 
+               <div style="margin-top:20px; float:left; width: 77px;"> 
                    <asp:Label ID="lblPrice" runat="server"></asp:Label>
-                   <span runat="server"  class="lblPrice" style="margin-left:7px; margin-top:20px;font-size:12px; height:10px;"></span></div>
-                   <span class="label label-info" style="margin-left:7px; margin-top:20px;font-size:12px; height:10px;">&nbsp;TL</span></div>
+                   &nbsp;TL</div>
+                   </div>
             <br />
             </div>
             <div class="TaskName"><span class="auto-style1">İş Tanımı :</span><asp:Label ID="lblTaskTitle" runat="server" Text=" "></asp:Label>
@@ -25,8 +25,10 @@
 &nbsp;tarafından</div>
             <br />
             <br />
-            <div class="Calendar">Tarih:</div>
-            <div class="hours">Saat:</div>
+            <div class="Calendar">Tarih:<asp:Label ID="lblDate" runat="server"></asp:Label>
+        </div>
+            <div class="hours">Saat:<asp:Label ID="lblHour" runat="server"></asp:Label>
+        </div>
             <br />
             &nbsp;<div><span class="auto-style1">İşin Detayı :</span></div>
             <div class="post-explanation" style="float:none; margin-bottom:10px; width:560px;">
