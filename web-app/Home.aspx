@@ -9,7 +9,9 @@
     <div class="main">
 
         <div class="solMenu">
-
+            <button type="button" style="width:100px;" id="btnPostedTask" class="btn btn-success">Gönderilen İşler</button>
+            <button type="button" style="width:100px;" id="btnTaskRabbits" class="btn btn-success">İşlerim</button>
+            <button type="button" style="width:100px;" id="btnTransaction" class="btn btn-success">Hareketlerim</button>
 
             </div>
 
