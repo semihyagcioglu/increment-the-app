@@ -13,20 +13,7 @@
 
             <div class="dropdown">
                 <div class="baslik"><span class="btn btn-primary"><a href="PostTask.aspx"><span style="color:#fff;">Yeni İş İlanı Ver</span></a></span></div>
-                <div class="alt-baslik"><span class="label label-success">En Son Eklenenler</span></div>
                 <div class="ilanicerik">
-
-
-                    <ul class="onilan">
-
-                        <li>İlan1</li>
-                        <li>İlan2</li>
-                        <li>İlan3</li>
-                        <li>İlan4</li>
-                        <li>İlan5</li>
-
-
-                    </ul>
 
 
                 </div>
@@ -35,35 +22,6 @@
 
             </div>
 
-        </div>
-
-        <div class="ortamenu">
-
-            <div class="panel panel-default">
-                <div class="panel-heading">Ayın En Başarılı Çalışanı</div>
-                <div class="panel-body">
-                    Ahmet Mehmet
-                    <br />
-                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-                </div>
-            </div>
-
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Ayın En Hızlı Çalışanı</h3>
-                </div>
-                <div class="panel-body">
-                    Ali Veli
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">Aktif Olan İşler</div>
-                <div class="panel-body">
-                    <asp:GridView ID="gvOnlineTask" runat="server" Width="471px"></asp:GridView>
-                </div>
-            </div>
-
-            
         </div>
 
 
