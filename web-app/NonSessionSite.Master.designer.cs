@@ -85,13 +85,13 @@ namespace increment_the_app {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// btnMain control.
+        /// btnHome control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl btnMain;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl btnHome;
         
         /// <summary>
         /// btnLogIn control.
