@@ -33,8 +33,8 @@
                 <asp:Label ID="lblTaskDetails" runat="server"></asp:Label>
             </div>
         </div>
-    </div>
+ 
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="footerContent" runat="server">
+<asp:Content ID="fc" ContentPlaceHolderID="footerContent" runat="server">
 </asp:Content>
     
