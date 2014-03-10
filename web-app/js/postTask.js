@@ -71,8 +71,11 @@ function InsertPostTask(userId, title, detail, privateNotes, location, date, hou
                     $("#warningMessage").show();
                 }
                 else {
-                    //Success
-                    window.location.href = 'Home.aspx';
+                    $("#warningMessagePostedTask").show();
+                    setTimeout(function () {
+                        window.location.href = 'Home.aspx';
+                    }, 5000);
+
 
                 }
 

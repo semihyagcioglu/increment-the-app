@@ -27,7 +27,9 @@
     <h4 class="ch4">Lütfen Gerekli İş Bilgilerini Giriniz...</h4>
   <hr />
     <div class="form-group">
-        <div id="warningMessage" class="alert alert-danger" style="display: none;"></div>
+        <div id="warningMessagePostedTask" class="alert alert-success" style="display: none;">
+            İş başarıyla eklendi :)
+        </div>
     </div>
     <form role="form">
         <div class="form-group">

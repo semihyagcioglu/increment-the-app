@@ -15,9 +15,7 @@
       <button type="button" style="width:100px;" id="btnResetPassword" class="btn btn-success">Gönder</button>
   </div>
 
-        <div class="form-group">
-        <div id="warningMessage" class="alert alert-danger" style="display: none; width:500px; text-align:center;"></div>
-    </div>
+        
 
          <div class="form-group">
         <div id="successMessage" class="alert alert-success" style="display: none; width:500px; text-align:center;"></div>
