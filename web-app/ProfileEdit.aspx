@@ -2,19 +2,31 @@
 
 <asp:Content ID="hc" ContentPlaceHolderID="headContent" runat="server">
 
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#EditProfile").click(function (e) {
+                window.location.href = "ProfileDetails.aspx";
+            });
+        });
+
+    </script>
+
 </asp:Content>
 
 <asp:Content ID="bc" ContentPlaceHolderID="bodyContent" runat="server">
-    <div class=" form-group" style="align-content:center;">
 
-  <div class="mt-profile-name">
+    <hr class="mt-profile-separator">
+
+    <div style="width:700px; " >
+
+  <div class="mt-profile-name" style="width:300px; margin:0 auto;">
 
     <div class="mt-profile-title">
 
-      <hr class="mt-profile-separator">
-      <h1 class="title" >ALi ÖZTÜRK</h1>
-
-        <a href="/account" class="mt-profile-title-action">Edit Account Details</a>
+      
+      <h1 class="title" style="background-position:center; text-align:center; font-size:24px;" >ALi ÖZTÜRK</h1>
 
     </div>
 
@@ -24,7 +36,7 @@
 
   </div>
 
-  <div class="mt-profile-hero-avatar">
+  <div class="mt-profile-hero-avatar" style="margin:0 auto; width:200px;">
   <img alt="ali ö." class="mt-profile-hero-avatar" src="https://d27r861tkvec9a.cloudfront.net/core/assets/default_avatars/poster_small.png">
 </div>
 
@@ -38,8 +50,8 @@
     <p>
     </p>
   </div>
-  <div class="mt-profile-section mt-profile-actions">
-    <a href="/profile/edit" class="button large">Edit your profile</a>
+  <div class="mt-profile-section mt-profile-actions" style="width:120px; margin:0 auto;">
+   <button type="button" class="btn btn-warning"  id="EditProfile" >Profil Düzenle</button><br /><br />
 </div>
 </div>
 </asp:Content>
