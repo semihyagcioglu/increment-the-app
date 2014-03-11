@@ -21,7 +21,7 @@ namespace increment_the_app
 
         private void ProfileDetails(int userID)
         {
-           
+
             string selectUser = @"Select [Name],[Surname],[Email],[Phone],[Location],[BirthDate],[About],[Gender]                                      
                                      From [Users]                                 
                                      WHERE UserId= '" + userID + "'";
@@ -37,7 +37,7 @@ namespace increment_the_app
             InputAbout.Value = userProfile.Rows[0]["About"].ToString();
 
             string gender = userProfile.Rows[0]["Gender"].ToString();
-            if (gender=="1")
+            if (gender == "1")
             {
                 Male.Checked = true;
             }

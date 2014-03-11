@@ -67,6 +67,7 @@
     <Content Include="img\money.png" />
     <Content Include="img\ornekprofile.png" />
     <Content Include="img\poster.png" />
+    <Content Include="img\poster_small.png" />
     <Content Include="img\search.png" />
     <Content Include="img\slider-img-2.jpg" />
     <Content Include="img\TaskDetailsicon.jpg" />

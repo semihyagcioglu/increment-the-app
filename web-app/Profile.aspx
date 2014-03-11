@@ -10,8 +10,26 @@
                 window.location.href = "ProfileEdit.aspx";
             });
         });
+        
+        </script>
 
-    </script>
+    <style type="text/css">
+
+        .mt-profile-hero-avatar img {
+            width: 200px;
+            height: 200px;
+            border-radius: 115px;
+            border: 5px solid whitesmoke;
+            box-shadow: 0px 2px 2px rgba(155,155,155,0.5);
+        }
+        uf492bf52media="screen" .mt-profile-hero-avatar {
+            position: relative;
+            width: 200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    </style>
 
 </asp:Content>
 
@@ -37,7 +55,7 @@
   </div>
 
   <div class="mt-profile-hero-avatar" style="margin:0 auto; width:200px;">
-  <img alt="ali ö." class="mt-profile-hero-avatar" src="https://d27r861tkvec9a.cloudfront.net/core/assets/default_avatars/poster_small.png">
+  <img alt="ali ö." class="mt-profile-hero-avatar" src="/img/poster_small.png">
 </div>
 
   <div class="mt-profile-section mt-profile-lists row">
@@ -48,21 +66,30 @@
       </div>
     <p>
         <br />
+       
          <div class="form-group">
         <label class="text-primary" style="color:black;">Ad Soyad:</label>
-             <label class="text-primary" id="lblName" runat="server" ></label>
+             <label class="text-primary" id="lblName" runat="server" > </label>
              </div>
         <div class="form-group">
         <label class="text-primary" style="color:black;">Email:</label>
-            <label class="text-primary" id="lblEmail" runat="server" ></label>
+            <label class="text-primary" id="lblEmail" runat="server" > </label>
             </div>
+          <div class="form-group">
+        <label class="text-primary" style="color:black;">Doğum Tarihi:</label>
+                    <label class="text-primary" id="lblBirthDate" runat="server" > </label>
+                    </div>
             <div class="form-group">
         <label class="text-primary" style="color:black;">Adres:</label>
-                <label class="text-primary" id="lblAddress" runat="server" ></label>
+                <label class="text-primary" id="lblAddress" runat="server" > </label>
                 </div>
                 <div class="form-group">
         <label class="text-primary" style="color:black;">Telefon:</label>
-                    <label class="text-primary" id="lblPhone" runat="server" ></label>
+                    <label class="text-primary" id="lblPhone" runat="server" > </label>
+                    </div>
+          <div class="form-group">
+        <label class="text-primary" style="color:black;">Hakkımda:</label>
+                    <label class="text-primary" id="lblAbout" runat="server" > </label>
                     </div>
                     
 

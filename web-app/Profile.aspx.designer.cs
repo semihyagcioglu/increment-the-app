@@ -31,6 +31,15 @@ namespace increment_the_app {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblEmail;
         
         /// <summary>
+        /// lblBirthDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblBirthDate;
+        
+        /// <summary>
         /// lblAddress control.
         /// </summary>
         /// <remarks>
@@ -47,5 +56,14 @@ namespace increment_the_app {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblPhone;
+        
+        /// <summary>
+        /// lblAbout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblAbout;
     }
 }
