@@ -10,87 +10,42 @@
 namespace increment_the_app {
     
     
-    public partial class Profile {
+    public partial class ProfileEdit {
         
         /// <summary>
-        /// InputName control.
+        /// lblName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText InputName;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblName;
         
         /// <summary>
-        /// InputSurname control.
+        /// lblEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText InputSurname;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblEmail;
         
         /// <summary>
-        /// InputEmail control.
+        /// lblAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText InputEmail;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblAddress;
         
         /// <summary>
-        /// InputPhone control.
+        /// lblPhone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText InputPhone;
-        
-        /// <summary>
-        /// InputAdress control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText InputAdress;
-        
-        /// <summary>
-        /// InputBirtDay control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText InputBirtDay;
-        
-        /// <summary>
-        /// Male control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton Male;
-        
-        /// <summary>
-        /// Female control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton Female;
-        
-        /// <summary>
-        /// InputAbout control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea InputAbout;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblPhone;
     }
 }

@@ -85,8 +85,8 @@
     <Content Include="js\updateProfile.js" />
     <Content Include="LogOut.aspx" />
     <Content Include="PostTask.aspx" />
-    <Content Include="Profile.aspx" />
     <Content Include="ProfileEdit.aspx" />
+    <Content Include="Profile.aspx" />
     <Content Include="ResetPassword.aspx" />
     <Content Include="Support.aspx" />
     <Content Include="TaskDetails.aspx" />
@@ -146,19 +146,19 @@
     <Compile Include="PostTask.aspx.designer.cs">
       <DependentUpon>PostTask.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Profile.aspx.cs">
-      <DependentUpon>Profile.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Profile.aspx.designer.cs">
-      <DependentUpon>Profile.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ProfileEdit.aspx.cs">
       <DependentUpon>ProfileEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ProfileEdit.aspx.designer.cs">
       <DependentUpon>ProfileEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="ResetPassword.aspx.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>
