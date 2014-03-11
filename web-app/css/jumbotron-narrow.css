@@ -134,7 +134,7 @@ float:right; height:200px; width:200px;
 .resim { float:left;margin-top:5px; background-color:red; width:75px; height:75px; border:1px; border-radius:15px; margin-left:5px; 
 }
 
-.baslik { float:left;  height:50px; margin-top:100px; width:200px; overflow:hidden;
+.baslik { float:left;  height:50px; margin-top:200px; width:200px; overflow:hidden;
 }
     .baslik a:hover {
     color:white; text-decoration:none;
