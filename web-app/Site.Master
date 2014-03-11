@@ -65,7 +65,16 @@
     <input type="hidden" runat="server" id="hdnSessionId" />
     <input type="hidden" runat="server" id="hdnUsername" />
     <form accept-charset="UTF-8" role="form" id="form1" runat="server">
-        <header class="main-header">
+       <header class="main-header">
+             <div class="grid-full">
+             <a href="/en/index" id="logo">
+				<!--{/tpl_site_link}-->
+					<img src="/img/logo.png" id="avira-umbrella" width="44" height="45" alt="increment-app">
+					<span class="wrap-text"><img src="/img/logo.png" id="avira-text" width="81" height="31" alt="increment" style="margin-left: -81px;"></span>
+				</a>
+             <div class="main-nav">
+                 <ul id="menu">
+
             <div id="btnMain" runat="server" class="btn">Ana Sayfa</div>
                 <div id="btnLogIn" runat="server" class="btn">Giriş Yap</div>
                 <div runat="server" class="btn btn-success" id="btnSignUp">Kayıt Ol</div>
@@ -88,26 +97,72 @@
                         <li><a href="LogOut.aspx">Çıkış Yap</a></li>
                     </ul>
                 </div>
-        </header>
+      <li class="mya-account" style="display:none;">
+    <a href="#" class="btn-mya-logged-in mya-modal-open" data-placement="bottom" data-toggle="tooltip" data-new="1" title="View My Account">
+            </a>
+</li>
+<!--{/tpl_login}-->
+<!-- mya login button do not modify -->
+					</ul>
+            <%-- <div id="btnHome" runat="server" class="btn btn-info">Ana Sayfa</div>
+                <div id="btnLogIn" runat="server" class="btn">Giriş Yap</div>
+                <div runat="server" class="btn btn-success" id="btnSignUp">Kayıt Ol</div>--%>
+                 </div>
+                 </div>
+             </header>
         <div class="container">
             <%--<div class="header">
                 
             </div>--%>
 
-            <div class="bodyContent">
+           <div class="wrapper">
                 <asp:ContentPlaceHolder ID="bodyContent" runat="server">
                 </asp:ContentPlaceHolder>
             </div>
 
 
-            <div class="footer">
-                <p>&copy; Increment the App 2013 | Yardım | Üyelik Sözleşmesi</p>
+            
+        </div>
+         <footer class="main-footer">
+		<div class="grid-full">
+			<div class="wrap-counter">
+				
+			</div>
+
+			
+
+			<!-- END .bottom-nav -->
+			
+			<div class="column-full">
+				<div class="footer-meta">
+						
+					<div class="btn-group dark-ui dropup language-dropup">
+						<a href="#" data-toggle="dropdown" class="btn btn-small btn-black dark-ui dropdown-toggle" style="color:white;">
+							English
+						</a>
+						
+						
+					</div>
+					
+					<ul class="meta-nav-list">
+						<li><a href="/en/general-imprint">Anasayfa</a></li>
+						<li><a href="/en/general-privacy">Profil</a></li>
+						<li><a href="/en/legal-terms">Giriş Yap</a></li>
+
+					</ul>
+					<div class="copyright">&copy; Increment the App 2013 | Yardım | Üyelik Sözleşmesi
 
                 <asp:ContentPlaceHolder ID="footerContent" runat="server">
-                </asp:ContentPlaceHolder>
-            </div>
-        </div>
-
+                </asp:ContentPlaceHolder></div>
+					
+					
+					
+				</div><!-- END .footer-meta -->
+			</div><!-- END .column-full -->
+			
+		</div><!-- END .grid-full -->
+	
+	</footer>
     </form>
 </body>
 </html>
