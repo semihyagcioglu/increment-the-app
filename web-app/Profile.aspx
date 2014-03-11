@@ -22,7 +22,7 @@
             border: 5px solid whitesmoke;
             box-shadow: 0px 2px 2px rgba(155,155,155,0.5);
         }
-        uf492bf52media="screen" .mt-profile-hero-avatar {
+        .mt-profile-hero-avatar {
             position: relative;
             width: 200px;
             margin-left: auto;

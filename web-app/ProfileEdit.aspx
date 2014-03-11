@@ -5,6 +5,25 @@
     <script src="js/jquery-1.10.2.min.js"></script>
     <script src="js/updateProfile.js"></script>
 
+    <style type="text/css">
+
+        .thumbnail {
+            width: 200px;
+            height: 200px;
+            border-radius: 115px;
+            border: 5px solid whitesmoke;
+            box-shadow: 0px 2px 2px rgba(155,155,155,0.5);
+        }
+
+        .thumbnail {
+            position: relative;
+            width: 200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    </style>
+
 </asp:Content>
 
 <asp:Content ID="bc" ContentPlaceHolderID="bodyContent" runat="server">
@@ -24,7 +43,7 @@
             </div>
             <form class="navbar-form navbar-left" role="search">
                 <div>
-                    <button id="btn" class="btn btn-warning" style="width: 120px; height: 30px; text-align: center;">Resmi Değiştir</button>
+                    <button id="btn" class="btn btn-warning" style="margin-left:45px; width: 120px; height: 30px; text-align: center;">Resmi Değiştir</button>
                     <br />
                     <br />
                 </div>
