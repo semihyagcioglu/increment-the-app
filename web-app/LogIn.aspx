@@ -8,7 +8,7 @@
 <asp:Content ID="bc" ContentPlaceHolderID="bodyContent" runat="server">
 
     <div class="row">
-        <div class="col-md-4 col-md-offset-4">
+        <div class="col-md-5 col-md-offset-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Giriş yapın</h3>
