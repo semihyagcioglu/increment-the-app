@@ -30,20 +30,21 @@
     <div id="ProfileContent">
         <div class="ProfileHeader">
 
-            <div class="ProfileName">
+            <div class="ProfileName" style="margin-left:200px;">
                 <div class="row">
                     <div class="col-sm-6 col-md-4">
                         <div class="thumbnail">
                             <img src="img/poster.png" height="200" width="300" alt="">
                             <div class="caption">
-                            </div>
+                            </div>                         
+                             <button id="btn" class="btn btn-warning" style="margin-left:32px; margin-top:10px; width: 120px; height: 30px; text-align: center;">Resmi Değiştir</button>
                         </div>
                     </div>
                 </div>
             </div>
             <form class="navbar-form navbar-left" role="search">
                 <div>
-                    <button id="btn" class="btn btn-warning" style="margin-left:45px; width: 120px; height: 30px; text-align: center;">Resmi Değiştir</button>
+                   
                     <br />
                     <br />
                 </div>
