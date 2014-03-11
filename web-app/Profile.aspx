@@ -44,7 +44,7 @@
     <div class="mt-profile-title">
 
       
-      <h1 class="title" style="background-position:center; text-align:center; font-size:24px;" >ALi ÖZTÜRK</h1>
+      <h1 class="title" id="hdName" style="background-position:center; text-align:center; font-size:24px;" runat="server"> </h1>
 
     </div>
 

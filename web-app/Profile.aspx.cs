@@ -31,6 +31,7 @@ namespace increment_the_app
 
             DataTable userProfile = Library.DataBase.GetDataTable(selectUser);
 
+            hdName.InnerText = userProfile.Rows[0]["UserName"].ToString();
             lblName.InnerText = userProfile.Rows[0]["UserName"].ToString();
             lblEmail.InnerText = userProfile.Rows[0]["Email"].ToString();
             lblBirthDate.InnerText = userProfile.Rows[0]["BirthDate"].ToString();
