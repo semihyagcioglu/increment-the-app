@@ -19,7 +19,7 @@ namespace increment_the_app.Library
                                   ,[Money] AS [İşin Ücreti]
                                   ,[TaskStatus] AS [İşin Durum]
                               FROM [Tasks]
-                                   WHERE [TaskStatus] = '1' ORDEjR BY DESC";
+                                   WHERE [TaskStatus] = '1' ORDER BY DESC";
 
             DataTable dtTasks = Library.DataBase.GetDataTable(sql);
 
@@ -38,6 +38,23 @@ namespace increment_the_app.Library
 
             return jsonData;
 
+        }
+        public static DataTable GetMyTask(int count,string userId)
+        {
+            string sql = @"SELECT TOP (" + count + @")[ID]
+                                  
+                                  ,[TaskTitle] AS [İş]
+                                  ,[TaskDetail] AS [İşin Detayı]
+                                  ,[Date] AS [Tarih]
+                                  ,[Location] AS [Yapılacak Yer]
+                                  ,[Money] AS [İşin Ücreti]
+                                  ,[TaskStatus] AS [İşin Durum]
+                              FROM [Tasks]
+                                   WHERE [TaskStatus] = '1' AND [UserID]=userId  ORDER BY DESC";
+
+            DataTable dtTasks = Library.DataBase.GetDataTable(sql);
+
+            return dtTasks;
         }
 
        
