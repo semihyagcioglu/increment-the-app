@@ -67,6 +67,7 @@
     <Content Include="img\date.png" />
     <Content Include="img\detail.png" />
     <Content Include="img\location.png" />
+    <Content Include="img\logo.png" />
     <Content Include="img\money.png" />
     <Content Include="img\ornekprofile.png" />
     <Content Include="img\poster.png" />
