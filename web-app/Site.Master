@@ -65,9 +65,8 @@
     <input type="hidden" runat="server" id="hdnSessionId" />
     <input type="hidden" runat="server" id="hdnUsername" />
     <form accept-charset="UTF-8" role="form" id="form1" runat="server">
-        <div class="container">
-            <div class="header">
-                <div id="btnMain" runat="server" class="btn">Ana Sayfa</div>
+        <header class="main-header">
+            <div id="btnMain" runat="server" class="btn">Ana Sayfa</div>
                 <div id="btnLogIn" runat="server" class="btn">Giriş Yap</div>
                 <div runat="server" class="btn btn-success" id="btnSignUp">Kayıt Ol</div>
                 <div runat="server" class="btn btn-info" id="btnHome">AnaSayfa</div>
@@ -89,7 +88,11 @@
                         <li><a href="LogOut.aspx">Çıkış Yap</a></li>
                     </ul>
                 </div>
-            </div>
+        </header>
+        <div class="container">
+            <%--<div class="header">
+                
+            </div>--%>
 
             <div class="bodyContent">
                 <asp:ContentPlaceHolder ID="bodyContent" runat="server">

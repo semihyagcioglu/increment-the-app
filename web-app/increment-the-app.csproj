@@ -61,6 +61,9 @@
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\datepicker.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="img\bg-footer.jpg" />
+    <Content Include="img\bg.jpg" />
+    <Content Include="img\bg_standardpage_body.png" />
     <Content Include="img\date.png" />
     <Content Include="img\detail.png" />
     <Content Include="img\location.png" />

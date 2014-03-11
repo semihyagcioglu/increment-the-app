@@ -1,7 +1,9 @@
 /* Space out content a bit */
 body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  /*padding-top: 20px;
+  padding-bottom: 20px;*/
+  background:url(../img/bg.jpg) 0 0 repeat;
+
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -15,7 +17,9 @@ body {
 /* Custom page header */
 .header {
   border-bottom: 0px solid #e5e5e5;
+  
 }
+
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
   margin-top: 0;
@@ -49,7 +53,7 @@ float:left;
 /* Main marketing message and sign up button */
 .jumbotron {
   text-align: center;
-  border-bottom: 1px solid #e5e5e5;
+  /*border-bottom: 1px solid #e5e5e5;*/
 }
 .jumbotron .btn {
   font-size: 21px;
@@ -245,4 +249,112 @@ float:left;
 
 .form-control {
  height:35px;
+}
+
+
+.main-header {
+ border-bottom: 1px solid rgba(0,0,0,0.2);
+background-color: #fff;
+background: -webkit-gradient(linear,50% 0,50% 100%,color-stop(0%,#fff),color-stop(100%,rgba(255,255,255,0.95)));
+background: -webkit-linear-gradient(top,#fff,rgba(255,255,255,0.95));
+background: -moz-linear-gradient(top,#fff,rgba(255,255,255,0.95));
+background: -o-linear-gradient(top,#fff,rgba(255,255,255,0.95));
+background: linear-gradient(top,#fff,rgba(255,255,255,0.95));
+border-top: 1px solid #fff;
+height: 82px;
+position: fixed;
+z-index: 65001;
+width: 100%;
+top: 0;
+margin-bottom: 20px;
+}
+
+.wrapper {
+background-color: #fff;
+border: 1px solid #dadada;
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+-webkit-box-shadow: 0 1px 2px -1px rgba(0,0,0,0.25);
+-moz-box-shadow: 0 1px 2px -1px rgba(0,0,0,0.25);
+box-shadow: 0 1px 2px -1px rgba(0,0,0,0.25);
+padding-top: 25px;
+margin-bottom: 90px;
+margin-top: 132px;
+
+}
+
+.main-footer {
+background: url("../img/bg-footer.jpg") repeat top left;
+padding: 30px 0 20px 0;
+box-shadow: 0 2px 8px rgba(0,0,0,0.3) inset;
+-webkit-box-shadow: 0 2px 8px rgba(0,0,0,0.3) inset;
+-moz-box-shadow: 0 2px 8px rgba(0,0,0,0.3) inset;
+position:fixed;
+left:0px;
+bottom:0px;
+width:100%;
+}
+user agent stylesheetarticle, aside, footer, header, hgroup, main, nav, section {
+display: block;
+}
+
+.main-nav {
+    float: right;
+    margin-top:10px;
+}
+
+.main-nav ul {
+margin: 0;
+overflow: hidden;
+}
+
+ul, menu, dir {
+display: block;
+list-style-type: disc;
+-webkit-margin-before: 1em;
+-webkit-margin-after: 1em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+-webkit-padding-start: 40px;
+}
+
+.main-nav ul li {
+display: block;
+float: left;
+line-height: 22px;
+}
+
+#logo {
+display: block;
+float: left;
+height: 45px !important;
+left: 0;
+overflow: hidden;
+position: relative;
+top: 18px;
+width: 44px;
+}
+
+.grid-full {
+max-width: 760px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.meta-nav-list li {
+display:block;
+float:left;
+margin-right:10px;
+}
+
+.meta-nav-list li a {
+ color:white;
+ text-decoration:none;
+ list-style-type:none;
+}
+
+
+.copyright {
+    color:white;
 }
