@@ -23,7 +23,7 @@
         </div>
         <div class=".col-md-6">
             <div>
-                <h6 style="font-size: large; font-weight: bold; color: #FF0000"> İŞLER </h6>
+                <h6 style="font-size: large; font-weight: bold; color: #000000"> İŞLER </h6>
                 <h6 style="font-size: larger; font-weight: bold">İşleri hızlandırmak için iş eklemeye ne dersiniz? </h6>
             </div>
             <div>
