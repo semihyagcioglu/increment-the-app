@@ -73,8 +73,6 @@ function UpdateProfile(userId, name, surname, email, phone, address, about, birt
 }
 $(document).ready(function () {
 
-    $('#bodyContent_InputName').focus();
-
     //enter key event
     $("body").keypress(function (e) {
         if (e.which == 13) {

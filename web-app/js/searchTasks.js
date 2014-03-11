@@ -125,10 +125,10 @@
 
 $(document).ready(function () {
 
-    $('#bodyContent_InputSearchTask').focus();
+    //$('#bodyContent_InputSearchTask').focus();
 
     //enter key event
-    $("body").keypress(function (e) {
+    $("#bodyContent_InputSearchTask").keypress(function (e) {
         if (e.which == 13) {
             $("#btnSearchTask").click();
         }
