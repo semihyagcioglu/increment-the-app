@@ -80,7 +80,7 @@
             <div id="btnMain" runat="server" class="btn">Ana Sayfa</div>
                 <div id="btnLogIn" runat="server" class="btn">Giriş Yap</div>
                 <div runat="server" class="btn btn-success" id="btnSignUp">Kayıt Ol</div>
-                <div runat="server" class="btn btn-info" id="btnHome">AnaSayfa</div>
+                <div runat="server" class="btn btn-success" id="btnHome">AnaSayfa</div>
                 
 
 
