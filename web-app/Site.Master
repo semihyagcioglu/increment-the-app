@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+    <script src="js/master.js"></script>
     <style type="text/css">
         .bodyContent {
             margin-top: 45px;
@@ -72,16 +73,18 @@
 					<img src="/img/logo.png" id="avira-umbrella" width="44" height="45" alt="increment-app">
 					<span class="wrap-text"><img src="/img/logo.png" id="avira-text" width="81" height="31" alt="increment" style="margin-left: -81px;"></span>
 				</a>
+                 </div>
              <div class="main-nav">
-                 <ul id="menu">
+               
 
             <div id="btnMain" runat="server" class="btn">Ana Sayfa</div>
                 <div id="btnLogIn" runat="server" class="btn">Giriş Yap</div>
                 <div runat="server" class="btn btn-success" id="btnSignUp">Kayıt Ol</div>
                 <div runat="server" class="btn btn-info" id="btnHome">AnaSayfa</div>
+                
 
 
-                <div class="btn-group">
+                <%--<div class="btn-group">--%>
                     <button type="button" class="btn btn-info dropdown-toggle" style="font-style: inherit;" data-toggle="dropdown" id="btnProfile" runat="server">
                         <span class="caret"></span>
                     </button>
@@ -97,23 +100,14 @@
                         <li><a href="LogOut.aspx">Çıkış Yap</a></li>
                     </ul>
                 </div>
-      <li class="mya-account" style="display:none;">
+<%--      <li class="mya-account" style="display:none;">
     <a href="#" class="btn-mya-logged-in mya-modal-open" data-placement="bottom" data-toggle="tooltip" data-new="1" title="View My Account">
             </a>
-</li>
-<!--{/tpl_login}-->
-<!-- mya login button do not modify -->
-					</ul>
-            <%-- <div id="btnHome" runat="server" class="btn btn-info">Ana Sayfa</div>
-                <div id="btnLogIn" runat="server" class="btn">Giriş Yap</div>
-                <div runat="server" class="btn btn-success" id="btnSignUp">Kayıt Ol</div>--%>
-                 </div>
-                 </div>
+</li>--%>
+
              </header>
         <div class="container">
-            <%--<div class="header">
-                
-            </div>--%>
+         
 
            <div class="wrapper">
                 <asp:ContentPlaceHolder ID="bodyContent" runat="server">
