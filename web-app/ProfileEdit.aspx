@@ -30,7 +30,7 @@
     <div id="ProfileContent">
         <div class="ProfileHeader">
 
-            <div class="ProfileName" style="margin-left:200px;">
+            <div class="ProfileName" style="margin:0 auto; width:200px;">
                 <div class="row">
                     <div class="col-sm-6 col-md-4">
                         <div class="thumbnail">
@@ -56,22 +56,22 @@
                     <input type="text" id="InputAdress" runat="server" class="form-control" placeholder="Adres" style="height: 30px;"><br />
                     <input type="text" id="InputBirtDay" runat="server" class="form-control" placeholder="Doğum Tarihi" style="height: 30px;"><br />
                     <div>
-                       <label style="float:left; font-size:14px;">Cinsiyet</label>
+                       <label style="float:left; font-size:14px; margin-top:5px;">Cinsiyet :</label>
                         <div class="col-lg-2" style="float: left;">
-                            <div class="input-group" style="width:5px;">
+                            <div class="input-group" style="height:30px;">
                                 <span class="input-group-addon" style="width:5px;">
                                     <input type="radio" id="Male" style="height:15px;" runat="server">
                                 </span>
-                                <label class="form-control" style="width: 62px;">Erkek</label>
+                                <label class="form-control" style="height:31px;">Erkek</label>
                             </div>
                         </div>
 
                         <div class="col-lg-2">
                             <div class="input-group">
-                                <span class="input-group-addon">
+                                <span class="input-group-addon" style="height:30px;">
                                     <input type="radio" id="Female" runat="server">
                                 </span>
-                                <label class="form-control" style="width: 62px;">Kadın</label>
+                                <label class="form-control" style="height:31px;">Kadın</label>
                             </div>
                         </div>
                     </div>
