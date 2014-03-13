@@ -87,7 +87,9 @@ margin: 0 auto;"><br />
              
                     <textarea id="InputAbout" runat="server" class="form-control" style="height: 100px;width: 650px;margin: 0 auto;" placeholder="Hakkımda"></textarea><br />
                 </div>
-                <button type="button" class="btn btn-primary" id="btnUpdateProfile">Değişiklikleri Kaydet</button><br />
+                <div style="width:210px; margin:0 auto;">
+                <button type="button" class="btn btn-primary" id="btnUpdateProfile">Değişiklikleri Kaydet</button>
+                    </div>
                 <br />
             </form>
         </div>
