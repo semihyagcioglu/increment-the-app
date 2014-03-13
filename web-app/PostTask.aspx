@@ -105,7 +105,7 @@
                 <label class="text-primary" style="margin-left:10px;">Ücret</label>
                <div class="text-primary"><input class="numeric integer optional" style="height:40px; width:50px; margin-left:15px; text-align:center;" id="taskPrice" name="task[named_price]" step="1" type="number" value="20" />
                   
-                   <label for="task_named_price">(TL) Bu iş için ne kadar ödemeyi düşnüyorsun?</label>
+                   <label for="task_named_price">(TL) Bu iş için ne kadar ödemeyi düşünüyorsun?</label>
 
                </div>            
             </div>            
