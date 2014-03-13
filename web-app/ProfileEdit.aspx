@@ -49,13 +49,19 @@
                     <br />
                 </div>
                 <div class="form-group">
-                    <input type="text" id="InputName" runat="server" class="form-control" placeholder="Ad" style="height: 30px;"><br />
-                    <input type="text" id="InputSurname" runat="server" class="form-control" placeholder="Soyad" style="height: 30px;"><br />
-                    <input type="text" id="InputEmail" runat="server" class="form-control" placeholder="Email" style="height: 30px;"><br />
-                    <input type="text" id="InputPhone" runat="server" class="form-control" placeholder="Telefon" style="height: 30px;"><br />
-                    <input type="text" id="InputAdress" runat="server" class="form-control" placeholder="Adres" style="height: 30px;"><br />
-                    <input type="text" id="InputBirtDay" runat="server" class="form-control" placeholder="Doğum Tarihi" style="height: 30px;"><br />
-                    <div>
+                    <input type="text" id="InputName" runat="server" class="form-control" placeholder="Ad" style="height: 30px;width: 500px;
+margin: 0 auto;"><br />
+                    <input type="text" id="InputSurname" runat="server" class="form-control" placeholder="Soyad" style="height: 30px;width: 500px;
+margin: 0 auto;"><br />
+                    <input type="text" id="InputEmail" runat="server" class="form-control" placeholder="Email" style="height: 30px;width: 500px;
+margin: 0 auto;"><br />
+                    <input type="text" id="InputPhone" runat="server" class="form-control" placeholder="Telefon" style="height: 30px;width: 500px;
+margin: 0 auto;"><br />
+                    <input type="text" id="InputAdress" runat="server" class="form-control" placeholder="Adres" style="height: 30px;width: 500px;
+margin: 0 auto;"><br />
+                    <input type="text" id="InputBirtDay" runat="server" class="form-control" placeholder="Doğum Tarihi" style="height: 30px;width: 500px;
+margin: 0 auto;"><br />
+                    <div style="width:500px; margin:0 auto;">
                        <label style="float:left; font-size:14px; margin-top:5px;">Cinsiyet :</label>
                         <div class="col-lg-2" style="float: left;">
                             <div class="input-group" style="height:30px;">
@@ -79,7 +85,7 @@
                     <br />
                     <br />
              
-                    <textarea id="InputAbout" runat="server" class="form-control" style="height: 100px;" placeholder="Hakkımda"></textarea><br />
+                    <textarea id="InputAbout" runat="server" class="form-control" style="height: 100px;width: 650px;margin: 0 auto;" placeholder="Hakkımda"></textarea><br />
                 </div>
                 <button type="button" class="btn btn-primary" id="btnUpdateProfile">Değişiklikleri Kaydet</button><br />
                 <br />
