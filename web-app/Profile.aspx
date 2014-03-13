@@ -59,7 +59,7 @@
 </div>
 
   <div class="mt-profile-section mt-profile-lists row" style="margin-left:5px;margin-left: 5px;
-width: 200px;
+width: 700px;
 margin: 0 auto;
 text-align: center;">
       
