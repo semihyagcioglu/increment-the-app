@@ -17,10 +17,10 @@
     <div class="main">
 
         <div class="solMenu .col-md-3">
-            <button type="button" style="width: 120px; margin-bottom: 5px;" id="btnPostedTask" class="btn btn-default">Gönderilen İşler</button>
-            <button type="button" style="width: 120px; margin-bottom: 5px;" id="btnTaskRabbits" class="btn btn-default">İşlerim</button>
-            <button type="button" style="width: 120px; margin-bottom: 5px;" id="btnTransaction" class="btn btn-default">Hareketlerim</button>
-            <button type="button" style="width: 120px;" id="btnGuideline" class="btn btn-default">Yasal Uyarı!</button>
+            <button type="button" style="width: 120px; margin-bottom: 5px;margin-left:10px;" id="btnPostedTask" class="btn btn-default">Gönderilen İşler</button>
+            <button type="button" style="width: 120px; margin-bottom: 5px; margin-left:10px;" id="btnTaskRabbits" class="btn btn-default">İşlerim</button>
+            <button type="button" style="width: 120px; margin-bottom: 5px;margin-left:10px;" id="btnTransaction" class="btn btn-default">Hareketlerim</button>
+            <button type="button" style="width: 120px;margin-left:10px;" id="btnGuideline" class="btn btn-default">Yasal Uyarı!</button>
         </div>
         <div class=".col-md-6">
             <div>

@@ -54,6 +54,9 @@ margin-right:5px;
 /* Main marketing message and sign up button */
 .jumbotron {
   text-align: center;
+  margin: 0 auto;
+  width: 670px;
+  margin-bottom: 15px;
   /*border-bottom: 1px solid #e5e5e5;*/
 }
 .jumbotron .btn {
