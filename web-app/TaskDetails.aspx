@@ -32,8 +32,8 @@
             <div class="hours">Saat:<asp:Label ID="lblHour" runat="server"></asp:Label>
         </div>
             <br />
-            &nbsp;<div><span class="auto-style1">İşin Detayı :</span></div>
-            <div class="post-explanation" style="float:none; margin-bottom:10px; width:560px;">
+            &nbsp;<div style="margin-left: 25px;"><span class="auto-style1">İşin Detayı :</span></div>
+            <div class="post-explanation" style="float:none; margin-bottom:10px; width:560px;margin-left: 25px;">
                 <asp:Label ID="lblTaskDetails" runat="server"></asp:Label>
             </div>
         </div>

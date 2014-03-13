@@ -189,16 +189,19 @@ float:right;
 margin-bottom:10px;
 font-size:14px;
 font-weight:bold;
-width:600px;
+width:650px;
+margin:0 auto;
 }
 .Calendar {
 float:left;
+margin-left: 25px;
 }
 .hours {
 float:left; margin-left:20px;
 }
 .User {
 float:left;
+margin-left: 25px;
 }
 .photomins {
  float:right;
