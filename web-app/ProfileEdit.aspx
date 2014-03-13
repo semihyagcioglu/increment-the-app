@@ -62,7 +62,7 @@ margin: 0 auto;"><br />
                     <input type="text" id="InputBirtDay" runat="server" class="form-control" placeholder="Doğum Tarihi" style="height: 30px;width: 500px;
 margin: 0 auto;"><br />
                     <div style="width:500px; margin:0 auto;">
-                       <label style="float:left; font-size:14px; margin-top:5px;">Cinsiyet :</label>
+                       <label style="float:left; font-size:14px; margin-top:5px;color:#9C9C9C;">Cinsiyet :</label>
                         <div class="col-lg-2" style="float: left;">
                             <div class="input-group" style="height:30px;">
                                 <span class="input-group-addon" style="width:5px;">
@@ -72,7 +72,7 @@ margin: 0 auto;"><br />
                             </div>
                         </div>
 
-                        <div class="col-lg-2">
+                        <div class="col-lg-2" style="float: left;margin-left: 40px;">
                             <div class="input-group">
                                 <span class="input-group-addon" style="height:30px;">
                                     <input type="radio" id="Female" runat="server">
