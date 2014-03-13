@@ -138,8 +138,8 @@
 					
 					<ul class="meta-nav-list">
 						<li><a href="Home.aspx">Anasayfa</a></li>
-						<li><a href="Profile.aspx">Profil</a></li>
-						<li><a href="LogIn.aspx">Giriş Yap</a></li>
+						<li><a href="Profile.aspx">Profilim</a></li>
+						<li><a href="SearchTask.aspx">İş Ara</a></li>
 
 					</ul>
 					<div class="copyright">&copy; Increment the App 2013 | Yardım | Üyelik Sözleşmesi

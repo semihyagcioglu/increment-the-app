@@ -125,9 +125,8 @@
 
 $(document).ready(function () {
 
-    //$('#bodyContent_InputSearchTask').focus();
-
-    //enter key event
+    $('#bodyContent_InputSearchTask').focus();
+      
     $("#bodyContent_InputSearchTask").keypress(function (e) {
         if (e.keyCode == 13) {
             e.preventDefault();
