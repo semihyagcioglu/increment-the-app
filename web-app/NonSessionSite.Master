@@ -63,7 +63,7 @@
     <form accept-charset="UTF-8" role="form" id="form1" runat="server">
          <header class="main-header">
              <div class="grid-full">
-             <a href="/en/index" id="logo">
+             <a href="Home.aspx" id="logo">
 				<!--{/tpl_site_link}-->
 					<img src="/img/logo.png" id="avira-umbrella" width="44" height="45" alt="increment-app">
 					<span class="wrap-text"><img src="/img/logo.png" id="avira-text" width="81" height="31" alt="increment" style="margin-left: -81px;"></span>

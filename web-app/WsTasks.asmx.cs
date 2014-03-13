@@ -25,5 +25,11 @@ namespace increment_the_app
             return Tasks.SearchTask(searchTask);
         }
 
+        [WebMethod]
+        public string MyTask(string userId)
+        {
+            return Tasks.GetMyTask(userId);
+        }
+
     }
 }

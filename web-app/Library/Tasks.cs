@@ -38,25 +38,21 @@ namespace increment_the_app.Library
 
             return jsonData;
 
-        }
-        public static DataTable GetMyTask(int count,string userId)
+        }       
+        public static string GetMyTask(string userId)
         {
-            string sql = @"SELECT TOP (" + count + @")[ID]
-                                  
-                                  ,[TaskTitle] AS [İş]
-                                  ,[TaskDetail] AS [İşin Detayı]
-                                  ,[Date] AS [Tarih]
-                                  ,[Location] AS [Yapılacak Yer]
-                                  ,[Money] AS [İşin Ücreti]
-                                  ,[TaskStatus] AS [İşin Durum]
+            string sql = @"SELECT [ID]                                  
+                                  ,[TaskTitle]
+                                  ,[TaskDetail]                                
                               FROM [Tasks]
-                                   WHERE [TaskStatus] = '1' AND [UserID]=userId  ORDER BY DESC";
+                                   WHERE [TaskStatus] = '1' AND [UserID]='"+ userId +"' ORDER BY [ID] DESC";
 
             DataTable dtTasks = Library.DataBase.GetDataTable(sql);
+            string jsonData = Library.Data.DataTableToJSON(dtTasks);
 
-            return dtTasks;
+            return jsonData;
+            
         }
 
-       
     }
 }
