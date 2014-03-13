@@ -30,6 +30,7 @@
     <table id="searchResult">
 
     </table>
+    <br /><br />
     <div class="temizle"></div>
     <asp:Panel ID="pnlSearchTask" runat="server"></asp:Panel>
 </asp:Content>
