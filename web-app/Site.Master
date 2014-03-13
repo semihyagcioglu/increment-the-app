@@ -134,14 +134,13 @@
 						<a href="#" data-toggle="dropdown" class="btn btn-small btn-black dark-ui dropdown-toggle" style="color:white;">
 							English
 						</a>
-						
-						
+												
 					</div>
 					
 					<ul class="meta-nav-list">
-						<li><a href="/en/general-imprint">Anasayfa</a></li>
-						<li><a href="/en/general-privacy">Profil</a></li>
-						<li><a href="/en/legal-terms">Giriş Yap</a></li>
+						<li><a href="Home.aspx">Anasayfa</a></li>
+						<li><a href="Profile.aspx">Profil</a></li>
+						<li><a href="LogIn.aspx">Giriş Yap</a></li>
 
 					</ul>
 					<div class="copyright">&copy; Increment the App 2013 | Yardım | Üyelik Sözleşmesi
