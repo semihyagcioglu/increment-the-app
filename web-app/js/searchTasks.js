@@ -129,7 +129,8 @@ $(document).ready(function () {
 
     //enter key event
     $("#bodyContent_InputSearchTask").keypress(function (e) {
-        if (e.which == 13) {
+        if (e.keyCode == 13) {
+            e.preventDefault();
             $("#btnSearchTask").click();
         }
     });
