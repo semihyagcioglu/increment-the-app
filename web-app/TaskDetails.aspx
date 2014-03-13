@@ -14,6 +14,8 @@
                <div style="margin-top:20px; float:left; width: 77px;"> 
                    <asp:Label ID="lblPrice" runat="server"></asp:Label>
                    &nbsp;TL</div>
+
+                 <button type="button" style="text-align:center;" id="btnOffer" class="btn btn-success">Teklif Ver</button>
                    </div>
             <br />
             </div>

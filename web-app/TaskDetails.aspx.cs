@@ -28,16 +28,16 @@ namespace increment_the_app
         private void TaskDetails(string TaskId)
         {
             string taskDetails = @"SELECT [ID]
-      ,U.[Name]
-      ,T.[UserID]
-      ,[TaskTitle]
-      ,[TaskDetail]
-      ,[Date]
-      ,[Money]
-      ,[TaskStatus]
-,[Hour]
-  FROM [Tasks] AS T INNER JOIN [Users] AS U ON T.[UserId] = U.[UserId]
-  WHERE [ID] = '" + TaskId + "'";
+                                          ,U.[Name]
+                                          ,T.[UserID]
+                                          ,[TaskTitle]
+                                          ,[TaskDetail]
+                                          ,[Date]
+                                          ,[Money]
+                                          ,[TaskStatus]
+                                    ,[Hour]
+                                      FROM [Tasks] AS T INNER JOIN [Users] AS U ON T.[UserId] = U.[UserId]
+                                      WHERE [ID] = '" + TaskId + "'";
 
             DataTable dtSearch = Library.DataBase.GetDataTable(taskDetails);
             taskTitle.Text = dtSearch.Rows[0]["TaskTitle"].ToString();
