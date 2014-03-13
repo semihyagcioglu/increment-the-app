@@ -362,3 +362,10 @@ margin-right:10px;
 .copyright {
     color:white;
 }
+
+.mt-profile-section mt-profile-lists row {
+margin-left:5px;margin-left: 5px;
+width: 200px;
+margin: 0 auto;
+text-align: center;
+}

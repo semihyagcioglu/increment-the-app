@@ -58,7 +58,7 @@
   <img alt="ali ö." class="mt-profile-hero-avatar" src="/img/poster_small.png">
 </div>
 
-  <div class="mt-profile-section mt-profile-lists row" style="margin-left:5px;">
+  <div class="mt-profile-section mt-profile-lists row">
       
       <div class="mt-profile-accounts column four">
         <div class="mt-profile-list-inner">
