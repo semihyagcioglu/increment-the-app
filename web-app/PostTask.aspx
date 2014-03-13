@@ -34,17 +34,17 @@
     <form role="form">
         <div class="form-group">
             <%--<label class="text-primary">Yapılmak İstenen İş</label>--%>
-            <input type="text" class="form-control" id="InputTitle" placeholder="Yapılmak istenen iş...">
+            <input type="text" class="form-control" id="InputTitle" style="width: 650px;margin: 0 auto;" placeholder="Yapılmak istenen iş...">
         </div>
         <div class="form-group">
            <%-- <label class="text-primary">İşin Detayı</label>--%>
-            <textarea class="form-control" id="InputTitleDetail" placeholder="Lütfen yapılacak işin detaylarını girin..." rows="3"></textarea>
+            <textarea class="form-control" id="InputTitleDetail" style="width: 650px;margin: 0 auto;" placeholder="Lütfen yapılacak işin detaylarını girin..." rows="3"></textarea>
         </div>
     </form>  
 
     <form role="form">
-        <div class="form-group">           
-            <span class="label label-info" id="Notes">+ İşiniz için özel notunuz var mı?</span>
+        <div class="form-group" style="width: 650px;margin: 0 auto;margin-bottom: 10px;">           
+            <span class="label label-info" id="Notes" style="width: 650px;margin: 0 auto;">+ İşiniz için özel notunuz var mı?</span>
            <textarea class="form-control" style="display:none;" id="PrivateNotes" placeholder="Özel notunuz varsa lütfen belirtin..." rows="3"></textarea>
         </div>        
     </form> 
@@ -52,14 +52,14 @@
         <form role="form">
             <div class="form-group">
                 <%--<label class="text-primary">Nerede Yapılacak</label>--%>
-                <input id="Location" class="form-control" placeholder="Nerede yapılsın..." type="text" />              
+                <input id="Location" class="form-control" style="width: 650px;margin: 0 auto;" placeholder="Nerede yapılsın..." type="text" />              
             </div>
         </form>
     <form role="form">
             <div class="form-group" id="date" style="width:263px; float:left; margin-right:10px; height:auto;">
-        <label class="text-primary">İşin Teslim Tarihi</label>      
+        <label class="text-primary" style="margin-left:10px;">İşin Teslim Tarihi</label>      
             <div class="form-group">
-                <input id="datepicker" type="text" class="form-control" placeholder="Tarih Seçin" required />
+                <input id="datepicker" type="text" class="form-control" style="margin-left:10px;" placeholder="Tarih Seçin" required />
             </div>
                 </div>
         </form>  
@@ -102,16 +102,16 @@
         <form role="form">
             <div class="form-group" id="money" style="width:600px; margin-top:auto;">
                 
-                <label class="text-primary">Ücret</label>
-               <div class="text-primary"><input class="numeric integer optional" style="height:40px; width:50px; margin-left:5px; text-align:center;" id="taskPrice" name="task[named_price]" step="1" type="number" value="20" />
+                <label class="text-primary" style="margin-left:10px;">Ücret</label>
+               <div class="text-primary"><input class="numeric integer optional" style="height:40px; width:50px; margin-left:15px; text-align:center;" id="taskPrice" name="task[named_price]" step="1" type="number" value="20" />
                   
                    <label for="task_named_price">(TL) Bu iş için ne kadar ödemeyi düşnüyorsun?</label>
 
                </div>            
             </div>            
         </form>
-       
-        <div id="btnTaskSave" style="width:300px; margin-bottom:auto; margin-top:auto; text-align:center;"  class="btn btn-lg btn-success btn-block">Kaydet ve Teklif Al</div>
+       <div style="width:300px; margin:0 auto;">
+        <div id="btnTaskSave" style="width:300px; margin-bottom:auto; margin-top:auto; text-align:center;"  class="btn btn-lg btn-success btn-block">Kaydet ve Teklif Al</div></div>
  <br />
 </asp:Content>
 <asp:Content ID="fc" ContentPlaceHolderID="footerContent" runat="server">
