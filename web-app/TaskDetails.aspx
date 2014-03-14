@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TaskDetails.aspx.cs" Inherits="increment_the_app.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headContent" runat="server">
+    <script src="js/offer.js"></script>
+    
     <style type="text/css">
         .auto-style1 {
             color: #0066FF;
@@ -7,6 +9,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="bodyContent" runat="server">
+    <input type="hidden" runat="server" id="TaskDetailsId" />
     <div id="TaskDetailsContent">
         <div class="firstbehind">
             <div style="height:200px; width:100px; float:right;">

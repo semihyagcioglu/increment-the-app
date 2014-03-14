@@ -100,14 +100,11 @@
 
         </div>
 
-
          <footer class="main-footer">
 		<div class="grid-full">
 			<div class="wrap-counter">
 				
 			</div>
-
-			
 
 			<!-- END .bottom-nav -->
 			
@@ -132,7 +129,6 @@
 
                 <asp:ContentPlaceHolder ID="footerContent" runat="server">
                 </asp:ContentPlaceHolder></div>
-					
 					
 					
 				</div><!-- END .footer-meta -->

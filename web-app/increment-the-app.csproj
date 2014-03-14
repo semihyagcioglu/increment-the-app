@@ -84,6 +84,7 @@
     <Content Include="js\login.js" />
     <Content Include="js\master.js" />
     <Content Include="js\myTasks.js" />
+    <Content Include="js\offer.js" />
     <Content Include="js\postTask.js" />
     <Content Include="js\resetPassword.js" />
     <Content Include="js\signup.js" />

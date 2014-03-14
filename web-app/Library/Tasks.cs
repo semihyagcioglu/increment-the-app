@@ -54,5 +54,18 @@ namespace increment_the_app.Library
             
         }
 
+        public static int Offer(string userId, string taskId)
+        {
+            string offerInsert = @"INSERT INTO [Offer]
+                                               ([UserId]
+                                               ,[TaskId])
+                                         VALUES
+                                               ('"+userId+"','"+taskId+"')";
+
+            int result = Library.DataBase.ExecuteNonQuery(offerInsert);
+
+            return result;
+        }
+
     }
 }

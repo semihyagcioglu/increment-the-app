@@ -16,6 +16,7 @@ namespace increment_the_app
             {
                 string TaskId = Request.QueryString["id"].ToString();
                 TaskDetails(TaskId);
+                TaskDetailsId.Value = TaskId.ToString();
             }
 
             else
