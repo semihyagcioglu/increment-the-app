@@ -17,6 +17,10 @@
 <asp:Content ID="bc" ContentPlaceHolderID="bodyContent" runat="server">
 
   <br />
+    <div class="form-group">
+        <div id="warningMessage" class="alert alert-danger" style="display: none; text-align:center;">                 
+        </div>
+    </div>
     <div>
     <form class="navbar-form navbar-left" role="search">
   <div class="form-group">
@@ -25,6 +29,7 @@
   </div>  
 </form>
 </div>
+    <label class="text-primary" style="display:none; margin-left:10px;" id="ResultTotal"></label>
     <table id="searchResult">
 
     </table>

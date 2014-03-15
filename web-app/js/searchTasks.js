@@ -21,10 +21,19 @@
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function (data) {
-                $("#searchResult").html(''); //clear search results
-                //alert(data.d);
-                //Write functionality to display data
-                $("#searchResult").append(CreateTableView(data.d, 'CssClassName', true));
+                if (data.d == -1) {
+                    $("#searchResult").html(''); 
+                    $("#ResultTotal").html('');
+                    $("#warningMessage").text('Aradığınız kriterlere uygun kayıt bulunamadı...');
+                    $("#warningMessage").show();
+                }
+                else {
+                    $("#searchResult").html(''); //clear search results
+                    $("#warningMessage").hide();
+                    //Write functionality to display data
+                    $("#searchResult").append(CreateTableView(data.d, 'CssClassName', true));
+                }
+               
             },
             error: function (result) {
                 alert("Error: " + result);
@@ -52,6 +61,9 @@
         var array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
 
         var str = '<div class="' + theme + '">';
+        
+        $("#ResultTotal").text('Bulunan sonuç : ' + array.length);
+        $("#ResultTotal").show();
 
         // table head
         //if (enableHeader) {

@@ -28,14 +28,20 @@ namespace increment_the_app.Library
 
         public static string SearchTask(string searchTask)
         {
+            string jsonData = "-1";
+
             string searchQuery = @"SELECT [ID]                                         
                                           ,[TaskTitle]
                                           ,[TaskDetail]                                         
                                       FROM [Tasks] WHERE [TaskTitle] like '%" + searchTask + "%'";
 
             DataTable dtSearch = Library.DataBase.GetDataTable(searchQuery);
-            string jsonData = Library.Data.DataTableToJSON(dtSearch);
 
+            if (dtSearch.Rows.Count > 0)
+            {
+                jsonData = Library.Data.DataTableToJSON(dtSearch);
+            }
+          
             return jsonData;
 
         }       
