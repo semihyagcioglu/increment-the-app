@@ -56,13 +56,30 @@ namespace increment_the_app.Library
 
         public static int Offer(string userId, string taskId)
         {
-            string offerInsert = @"INSERT INTO [Offer]
+            int result;
+
+            string selectOffer = @"SELECT COUNT(*) AS [Total]
+                                      FROM [Offer] WHERE [UserId] = '"+userId+"' AND [TaskId] = '"+taskId+"' ";
+
+            DataTable dt = Library.DataBase.GetDataTable(selectOffer);
+
+            int total = int.Parse(dt.Rows[0]["Total"].ToString());
+
+            if(total>0)
+            {
+                result = -1;
+            }
+            else
+            {
+                string offerInsert = @"INSERT INTO [Offer]
                                                ([UserId]
                                                ,[TaskId])
                                          VALUES
-                                               ('"+userId+"','"+taskId+"')";
+                                               ('" + userId + "','" + taskId + "')";
 
-            int result = Library.DataBase.ExecuteNonQuery(offerInsert);
+                result = Library.DataBase.ExecuteNonQuery(offerInsert);
+
+            }
 
             return result;
         }

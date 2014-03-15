@@ -8,22 +8,24 @@
         dataType: "json",
         success: function (msg) {
 
-            if (msg.d == 0) {
-                //console.log(msg.d);
-                $("#warningMessage").text("Kullanıcı adı ya da şifre hatalı");
+            if (msg.d == -1) {
+               
+                $("#warningMessage").text("Bu iş için daha önce teklif verdiniz...");
                 $('#warningMessage').show();
             }
-            else if (msg.d == -1) {
+            else if (msg.d == 0) {
                 alert("HATA");
-                //console.log(msg.d);
+              
                 $("#warningMessage").text("Beklenmedik bir sorun oluştu");
                 $('#warningMessage').show();
 
-            }
+            }            
             else {
-               
-                parent.window.location.href = 'Home.aspx';
-
+                    $("#warningMessagePostedTask").fadeIn();
+                setTimeout(function () {
+                    window.location.href = "Home.aspx";
+                }, 3000);
+              
             }
         },
 
@@ -40,8 +42,7 @@ $(document).ready(function () {
     $("#btnOffer").click(function () {
         var userId = $("#hdnUserId").val();
         var taskId = $("#bodyContent_TaskDetailsId").val();
-
-        //alert(email);
+              
         Offer(userId, taskId);
     });
 

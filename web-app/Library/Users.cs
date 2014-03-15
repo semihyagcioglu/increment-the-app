@@ -500,15 +500,8 @@ namespace increment_the_app.Library
             int result = DataBase.ExecuteNonQueryWithParameters(trafficQuery, parameters);
 
             return result;
-                                      
-
-
+             
         }
-            
-
-        
-
-       
-
+      
     }
 }

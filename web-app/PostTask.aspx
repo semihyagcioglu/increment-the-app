@@ -28,7 +28,7 @@
   <hr />
     <div class="form-group">
         <div id="warningMessagePostedTask" class="alert alert-success" style="display: none;">
-            İş başarıyla eklendi :)
+           Yeni iş başarıyla eklendi...
         </div>
     </div>
     <form role="form">

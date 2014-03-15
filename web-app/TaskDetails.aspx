@@ -10,6 +10,14 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="bodyContent" runat="server">
     <input type="hidden" runat="server" id="TaskDetailsId" />
+     <div class="form-group">
+        <div id="warningMessagePostedTask" class="alert alert-success" style="display: none;">
+           Teklifiniz kaydedildi...
+        </div>
+    </div>
+     <div class="form-group">
+        <div id="warningMessage" class="alert alert-danger" style="display: none; text-align:center;"></div>
+    </div>
     <div id="TaskDetailsContent">
         <div class="firstbehind">
             <div style="height:200px; width:100px; float:right;">
