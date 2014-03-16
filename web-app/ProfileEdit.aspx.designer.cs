@@ -13,6 +13,33 @@ namespace increment_the_app {
     public partial class Profile {
         
         /// <summary>
+        /// hdName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl hdName;
+        
+        /// <summary>
+        /// imgProfile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlImage imgProfile;
+        
+        /// <summary>
+        /// btnChangePicture control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnChangePicture;
+        
+        /// <summary>
         /// InputName control.
         /// </summary>
         /// <remarks>

@@ -15,6 +15,8 @@ namespace increment_the_app
             if (Session["userId"] != null)
             {
                 ProfileDetails(int.Parse(Session["UserId"].ToString()));
+                int userId = int.Parse(Session["userId"].ToString());
+                imgProfile.Src = "Image.ashx?id=" + userId;
             }
             
         }

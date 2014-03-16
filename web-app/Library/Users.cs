@@ -4,12 +4,41 @@ using System.Data;
 using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
+using System.Web.UI;
 
 
 namespace increment_the_app.Library
 {
     public class Users
     {
+
+        public static byte[] GetBlobFromDataBase(string userId)
+        {
+
+            int id = Convert.ToInt32(userId);
+            string sqlQuery = @"SELECT [Image]  
+  FROM [dbo].[Users]
+  WHERE UserId = '" + id + "'";
+            byte[] Image = (byte[])Library.DataBase.ExecuteScalar(sqlQuery);
+            return Image;
+            
+        }
+
+
+
+        public static string ChangePicture(byte[] myimage, string id)
+        {
+            int userId = Convert.ToInt32(id);
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0]= Library.DataBase.SetImgParameter("@img", SqlDbType.Image, myimage.Length,myimage);
+            string sqlQuery = @"UPDATE [Users] SET [Image] = @img WHERE UserId='"+id+"'";
+            Library.DataBase.ExecuteSqlWithParameters(sqlQuery,parameters);    
+            return "sucsess";
+        }
+
+
+
+
         public static int ResetPassword(string email)
         {
             int returnedResult = 0;
@@ -37,7 +66,7 @@ namespace increment_the_app.Library
                 {
                     //mail gönderme bölümü
 
-                   returnedResult = 1;
+                    returnedResult = 1;
                 }
                 else
                 {
@@ -50,7 +79,7 @@ namespace increment_the_app.Library
 
             return returnedResult;
         }
-        
+
         public static int LogIn(string email, string password)
         {
             int result = 0;
@@ -63,11 +92,11 @@ namespace increment_the_app.Library
             SqlParameter[] parameters = new SqlParameter[2];
             parameters[0] = DataBase.SetParameter("@email", SqlDbType.NVarChar, 80, "Input", email);
             parameters[1] = DataBase.SetParameter("@password", SqlDbType.NVarChar, 16, "Input", password);
-            
+
             string queryUser = @" SELECT [UserId], [Name], [Surname],[UniqueId]
                                   FROM [Users]
                                   WHERE (Email = @email) AND ([Password] = @password)";
-            
+
             try
             {
                 DataTable dtUserInfo = DataBase.ExecuteSqlWithParameters(queryUser, parameters);
@@ -107,7 +136,7 @@ namespace increment_the_app.Library
             }
 
             return result;
-        
+
         }
 
         public static string LogOut(string userId)
@@ -214,90 +243,90 @@ namespace increment_the_app.Library
             int result = DataBase.ExecuteStoredProcedure("spInsertUsers", parameters, "@value");
             return result;
 
-//            string returnValue = string.Empty;
-//            string hashGuid = string.Empty;
-//            string message = string.Empty;
-//            string query = string.Empty;
+            //            string returnValue = string.Empty;
+            //            string hashGuid = string.Empty;
+            //            string message = string.Empty;
+            //            string query = string.Empty;
 
-//            string ip = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"].ToString();
+            //            string ip = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"].ToString();
 
-//            Guid uniqueId;
+            //            Guid uniqueId;
 
-//            string errorState = "-1";
+            //            string errorState = "-1";
 
-//            if (CheckEmail(email) == "-1")
-//            {
+            //            if (CheckEmail(email) == "-1")
+            //            {
 
-//                uniqueId = Guid.NewGuid();
+            //                uniqueId = Guid.NewGuid();
 
-//                string sqlInsertUser = @"	DECLARE @UserId INT
-//        
-//        	                                        INSERT INTO [Users] (Name,Surname,[User].[Password],Email,IsFirstTime,IsActive,TotalAccessCount,UniqueId,CreatedAt)
-//                                                    VALUES ('" + userName + "','" + userSurname + "','" + password + "','" + email + @"',1,1,0,'" + uniqueId + @"',GETDATE())
-//                                                	
-//        	                                        SELECT @UserId = UserId 
-//        	                                        FROM [Users]
-//        	                                        WHERE UniqueId = '" + uniqueId + @"'
-//                                                	
-//        	                                        INSERT INTO UserLoginTypes (UserId,LoginType)
-//        	                                        VALUES
-//        	                                        (@UserId,'1') 
-//        
-//                                                    INSERT INTO [MailList]
-//                                                    ([Name],[Surname],[Email],[UniqueId],[UserId],[BirthDate],[Gender],[GSM],[Location],[Source],[MailSent],[Unsubscribe],[CreatedAt])
-//                                                    SELECT [Name],[Surname],[Email],[UniqueId],UserId,[BirthDate],[Gender],[GSM],[City],'increment',0,0,GETDATE()
-//                                                    FROM Users
-//                                                    WHERE UserId = @UserId AND [Email] NOT IN (SELECT [Email] FROM [MailList]) ";
+            //                string sqlInsertUser = @"	DECLARE @UserId INT
+            //        
+            //        	                                        INSERT INTO [Users] (Name,Surname,[User].[Password],Email,IsFirstTime,IsActive,TotalAccessCount,UniqueId,CreatedAt)
+            //                                                    VALUES ('" + userName + "','" + userSurname + "','" + password + "','" + email + @"',1,1,0,'" + uniqueId + @"',GETDATE())
+            //                                                	
+            //        	                                        SELECT @UserId = UserId 
+            //        	                                        FROM [Users]
+            //        	                                        WHERE UniqueId = '" + uniqueId + @"'
+            //                                                	
+            //        	                                        INSERT INTO UserLoginTypes (UserId,LoginType)
+            //        	                                        VALUES
+            //        	                                        (@UserId,'1') 
+            //        
+            //                                                    INSERT INTO [MailList]
+            //                                                    ([Name],[Surname],[Email],[UniqueId],[UserId],[BirthDate],[Gender],[GSM],[Location],[Source],[MailSent],[Unsubscribe],[CreatedAt])
+            //                                                    SELECT [Name],[Surname],[Email],[UniqueId],UserId,[BirthDate],[Gender],[GSM],[City],'increment',0,0,GETDATE()
+            //                                                    FROM Users
+            //                                                    WHERE UserId = @UserId AND [Email] NOT IN (SELECT [Email] FROM [MailList]) ";
 
 
-//                try
-//                {
-//                    DataBase.ExecuteNonQuery(sqlInsertUser);
-//                }
-//                catch (Exception exx)
-//                {
+            //                try
+            //                {
+            //                    DataBase.ExecuteNonQuery(sqlInsertUser);
+            //                }
+            //                catch (Exception exx)
+            //                {
 
-//                    Logs.InsertErrorLog(exx, "wsUser.asmx.cs/CreateNewUser", uniqueId.ToString(), ip, sqlInsertUser);
-//                    errorState = "1";
-//                }
+            //                    Logs.InsertErrorLog(exx, "wsUser.asmx.cs/CreateNewUser", uniqueId.ToString(), ip, sqlInsertUser);
+            //                    errorState = "1";
+            //                }
 
-//                if (errorState == "-1")
-//                {
+            //                if (errorState == "-1")
+            //                {
 
-//                    hashGuid = Functions.MD5Encode(uniqueId.ToString());
-//                    try
-//                    {
-//                        Mail.SendTemplateMail(string.Empty, uniqueId.ToString(), string.Empty, string.Empty, Resources.Mail.MAIL_TEMPLATE_ACTIVATION.ToString(), email, Resources.GlobalVariables.PROJECT_CONTACT_MAIL_ADDRESS, string.Empty, string.Empty);
-//                    }
-//                    catch (Exception ex)
-//                    {
+            //                    hashGuid = Functions.MD5Encode(uniqueId.ToString());
+            //                    try
+            //                    {
+            //                        Mail.SendTemplateMail(string.Empty, uniqueId.ToString(), string.Empty, string.Empty, Resources.Mail.MAIL_TEMPLATE_ACTIVATION.ToString(), email, Resources.GlobalVariables.PROJECT_CONTACT_MAIL_ADDRESS, string.Empty, string.Empty);
+            //                    }
+            //                    catch (Exception ex)
+            //                    {
 
-//                        Logs.InsertErrorLog(ex, System.Web.HttpContext.Current.Request.Url.AbsoluteUri.ToString(), uniqueId.ToString(), ip, string.Empty);
+            //                        Logs.InsertErrorLog(ex, System.Web.HttpContext.Current.Request.Url.AbsoluteUri.ToString(), uniqueId.ToString(), ip, string.Empty);
 
-//                        query = "UPDATE [Users] WHERE UniqueId='" + uniqueId + "' Set IsValidated = -1";
-//                        DataBase.ExecuteNonQuery(query);
+            //                        query = "UPDATE [Users] WHERE UniqueId='" + uniqueId + "' Set IsValidated = -1";
+            //                        DataBase.ExecuteNonQuery(query);
 
-//                    }
+            //                    }
 
-//                    returnValue = LogIn(email, password);
+            //                    returnValue = LogIn(email, password);
 
-//                    if (returnValue == Resources.CustomCodes.ERROR_GENERIC.ToString())
-//                    {
-//                        return "-2";
-//                    }
-//                    else
-//                    {
-//                        return uniqueId.ToString();
-//                    }
-//                }
-//                else if (errorState == "1")
-//                {
-//                    return "-2";
-//                }
+            //                    if (returnValue == Resources.CustomCodes.ERROR_GENERIC.ToString())
+            //                    {
+            //                        return "-2";
+            //                    }
+            //                    else
+            //                    {
+            //                        return uniqueId.ToString();
+            //                    }
+            //                }
+            //                else if (errorState == "1")
+            //                {
+            //                    return "-2";
+            //                }
 
-//            }
+            //            }
 
-//            return "-1";
+            //            return "-1";
         }
 
         public static string CheckEmail(string email)
@@ -379,7 +408,7 @@ namespace increment_the_app.Library
             {
                 return "customer";//fix
             }
-        } 
+        }
 
         public static string Subscribe(string userId, string email)
         {
@@ -435,7 +464,7 @@ namespace increment_the_app.Library
 
         public static int PostTask(string userId, string taskTitle, string taskDetail, string privateNotes, string date, string hour, string location, string money)
         {
-            
+
             SqlParameter[] parameters = new SqlParameter[9];
             parameters[0] = DataBase.SetParameter("@userId", SqlDbType.Int, 32, "Input", userId);
             parameters[1] = DataBase.SetParameter("@taskTitle", SqlDbType.NVarChar, 50, "Input", taskTitle);
@@ -445,7 +474,7 @@ namespace increment_the_app.Library
             parameters[5] = DataBase.SetParameter("@hour", SqlDbType.NVarChar, 10, "Input", hour);
             parameters[6] = DataBase.SetParameter("@location", SqlDbType.NVarChar, 50, "Input", location);
             parameters[7] = DataBase.SetParameter("@money", SqlDbType.Money, 0, "Input", money);
-            parameters[8] = DataBase.SetParameter("@taskStatus",SqlDbType.Int,32, "Input", "1");
+            parameters[8] = DataBase.SetParameter("@taskStatus", SqlDbType.Int, 32, "Input", "1");
 
             string taskQuery = @"INSERT INTO [Tasks]
                                        ([UserID]
@@ -468,16 +497,16 @@ namespace increment_the_app.Library
                                        ,@money
                                        ,@taskStatus)";
 
-            int result= DataBase.ExecuteNonQueryWithParameters(taskQuery, parameters);
+            int result = DataBase.ExecuteNonQueryWithParameters(taskQuery, parameters);
 
             return result;
         }
 
-        public static int ChangePassword(string password,string userId)
-        {   
-            string  sqlChangePassword = @" UPDATE [Users]
-                                        SET [Password] = "+password+@"
-                                        WHERE [UserId] = " + userId +"";
+        public static int ChangePassword(string password, string userId)
+        {
+            string sqlChangePassword = @" UPDATE [Users]
+                                        SET [Password] = " + password + @"
+                                        WHERE [UserId] = " + userId + "";
 
             DataBase.ExecuteNonQuery(sqlChangePassword);
 
@@ -500,8 +529,8 @@ namespace increment_the_app.Library
             int result = DataBase.ExecuteNonQueryWithParameters(trafficQuery, parameters);
 
             return result;
-             
+
         }
-      
+
     }
 }

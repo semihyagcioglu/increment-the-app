@@ -179,6 +179,17 @@ namespace increment_the_app.Library
             return parameter;
         }
 
+
+        public static SqlParameter SetImgParameter(string parameterName, SqlDbType dbType, Int32 iSize,  object oParamValue)
+        {
+            var parameter = new SqlParameter(parameterName, dbType, iSize);
+
+           
+
+            parameter.Value = oParamValue;
+            return parameter;
+        }
+
         // This function requires SqlParameters and Sql command and returns a datatable.
         // Usage is :
         //

@@ -94,6 +94,7 @@
     <Content Include="PostTask.aspx" />
     <Content Include="ProfileEdit.aspx" />
     <Content Include="Profile.aspx" />
+    <Content Include="ProfilePicture.aspx" />
     <Content Include="ResetPassword.aspx" />
     <Content Include="Support.aspx" />
     <Content Include="TaskDetails.aspx" />
@@ -128,6 +129,9 @@
     </Compile>
     <Compile Include="ChangePassword.aspx.designer.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Image.ashx.cs">
+      <DependentUpon>Image.ashx</DependentUpon>
     </Compile>
     <Compile Include="Library\Data.cs" />
     <Compile Include="Library\Tasks.cs" />
@@ -166,6 +170,13 @@
     </Compile>
     <Compile Include="Profile.aspx.designer.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProfilePicture.aspx.cs">
+      <DependentUpon>ProfilePicture.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProfilePicture.aspx.designer.cs">
+      <DependentUpon>ProfilePicture.aspx</DependentUpon>
     </Compile>
     <Compile Include="ResetPassword.aspx.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>
@@ -314,6 +325,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="NonSessionSite.Master" />
     <Content Include="bin\increment-the-app.dll.config" />
+    <Content Include="Image.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
