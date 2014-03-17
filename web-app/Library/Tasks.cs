@@ -30,7 +30,8 @@ namespace increment_the_app.Library
         {
             string jsonData = "-1";
 
-            string searchQuery = @"SELECT [ID]                                         
+            string searchQuery = @"SELECT [ID]     
+                                          ,[UserID]                                      
                                           ,[TaskTitle]
                                           ,[TaskDetail]                                         
                                       FROM [Tasks] WHERE [TaskTitle] like '%" + searchTask + "%'";
