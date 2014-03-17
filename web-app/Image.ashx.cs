@@ -13,13 +13,10 @@ namespace increment_the_app
 
         public void ProcessRequest(HttpContext context)
         {
-            if (context.Request.QueryString["id"] != null)
-            {
-                string id = context.Request.QueryString["id"];
-                byte[] img = (byte[])Library.Users.GetBlobFromDataBase(id);
-                context.Response.ContentType = "image/jpg/png";
-                context.Response.BinaryWrite(img);
-            }
+            string id = context.Request.QueryString["id"];
+            byte[] img = (byte[])Library.Users.GetBlobFromDataBase(id);
+            context.Response.ContentType = "image/jpg/png";
+            context.Response.BinaryWrite(img);
         }
 
         public bool IsReusable
