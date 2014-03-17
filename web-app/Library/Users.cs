@@ -14,17 +14,14 @@ namespace increment_the_app.Library
 
         public static byte[] GetBlobFromDataBase(string userId)
         {
-
             int id = Convert.ToInt32(userId);
             string sqlQuery = @"SELECT [Image]  
-  FROM [dbo].[Users]
-  WHERE UserId = '" + id + "'";
+                                      FROM [Users]
+                                      WHERE UserId = '" + id + "'";
             byte[] Image = (byte[])Library.DataBase.ExecuteScalar(sqlQuery);
             return Image;
-            
+
         }
-
-
 
         public static string ChangePicture(byte[] myimage, string id)
         {
