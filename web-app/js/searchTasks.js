@@ -106,7 +106,7 @@
                 else {
                     if (index === 'UserID') {
                         //test
-                        str += '<hr><div class="result-avatar" style="float:left; margin-right:10px; "><img src=Image.ashx?id=' + array[i]['UserID'] + ' class="img-rounded" style="width:50px; height:50px;"> </div>';
+                        str += '<hr><div class="result-avatar" style="float:left; margin-right:10px; "><img src="/Image.ashx?id=' + array[i][index] + '" class="img-rounded" style="width:50px; height:50px;"> </div>';
                     }
 
                     
