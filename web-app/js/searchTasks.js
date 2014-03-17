@@ -104,9 +104,9 @@
                     str += '<div> </div>';
                 }
                 else {
-                    if (index === 'UserID') {
+                    if (index === 'TaskTitle') {
                         //test
-                        str += '<hr><div class="result-avatar" style="float:left; margin-right:10px; "><img src="/img/poster.png" class="img-rounded" style="width:50px; height:50px;"> </div>';
+                        str += '<hr><div class="result-avatar" style="float:left; margin-right:10px; "><img src="Image.ashx?id=' + array[i]['UserID'] + '" id="imgProfile" class="img-rounded" style="width:50px; height:50px;"> </div>';
                     }
 
                     
