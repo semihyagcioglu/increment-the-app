@@ -11,6 +11,10 @@
             $("#btnIsEkle").click(function (e) {
                 window.location.href = "PostTask.aspx";
             });
+
+            $("#btnOffer").click(function (e) {
+                window.location.href = "Offer.aspx";
+            });
         });
     </script>
 
@@ -20,6 +24,7 @@
             <button type="button" style="width: 120px; margin-bottom: 5px;margin-left:10px;" id="btnPostedTask" class="btn btn-default">Gönderilen İşler</button>
             <button type="button" style="width: 120px; margin-bottom: 5px; margin-left:10px;" id="btnTaskRabbits" class="btn btn-default">İşlerim</button>
             <button type="button" style="width: 120px; margin-bottom: 5px;margin-left:10px;" id="btnTransaction" class="btn btn-default">Hareketlerim</button>
+            <button type="button" style="width: 120px; margin-bottom: 5px;margin-left:10px;" id="btnOffer" class="btn btn-default">Tekliflerim</button>
             <button type="button" style="width: 120px;margin-left:10px;" id="btnGuideline" class="btn btn-default">Yasal Uyarı!</button>
         </div>
         <div class=".col-md-6">
