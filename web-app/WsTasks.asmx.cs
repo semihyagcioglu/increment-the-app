@@ -37,5 +37,11 @@ namespace increment_the_app
             return Tasks.Offer(userId, taskId);
         }
 
+        [WebMethod]
+        public string MyOffer(string userId)
+        {
+            return Tasks.GetMyOffer(userId);
+        }
+
     }
 }

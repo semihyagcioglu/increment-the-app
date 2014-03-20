@@ -91,5 +91,25 @@ namespace increment_the_app.Library
             return result;
         }
 
+        public static string GetMyOffer(string userId)
+        {
+            string sql = @"SELECT  O.[ID]                                  
+                                  ,O.[UserId]
+                                  ,O.[TaskId]
+                                  ,T.[ID]
+                                  ,T.[UserID]                                  
+                                  ,T.[TaskTitle]
+                                  ,T.[TaskDetail]                             
+                              FROM [Offer] AS O 
+                              INNER JOIN [Tasks] AS T ON T.[Id] = O.[TaskId]
+                                   WHERE O.[UserID]='" + userId + "' ORDER BY T.[ID] DESC";
+
+            DataTable dtTasks = Library.DataBase.GetDataTable(sql);
+            string jsonData = Library.Data.DataTableToJSON(dtTasks);
+
+            return jsonData;
+
+        }
+
     }
 }
