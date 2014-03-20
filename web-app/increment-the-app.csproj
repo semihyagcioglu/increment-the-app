@@ -91,6 +91,7 @@
     <Content Include="js\searchTasks.js" />
     <Content Include="js\updateProfile.js" />
     <Content Include="LogOut.aspx" />
+    <Content Include="Offer.aspx" />
     <Content Include="PostTask.aspx" />
     <Content Include="ProfileEdit.aspx" />
     <Content Include="Profile.aspx" />
@@ -149,6 +150,13 @@
     </Compile>
     <Compile Include="NonSessionSite.Master.designer.cs">
       <DependentUpon>NonSessionSite.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Offer.aspx.cs">
+      <DependentUpon>Offer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Offer.aspx.designer.cs">
+      <DependentUpon>Offer.aspx</DependentUpon>
     </Compile>
     <Compile Include="PostTask.aspx.cs">
       <DependentUpon>PostTask.aspx</DependentUpon>
