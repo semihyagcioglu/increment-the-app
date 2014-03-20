@@ -6,7 +6,7 @@
 
 <asp:Content ID="bc" ContentPlaceHolderID="bodyContent" runat="server">
 
-      <table id="myOfferResult"></table>
+      <table id="myOfferResult"></table><br />
 
                  
 </asp:Content>
