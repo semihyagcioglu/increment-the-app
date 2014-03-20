@@ -27,7 +27,7 @@ namespace increment_the_app
                 hdnUsername.Value = HttpContext.Current.Session["name"].ToString() + " " + HttpContext.Current.Session["surname"].ToString();
                 //btnProfile.InnerText = hdnUsername.Value;
                 btnProfile.InnerHtml = hdnUsername.Value;
-                
+                imgProfile.Src = "Image.ashx?id=" + hdnUserId.Value;
             }
             else
             {

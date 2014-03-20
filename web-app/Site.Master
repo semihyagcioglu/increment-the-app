@@ -83,11 +83,12 @@
                 <div runat="server" class="btn btn-success" id="btnHome">AnaSayfa</div>
                 
 
-
+               
                 <div class="btn-group" style="margin-right:50px;">
-                    <button type="button" class="btn btn-info dropdown-toggle" style="font-style: inherit;" data-toggle="dropdown" id="btnProfile" runat="server">
+                    <button type="button" class="btn btn-info dropdown-toggle" style="font-style: inherit; margin-left:10px;" data-toggle="dropdown" id="btnProfile" runat="server">
                         <span class="caret"></span>
                     </button>
+                    
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="Profile.aspx">Profilim</a></li>
                         <li><a href="Home.aspx">Anasayfa</a></li>
@@ -99,6 +100,7 @@
                         <li><a href="LogOut.aspx">Çıkış Yap</a></li>
                     </ul>
                     </div>
+                <img src="" id="imgProfile" class="img-rounded" style="width:34px; height:34px;" runat="server">
                 </div>
 <%--      <li class="mya-account" style="display:none;">
     <a href="#" class="btn-mya-logged-in mya-modal-open" data-placement="bottom" data-toggle="tooltip" data-new="1" title="View My Account">
