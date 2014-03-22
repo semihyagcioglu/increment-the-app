@@ -49,7 +49,7 @@ function CreateTableView(objArray, theme, enableHeader) {
                
                 if (index === 'UserID') {
 
-                    str += 'div class="result-avatar" style="float:left; margin-right:10px; margin-left:15px; "><img src="Image.ashx?id=' + array[i]['UserID'] + '" id="imgProfile" class="img-rounded" style="width:50px; height:50px;"> </div>';
+                    str += '<div class="result-avatar" style="float:left; margin-right:10px; margin-left:15px; "><img src="Image.ashx?id=' + array[i]['UserID'] + '" id="imgProfile" class="img-rounded" style="width:50px; height:50px;"> </div>';
                 }
 
 
@@ -67,7 +67,7 @@ function CreateTableView(objArray, theme, enableHeader) {
 
                 if (index === 'UserID') {
 
-                    str += '<hr><div class="offerId"><input type="button" class="btn btn-warning" runat="server" id="' + array[i]['Id'] + '" Value="Teklifi Sil" style="margin-left:600px;"> </div>';
+                    str += '<hr><div class="offerId"><input type="button" class="btn btn-warning" " Value="Teklifi Sil" style="margin-left:600px;"> </div>';
                 }
 
             }
