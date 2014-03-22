@@ -55,14 +55,19 @@ function CreateTableView(objArray, theme, enableHeader) {
 
                 if (index === 'TaskTitle') {
 
-                    str += '<div class="title" style="float:left; "><a href="/TaskDetails.aspx?id=' + array[i]['ID'] + '">' + array[i][index] + '</a></div><br>';
+                    str += '<div class="title" style="float:left; width:700px;"><a href="/TaskDetails.aspx?id=' + array[i]['ID'] + '">' + array[i][index] + '</a></div><br>';
 
                 }
 
                 if (index === 'TaskDetail') {
 
-                    str += '<div class="detail" style="display:block;"> ' + array[i][index] + ' </div>';
+                    str += '<div class="detail" style="margin-right:20px;"> ' + array[i][index] + ' </div>';
 
+                }
+
+                if (index === 'Id') {
+
+                    str += '<div class="Id"><input type="button" class="btn btn-warning" runat="server" id="' + array[i]['Id'] + '" Value="Teklifi Sil" style="margin-left:600px;"> </div>';
                 }
 
             }

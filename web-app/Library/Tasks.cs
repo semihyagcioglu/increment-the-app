@@ -93,7 +93,8 @@ namespace increment_the_app.Library
 
         public static string GetMyOffer(string userId)
         {
-            string sql = @"SELECT  T.[ID]
+            string sql = @"SELECT  O.[Id]
+                                  ,T.[ID]
                                   ,T.[UserID]                                 
                                   ,T.[TaskTitle]
                                   ,T.[TaskDetail]                           
