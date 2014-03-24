@@ -123,7 +123,7 @@ $(document).ready(function() {
     //enter key event
     $("body").keypress(function(e) {
         if (e.which == 13) {
-            $("#btnSignUp").click();
+            $("#btnRegister").click();
         }
     });
 
