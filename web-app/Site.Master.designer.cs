@@ -112,13 +112,13 @@ namespace increment_the_app {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl btnSignUp;
         
         /// <summary>
-        /// btnHome control.
+        /// imgProfile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl btnHome;
+        protected global::System.Web.UI.HtmlControls.HtmlImage imgProfile;
         
         /// <summary>
         /// btnProfile control.
@@ -128,15 +128,6 @@ namespace increment_the_app {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlButton btnProfile;
-        
-        /// <summary>
-        /// imgProfile control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage imgProfile;
         
         /// <summary>
         /// bodyContent control.
