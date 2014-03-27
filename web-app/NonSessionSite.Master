@@ -65,8 +65,8 @@
              <div class="grid-full">
              <a href="Home.aspx" id="logo">
 				<!--{/tpl_site_link}-->
-					<img src="/img/logo.png" id="avira-umbrella" width="44" height="45" alt="increment-app">
-					<span class="wrap-text"><img src="/img/logo.png" id="avira-text" width="81" height="31" alt="increment" style="margin-left: -81px;"></span>
+					<img src="/img/logo.png" id="avira-umbrella" width="220" height="90" alt="increment-app">
+					<span class="wrap-text"><img src="/img/logo.png" id="avira-text" width="850" height="355" alt="increment" style="margin-left: -81px;"></span>
 				</a>
              <div class="main-nav">
                  <ul id="menu">
