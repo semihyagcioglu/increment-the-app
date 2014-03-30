@@ -98,6 +98,7 @@
     <Content Include="Profile.aspx" />
     <Content Include="ProfilePicture.aspx" />
     <Content Include="ResetPassword.aspx" />
+    <Content Include="sendmail.aspx" />
     <Content Include="Support.aspx" />
     <Content Include="TaskDetails.aspx" />
     <Content Include="Test.aspx" />
@@ -193,6 +194,13 @@
     </Compile>
     <Compile Include="ResetPassword.aspx.designer.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sendmail.aspx.cs">
+      <DependentUpon>sendmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sendmail.aspx.designer.cs">
+      <DependentUpon>sendmail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Support.aspx.cs">
       <DependentUpon>Support.aspx</DependentUpon>
