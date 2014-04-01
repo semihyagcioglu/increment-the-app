@@ -6,6 +6,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Net;
 using System.Net.Mail;
+using System.Text;
+using System.Net.Mime;
+
 
 using SendGridMail;
 
@@ -19,23 +22,30 @@ namespace increment_the_app
             
         }
 
-        protected void Unnamed1_Click(object sender, EventArgs e)
+
+        protected void btnSend_Click(object sender, EventArgs e)
         {
-            
-            MailMessage mail = new MailMessage();
-            SmtpClient SmtpServer = new SmtpClient("smtp.sendgrid.net");
+            MailMessage mailMsg = new MailMessage();
 
-            mail.From = new MailAddress("increment@increment.com");
-            mail.To.Add("sungurtas.recep@gmail.com");
-            mail.Subject = "deneme";
-            mail.Body = "Report";
-       
-            SmtpServer.Port = 25;
-            SmtpServer.Credentials = new System.Net.NetworkCredential("azure_093dfa8238abf9d9703183d4a7c559f0@azure.com", "x4f0Zq9XO7Rj6JQ");
-            SmtpServer.EnableSsl = true;
+            // To
+            mailMsg.To.Add(new MailAddress(txtToMail.Text, txtToName.Text));
 
-            SmtpServer.Send(mail);
+            // From
+            mailMsg.From = new MailAddress(txtFromMail.Text, txtFromName.Text);
 
+            // Subject and multipart/alternative Body
+            mailMsg.Subject = txtSubject.Text;
+            string text = txtText.Text;
+            //string html = @"<p>html body</p>";
+            mailMsg.AlternateViews.Add(AlternateView.CreateAlternateViewFromString(text, null, MediaTypeNames.Text.Plain));
+            //mailMsg.AlternateViews.Add(AlternateView.CreateAlternateViewFromString(html, null, MediaTypeNames.Text.Html));
+
+            // Init SmtpClient and send
+            SmtpClient smtpClient = new SmtpClient("smtp.sendgrid.net", Convert.ToInt32(587));
+            System.Net.NetworkCredential credentials = new System.Net.NetworkCredential("azure_093dfa8238abf9d9703183d4a7c559f0@azure.com", "x4f0Zq9XO7Rj6JQ");
+            smtpClient.Credentials = credentials;
+
+            smtpClient.Send(mailMsg);
         }
     }
 }

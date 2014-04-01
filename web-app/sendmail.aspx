@@ -10,7 +10,23 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    <asp:button runat="server" text="Button" OnClick="Unnamed1_Click" />
+        to mail
+        <asp:TextBox ID="txtToMail" runat="server"></asp:TextBox>
+&nbsp;to name
+        <asp:TextBox ID="txtToName" runat="server"></asp:TextBox>
+&nbsp;<br />
+        from mail&nbsp;
+        <asp:TextBox ID="txtFromMail" runat="server"></asp:TextBox>
+&nbsp; from name&nbsp;
+        <asp:TextBox ID="txtFromName" runat="server"></asp:TextBox>
+&nbsp;&nbsp; it can be everythink. For example: mail <a href="mailto:info@yappana.com">info@yappana.com</a> , name yappana.com<br />
+        subject <asp:TextBox ID="txtSubject" runat="server"></asp:TextBox>
+        <br />
+        text
+        <asp:TextBox ID="txtText" runat="server"></asp:TextBox>
+&nbsp; we can send html or text.<br />
+        <br />
+        <asp:Button ID="btnSend" runat="server" OnClick="btnSend_Click" Text="Send" />
     </div>
     </form>
 </body>
