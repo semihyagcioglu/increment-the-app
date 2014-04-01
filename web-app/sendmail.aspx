@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="sendmail.aspx.cs" Inherits="increment_the_app.sendmail" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SendMail.aspx.cs" Inherits="increment_the_app.sendmail" %>
 
 <!DOCTYPE html>
 
@@ -25,6 +25,10 @@
         text
         <asp:TextBox ID="txtText" runat="server"></asp:TextBox>
 &nbsp; we can send html or text.<br />
+        <br />
+        <br />
+        <br />
+        ........<br />
         <br />
         <asp:Button ID="btnSend" runat="server" OnClick="btnSend_Click" Text="Send" />
     </div>
