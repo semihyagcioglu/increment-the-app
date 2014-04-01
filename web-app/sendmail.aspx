@@ -10,7 +10,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        to mail
+        rto mail
         <asp:TextBox ID="txtToMail" runat="server"></asp:TextBox>
 &nbsp;to name
         <asp:TextBox ID="txtToName" runat="server"></asp:TextBox>
