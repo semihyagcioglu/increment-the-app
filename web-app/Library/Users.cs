@@ -57,36 +57,38 @@ namespace increment_the_app.Library
             if (email.Length > 0)
             {
                 Random rand = new Random();
-                int password = rand.Next(1000, 100000000);
+                int password = rand.Next(1000, 1001);
 
                 string sqlQuery = @"UPDATE [users]
    SET [Password] = '" + password + "'WHERE Email='" + email + "'";
 
                 int result = Library.DataBase.ExecuteNonQuery(sqlQuery);
 
+                MailMessage mailMsg = new MailMessage();
+
+                // To
+                mailMsg.To.Add(new MailAddress(email.ToString(), "User"));
+
+                // From
+                mailMsg.From = new MailAddress("no-reply@increment.com", "increment team");
+
+                // Subject and multipart/alternative Body
+                mailMsg.Subject = "Şifre Sıfırlama";
+                string text = "Yeni şifreniz " + password + "  .Üçüncü kişiler ile paylaşmayınız";
+                //string html = @"<p>html body</p>";
+                mailMsg.AlternateViews.Add(AlternateView.CreateAlternateViewFromString(text, null, MediaTypeNames.Text.Plain));
+                //mailMsg.AlternateViews.Add(AlternateView.CreateAlternateViewFromString(html, null, MediaTypeNames.Text.Html));
+
+                // Init SmtpClient and send
+                SmtpClient smtpClient = new SmtpClient("smtp.sendgrid.net", Convert.ToInt32(587));
+                System.Net.NetworkCredential credentials = new System.Net.NetworkCredential("azure_093dfa8238abf9d9703183d4a7c559f0@azure.com", "x4f0Zq9XO7Rj6JQ");
+                smtpClient.Credentials = credentials;
+
+                smtpClient.Send(mailMsg);
+
                 if (result > 0)
                 {
-                    MailMessage mailMsg = new MailMessage();
-
-                    // To
-                    mailMsg.To.Add(new MailAddress(email.ToString(),"User"));
-
-                    // From
-                    mailMsg.From = new MailAddress("no-reply@increment.com", "increment team");
-
-                    // Subject and multipart/alternative Body
-                    mailMsg.Subject = "Şifre Sıfırlama";
-                    string text = "Yeni şifreniz "+password+"  :Üçüncü kişiler ile paylaşmayınız";
-                    //string html = @"<p>html body</p>";
-                    mailMsg.AlternateViews.Add(AlternateView.CreateAlternateViewFromString(text, null, MediaTypeNames.Text.Plain));
-                    //mailMsg.AlternateViews.Add(AlternateView.CreateAlternateViewFromString(html, null, MediaTypeNames.Text.Html));
-
-                    // Init SmtpClient and send
-                    SmtpClient smtpClient = new SmtpClient("smtp.sendgrid.net", Convert.ToInt32(587));
-                    System.Net.NetworkCredential credentials = new System.Net.NetworkCredential("azure_093dfa8238abf9d9703183d4a7c559f0@azure.com", "x4f0Zq9XO7Rj6JQ");
-                    smtpClient.Credentials = credentials;
-
-                    smtpClient.Send(mailMsg);
+                    
 
                     returnedResult = 1;
                 }
