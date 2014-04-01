@@ -67,7 +67,7 @@ namespace increment_the_app.Library
                 MailMessage mailMsg = new MailMessage();
 
                 // To
-                mailMsg.To.Add(new MailAddress(email.ToString(), "User"));
+                mailMsg.To.Add(new MailAddress("sungurtas.recep@gmail.com", "User"));
 
                 // From
                 mailMsg.From = new MailAddress("no-reply@increment.com", "increment team");
