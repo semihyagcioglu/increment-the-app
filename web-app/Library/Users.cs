@@ -75,9 +75,9 @@ namespace increment_the_app.Library
                 // Subject and multipart/alternative Body
                 mailMsg.Subject = "Şifre Sıfırlama";
                 string text = "Yeni şifreniz " + password + "  .Üçüncü kişiler ile paylaşmayınız";
-                //string html = @"<p>html body</p>";
+                string html = @"<p>html body</p>";
                 mailMsg.AlternateViews.Add(AlternateView.CreateAlternateViewFromString(text, null, MediaTypeNames.Text.Plain));
-                //mailMsg.AlternateViews.Add(AlternateView.CreateAlternateViewFromString(html, null, MediaTypeNames.Text.Html));
+                mailMsg.AlternateViews.Add(AlternateView.CreateAlternateViewFromString(html, null, MediaTypeNames.Text.Html));
 
                 // Init SmtpClient and send
                 SmtpClient smtpClient = new SmtpClient("smtp.sendgrid.net", Convert.ToInt32(25));
