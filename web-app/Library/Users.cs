@@ -10,6 +10,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Net.Mime;
+using SendGridMail;
 
 
 namespace increment_the_app.Library
@@ -64,27 +65,42 @@ namespace increment_the_app.Library
 
                 int result = Library.DataBase.ExecuteNonQuery(sqlQuery);
 
-                MailMessage mailMsg = new MailMessage();
+                //MailMessage mailMsg = new MailMessage();
 
-                // To
-                mailMsg.To.Add(new MailAddress("sungurtas.recep@gmail.com", "User"));
+                //// To
+                //mailMsg.To.Add(new MailAddress("sungurtas.recep@gmail.com", "User"));
 
-                // From
-                mailMsg.From = new MailAddress("no-reply@increment.com", "increment team");
+                //// From
+                //mailMsg.From = new MailAddress("no-reply@increment.com", "increment team");
 
-                // Subject and multipart/alternative Body
-                mailMsg.Subject = "Şifre Sıfırlama";
-                string text = "Yeni şifreniz " + password + "  .Üçüncü kişiler ile paylaşmayınız";
-                string html = @"<p>html body</p>";
-                mailMsg.AlternateViews.Add(AlternateView.CreateAlternateViewFromString(text, null, MediaTypeNames.Text.Plain));
-                mailMsg.AlternateViews.Add(AlternateView.CreateAlternateViewFromString(html, null, MediaTypeNames.Text.Html));
+                //// Subject and multipart/alternative Body
+                //mailMsg.Subject = "Şifre Sıfırlama";
+                //string text = "Yeni şifreniz " + password + "  .Üçüncü kişiler ile paylaşmayınız";
+                //string html = @"<p>html body</p>";
+                //mailMsg.AlternateViews.Add(AlternateView.CreateAlternateViewFromString(text, null, MediaTypeNames.Text.Plain));
+                //mailMsg.AlternateViews.Add(AlternateView.CreateAlternateViewFromString(html, null, MediaTypeNames.Text.Html));
 
-                // Init SmtpClient and send
-                SmtpClient smtpClient = new SmtpClient("smtp.sendgrid.net", Convert.ToInt32(25));
-                System.Net.NetworkCredential credentials = new System.Net.NetworkCredential("azure_093dfa8238abf9d9703183d4a7c559f0@azure.com", "x4f0Zq9XO7Rj6JQ");
-                smtpClient.Credentials = credentials;
+                //// Init SmtpClient and send
+                //SmtpClient smtpClient = new SmtpClient("smtp.sendgrid.net", Convert.ToInt32(25));
+                //System.Net.NetworkCredential credentials = new System.Net.NetworkCredential("azure_093dfa8238abf9d9703183d4a7c559f0@azure.com", "x4f0Zq9XO7Rj6JQ");
+                //smtpClient.Credentials = credentials;
 
-                smtpClient.Send(mailMsg);
+                //smtpClient.Send(mailMsg);
+
+                SendGrid myMessage = SendGrid.GetInstance();
+                myMessage.AddTo("sungurtas.recep@gmail.com");
+                myMessage.From = new MailAddress("john@example.com", "John Smith");
+                myMessage.Subject = "Testing the SendGrid Library";
+                myMessage.Text = "Hello World!";
+
+                // Create credentials, specifying your user name and password.
+                var credentials = new NetworkCredential("azure_093dfa8238abf9d9703183d4a7c559f0@azure.com", "x4f0Zq9XO7Rj6JQ");
+
+                // Create an Web transport for sending email.
+                var transportWeb = Web.GetInstance(credentials);
+
+                // Send the email.
+                transportWeb.Deliver(myMessage);
 
                 if (result > 0)
                 {
