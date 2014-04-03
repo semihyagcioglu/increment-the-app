@@ -119,6 +119,7 @@
     <Content Include="Profile.aspx" />
     <Content Include="ProfilePicture.aspx" />
     <Content Include="ResetPassword.aspx" />
+    <Content Include="SendGrid.aspx" />
     <Content Include="SendMail.aspx" />
     <Content Include="Support.aspx" />
     <Content Include="TaskDetails.aspx" />
@@ -215,6 +216,13 @@
     </Compile>
     <Compile Include="ResetPassword.aspx.designer.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SendGrid.aspx.cs">
+      <DependentUpon>SendGrid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SendGrid.aspx.designer.cs">
+      <DependentUpon>SendGrid.aspx</DependentUpon>
     </Compile>
     <Compile Include="SendMail.aspx.cs">
       <DependentUpon>SendMail.aspx</DependentUpon>

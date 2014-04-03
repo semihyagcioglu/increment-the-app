@@ -10,7 +10,7 @@
 namespace increment_the_app {
     
     
-    public partial class sendmail {
+    public partial class SendGrid {
         
         /// <summary>
         /// Head1 control.
