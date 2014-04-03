@@ -41,11 +41,13 @@ namespace increment_the_app
             //mailMsg.AlternateViews.Add(AlternateView.CreateAlternateViewFromString(html, null, MediaTypeNames.Text.Html));
 
             // Init SmtpClient and send
-            SmtpClient smtpClient = new SmtpClient("smtp.sendgrid.net", Convert.ToInt32(25));
+            SmtpClient smtpClient = new SmtpClient("smtp.sendgrid.net", Convert.ToInt32(587));
             System.Net.NetworkCredential credentials = new System.Net.NetworkCredential("azure_093dfa8238abf9d9703183d4a7c559f0@azure.com", "x4f0Zq9XO7Rj6JQ");
             smtpClient.Credentials = credentials;
 
             smtpClient.Send(mailMsg);
+
+            
         }
     }
 }
