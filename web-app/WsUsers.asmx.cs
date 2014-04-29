@@ -89,7 +89,11 @@ namespace increment_the_app
         {
             return Users.CheckUserID(guid);
         }
-
+        [WebMethod]
+        public static string GetUser()
+        {
+            return Users.GetUser();
+        }
         [WebMethod]
         public static string SendPassword(string email)
         {

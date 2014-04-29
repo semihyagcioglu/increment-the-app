@@ -33,9 +33,9 @@ namespace increment_the_app.Library
         {
             int userId = Convert.ToInt32(id);
             SqlParameter[] parameters = new SqlParameter[1];
-            parameters[0]= Library.DataBase.SetImgParameter("@img", SqlDbType.Image, myimage.Length,myimage);
-            string sqlQuery = @"UPDATE [Users] SET [Image] = @img WHERE UserId='"+id+"'";
-            Library.DataBase.ExecuteSqlWithParameters(sqlQuery,parameters);    
+            parameters[0] = Library.DataBase.SetImgParameter("@img", SqlDbType.Image, myimage.Length, myimage);
+            string sqlQuery = @"UPDATE [Users] SET [Image] = @img WHERE UserId='" + id + "'";
+            Library.DataBase.ExecuteSqlWithParameters(sqlQuery, parameters);
             return "sucsess";
         }
 
@@ -66,11 +66,11 @@ namespace increment_the_app.Library
                 int result = Library.DataBase.ExecuteNonQuery(sqlQuery);
 
 
-                
+
 
                 if (result > 0)
                 {
-                    
+
 
                     returnedResult = 1;
                 }
@@ -347,6 +347,24 @@ namespace increment_the_app.Library
         public static string SendPassword(string email)
         {
             return "";
+        }
+        public static string GetUser()
+        {
+            string sql = @"SELECT [Name]                                  
+                                  ,[Surname]
+                                  ,[Email]  
+                                  ,[Birthdate]
+                                  ,[Email]                                
+                                  ,[Cinsiyet]                                
+                                
+                              
+                              FROM [Users]";
+
+            DataTable dtUser = Library.DataBase.GetDataTable(sql);
+            string jsonData = Library.Data.DataTableToJSON(dtUser);
+
+            return jsonData;
+
         }
         public static string GetUserInformation(string userId, string guid, string email)
         {

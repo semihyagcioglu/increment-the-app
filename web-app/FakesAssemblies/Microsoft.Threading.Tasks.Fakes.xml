@@ -1,0 +1,404 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Threading.Tasks.Fakes</name>
+    </assembly>
+    <members>
+        <member name="T:Global.Fakes.ShimAwaitExtensions">
+            <summary>Shim type of AwaitExtensions</summary>
+        </member>
+        <member name="M:Global.Fakes.ShimAwaitExtensions.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Global.Fakes.ShimAwaitExtensions.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Global.Fakes.ShimAwaitExtensions.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Global.Fakes.ShimAwaitExtensions.ConfigureAwaitOf1TaskOfM0Boolean``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Func{System.Threading.Tasks.Task{``0},System.Boolean,Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable{``0}})">
+            <summary>Sets the shim of AwaitExtensions.ConfigureAwait(Task`1&lt;!!0&gt; task, Boolean continueOnCapturedContext)</summary>
+        </member>
+        <member name="M:Global.Fakes.ShimAwaitExtensions.GetAwaiterOf1TaskOfM0``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Func{System.Threading.Tasks.Task{``0},Microsoft.Runtime.CompilerServices.TaskAwaiter{``0}})">
+            <summary>Sets the shim of AwaitExtensions.GetAwaiter(Task`1&lt;!!0&gt; task)</summary>
+        </member>
+        <member name="P:Global.Fakes.ShimAwaitExtensions.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Global.Fakes.ShimAwaitExtensions.CancelAfterCancellationTokenSourceInt32">
+            <summary>Sets the shim of AwaitExtensions.CancelAfter(CancellationTokenSource source, Int32 dueTime)</summary>
+        </member>
+        <member name="P:Global.Fakes.ShimAwaitExtensions.CancelAfterCancellationTokenSourceTimeSpan">
+            <summary>Sets the shim of AwaitExtensions.CancelAfter(CancellationTokenSource source, TimeSpan dueTime)</summary>
+        </member>
+        <member name="P:Global.Fakes.ShimAwaitExtensions.ConfigureAwaitTaskBoolean">
+            <summary>Sets the shim of AwaitExtensions.ConfigureAwait(Task task, Boolean continueOnCapturedContext)</summary>
+        </member>
+        <member name="P:Global.Fakes.ShimAwaitExtensions.GetAwaiterTask">
+            <summary>Sets the shim of AwaitExtensions.GetAwaiter(Task task)</summary>
+        </member>
+        <member name="T:Microsoft.Fakes.ShimProgress`1">
+            <summary>Shim type of Microsoft.Progress`1</summary>
+        </member>
+        <member name="M:Microsoft.Fakes.ShimProgress`1.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.Fakes.ShimProgress`1.#ctor(Microsoft.Progress{`0})">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Microsoft.Fakes.ShimProgress`1.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Fakes.ShimProgress`1.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Fakes.ShimProgress`1.Bind(System.IProgress{`0})">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:Microsoft.Fakes.ShimProgress`1.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Fakes.ShimProgress`1.Constructor">
+            <summary>Sets the shim of Progress`1.Progress`1()</summary>
+        </member>
+        <member name="P:Microsoft.Fakes.ShimProgress`1.ConstructorActionOfT0">
+            <summary>Sets the shim of Progress`1.Progress`1(Action`1&lt;!0&gt; handler)</summary>
+        </member>
+        <member name="P:Microsoft.Fakes.ShimProgress`1.InvokeHandlersObject">
+            <summary>Sets the shim of Progress`1.InvokeHandlers(Object state)</summary>
+        </member>
+        <member name="P:Microsoft.Fakes.ShimProgress`1.OnReportT0">
+            <summary>Sets the shim of Progress`1.OnReport(!0 value)</summary>
+        </member>
+        <member name="P:Microsoft.Fakes.ShimProgress`1.ProgressChangedAddProgressEventHandlerOfT0">
+            <summary>Sets the shim of Progress`1.add_ProgressChanged(ProgressEventHandler`1&lt;!0&gt; value)</summary>
+        </member>
+        <member name="P:Microsoft.Fakes.ShimProgress`1.ProgressChangedRemoveProgressEventHandlerOfT0">
+            <summary>Sets the shim of Progress`1.remove_ProgressChanged(ProgressEventHandler`1&lt;!0&gt; value)</summary>
+        </member>
+        <member name="P:Microsoft.Fakes.ShimProgress`1.SystemIProgressTReportT0">
+            <summary>Sets the shim of Progress`1.System.IProgress&lt;T&gt;.Report(!0 value)</summary>
+        </member>
+        <member name="T:Microsoft.Fakes.ShimProgress`1.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Microsoft.Fakes.ShimProgress`1.AllInstances.InvokeHandlersObject">
+            <summary>Sets the shim of Progress`1.InvokeHandlers(Object state)</summary>
+        </member>
+        <member name="P:Microsoft.Fakes.ShimProgress`1.AllInstances.OnReportT0">
+            <summary>Sets the shim of Progress`1.OnReport(!0 value)</summary>
+        </member>
+        <member name="P:Microsoft.Fakes.ShimProgress`1.AllInstances.ProgressChangedAddProgressEventHandlerOfT0">
+            <summary>Sets the shim of Progress`1.add_ProgressChanged(ProgressEventHandler`1&lt;!0&gt; value)</summary>
+        </member>
+        <member name="P:Microsoft.Fakes.ShimProgress`1.AllInstances.ProgressChangedRemoveProgressEventHandlerOfT0">
+            <summary>Sets the shim of Progress`1.remove_ProgressChanged(ProgressEventHandler`1&lt;!0&gt; value)</summary>
+        </member>
+        <member name="P:Microsoft.Fakes.ShimProgress`1.AllInstances.SystemIProgressTReportT0">
+            <summary>Sets the shim of Progress`1.System.IProgress&lt;T&gt;.Report(!0 value)</summary>
+        </member>
+        <member name="T:Microsoft.Fakes.StubProgress`1">
+            <summary>Stub type of Microsoft.Progress`1</summary>
+        </member>
+        <member name="M:Microsoft.Fakes.StubProgress`1.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Microsoft.Fakes.StubProgress`1.#ctor(System.Action{`0})">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Microsoft.Fakes.StubProgress`1.InitializeStub">
+            <summary>Initializes a new instance of type StubProgress</summary>
+        </member>
+        <member name="M:Microsoft.Fakes.StubProgress`1.OnReport(`0)">
+            <summary>Sets the stub of Progress`1.OnReport(!0 value)</summary>
+        </member>
+        <member name="F:Microsoft.Fakes.StubProgress`1.OnReportT0">
+            <summary>Sets the stub of Progress`1.OnReport(!0 value)</summary>
+        </member>
+        <member name="P:Microsoft.Fakes.StubProgress`1.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Microsoft.Fakes.StubProgress`1.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Microsoft.Fakes.StubProgress`1.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:Microsoft.QualityTools.Testing.Fakes.Delegates.MicrosoftThreadingTasksDelegates">
+            <summary>Contains custom delegates used for the stubs and shims of Microsoft.Threading.Tasks</summary>
+        </member>
+        <member name="T:Microsoft.Runtime.CompilerServices.Fakes.ShimConfiguredTaskAwaitable">
+            <summary>Shim type of Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable</summary>
+        </member>
+        <member name="M:Microsoft.Runtime.CompilerServices.Fakes.ShimConfiguredTaskAwaitable.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.Runtime.CompilerServices.Fakes.ShimConfiguredTaskAwaitable.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Runtime.CompilerServices.Fakes.ShimConfiguredTaskAwaitable.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Runtime.CompilerServices.Fakes.ShimConfiguredTaskAwaitable.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="T:Microsoft.Runtime.CompilerServices.Fakes.ShimConfiguredTaskAwaitable.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="T:Microsoft.Runtime.CompilerServices.Fakes.ShimConfiguredTaskAwaitable.ShimConfiguredTaskAwaiter">
+            <summary>Shim type of Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable+ConfiguredTaskAwaiter</summary>
+        </member>
+        <member name="M:Microsoft.Runtime.CompilerServices.Fakes.ShimConfiguredTaskAwaitable.ShimConfiguredTaskAwaiter.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.Runtime.CompilerServices.Fakes.ShimConfiguredTaskAwaitable.ShimConfiguredTaskAwaiter.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Runtime.CompilerServices.Fakes.ShimConfiguredTaskAwaitable.ShimConfiguredTaskAwaiter.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Runtime.CompilerServices.Fakes.ShimConfiguredTaskAwaitable.ShimConfiguredTaskAwaiter.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="T:Microsoft.Runtime.CompilerServices.Fakes.ShimConfiguredTaskAwaitable.ShimConfiguredTaskAwaiter.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="T:Microsoft.Runtime.CompilerServices.Fakes.ShimConfiguredTaskAwaitable`1">
+            <summary>Shim type of Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable`1</summary>
+        </member>
+        <member name="M:Microsoft.Runtime.CompilerServices.Fakes.ShimConfiguredTaskAwaitable`1.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.Runtime.CompilerServices.Fakes.ShimConfiguredTaskAwaitable`1.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Runtime.CompilerServices.Fakes.ShimConfiguredTaskAwaitable`1.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Runtime.CompilerServices.Fakes.ShimConfiguredTaskAwaitable`1.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="T:Microsoft.Runtime.CompilerServices.Fakes.ShimConfiguredTaskAwaitable`1.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="T:Microsoft.Runtime.CompilerServices.Fakes.ShimConfiguredTaskAwaitable`1.ShimConfiguredTaskAwaiter">
+            <summary>Shim type of Microsoft.Runtime.CompilerServices.ConfiguredTaskAwaitable`1+ConfiguredTaskAwaiter</summary>
+        </member>
+        <member name="M:Microsoft.Runtime.CompilerServices.Fakes.ShimConfiguredTaskAwaitable`1.ShimConfiguredTaskAwaiter.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.Runtime.CompilerServices.Fakes.ShimConfiguredTaskAwaitable`1.ShimConfiguredTaskAwaiter.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Runtime.CompilerServices.Fakes.ShimConfiguredTaskAwaitable`1.ShimConfiguredTaskAwaiter.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Runtime.CompilerServices.Fakes.ShimConfiguredTaskAwaitable`1.ShimConfiguredTaskAwaiter.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="T:Microsoft.Runtime.CompilerServices.Fakes.ShimConfiguredTaskAwaitable`1.ShimConfiguredTaskAwaiter.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="T:Microsoft.Runtime.CompilerServices.Fakes.ShimTaskAwaiter">
+            <summary>Shim type of Microsoft.Runtime.CompilerServices.TaskAwaiter</summary>
+        </member>
+        <member name="M:Microsoft.Runtime.CompilerServices.Fakes.ShimTaskAwaiter.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.Runtime.CompilerServices.Fakes.ShimTaskAwaiter.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Runtime.CompilerServices.Fakes.ShimTaskAwaiter.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Runtime.CompilerServices.Fakes.ShimTaskAwaiter.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Runtime.CompilerServices.Fakes.ShimTaskAwaiter.HandleNonSuccessTask">
+            <summary>Sets the shim of TaskAwaiter.HandleNonSuccess(Task task)</summary>
+        </member>
+        <member name="P:Microsoft.Runtime.CompilerServices.Fakes.ShimTaskAwaiter.IsValidLocationForInliningGet">
+            <summary>Sets the shim of TaskAwaiter.get_IsValidLocationForInlining()</summary>
+        </member>
+        <member name="P:Microsoft.Runtime.CompilerServices.Fakes.ShimTaskAwaiter.OnCompletedInternalTaskActionBoolean">
+            <summary>Sets the shim of TaskAwaiter.OnCompletedInternal(Task task, Action continuation, Boolean continueOnCapturedContext)</summary>
+        </member>
+        <member name="P:Microsoft.Runtime.CompilerServices.Fakes.ShimTaskAwaiter.PrepareExceptionForRethrowException">
+            <summary>Sets the shim of TaskAwaiter.PrepareExceptionForRethrow(Exception exc)</summary>
+        </member>
+        <member name="P:Microsoft.Runtime.CompilerServices.Fakes.ShimTaskAwaiter.RunNoExceptionAction">
+            <summary>Sets the shim of TaskAwaiter.RunNoException(Action continuation)</summary>
+        </member>
+        <member name="P:Microsoft.Runtime.CompilerServices.Fakes.ShimTaskAwaiter.ThrowForNonSuccessTask">
+            <summary>Sets the shim of TaskAwaiter.ThrowForNonSuccess(Task task)</summary>
+        </member>
+        <member name="P:Microsoft.Runtime.CompilerServices.Fakes.ShimTaskAwaiter.ValidateEndTask">
+            <summary>Sets the shim of TaskAwaiter.ValidateEnd(Task task)</summary>
+        </member>
+        <member name="P:Microsoft.Runtime.CompilerServices.Fakes.ShimTaskAwaiter._OnCompletedInternalb__2Object">
+            <summary>Sets the shim of TaskAwaiter.&lt;OnCompletedInternal&gt;b__2(Object s)</summary>
+        </member>
+        <member name="T:Microsoft.Runtime.CompilerServices.Fakes.ShimTaskAwaiter.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="T:Microsoft.Runtime.CompilerServices.Fakes.ShimTaskAwaiter`1">
+            <summary>Shim type of Microsoft.Runtime.CompilerServices.TaskAwaiter`1</summary>
+        </member>
+        <member name="M:Microsoft.Runtime.CompilerServices.Fakes.ShimTaskAwaiter`1.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.Runtime.CompilerServices.Fakes.ShimTaskAwaiter`1.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Runtime.CompilerServices.Fakes.ShimTaskAwaiter`1.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Runtime.CompilerServices.Fakes.ShimTaskAwaiter`1.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="T:Microsoft.Runtime.CompilerServices.Fakes.ShimTaskAwaiter`1.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="T:Microsoft.Runtime.CompilerServices.Fakes.ShimYieldAwaitable">
+            <summary>Shim type of Microsoft.Runtime.CompilerServices.YieldAwaitable</summary>
+        </member>
+        <member name="M:Microsoft.Runtime.CompilerServices.Fakes.ShimYieldAwaitable.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.Runtime.CompilerServices.Fakes.ShimYieldAwaitable.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Runtime.CompilerServices.Fakes.ShimYieldAwaitable.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Runtime.CompilerServices.Fakes.ShimYieldAwaitable.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="T:Microsoft.Runtime.CompilerServices.Fakes.ShimYieldAwaitable.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="T:Microsoft.Runtime.CompilerServices.Fakes.ShimYieldAwaitable.ShimYieldAwaiter">
+            <summary>Shim type of Microsoft.Runtime.CompilerServices.YieldAwaitable+YieldAwaiter</summary>
+        </member>
+        <member name="M:Microsoft.Runtime.CompilerServices.Fakes.ShimYieldAwaitable.ShimYieldAwaiter.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.Runtime.CompilerServices.Fakes.ShimYieldAwaitable.ShimYieldAwaiter.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Runtime.CompilerServices.Fakes.ShimYieldAwaitable.ShimYieldAwaiter.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Runtime.CompilerServices.Fakes.ShimYieldAwaitable.ShimYieldAwaiter.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Runtime.CompilerServices.Fakes.ShimYieldAwaitable.ShimYieldAwaiter.StaticConstructor">
+            <summary>Sets the shim of YieldAwaiter.YieldAwaiter()</summary>
+        </member>
+        <member name="T:Microsoft.Runtime.CompilerServices.Fakes.ShimYieldAwaitable.ShimYieldAwaiter.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="T:System.Threading.Tasks.Fakes.ShimTaskEx">
+            <summary>Shim type of System.Threading.Tasks.TaskEx</summary>
+        </member>
+        <member name="M:System.Threading.Tasks.Fakes.ShimTaskEx.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:System.Threading.Tasks.Fakes.ShimTaskEx.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Threading.Tasks.Fakes.ShimTaskEx.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:System.Threading.Tasks.Fakes.ShimTaskEx.FromResultOf1M0``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Func{``0,System.Threading.Tasks.Task{``0}})">
+            <summary>Sets the shim of TaskEx.FromResult(!!0 result)</summary>
+        </member>
+        <member name="M:System.Threading.Tasks.Fakes.ShimTaskEx.RunOf1FuncOfM0``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Func{System.Func{``0},System.Threading.Tasks.Task{``0}})">
+            <summary>Sets the shim of TaskEx.Run(Func`1&lt;!!0&gt; function)</summary>
+        </member>
+        <member name="M:System.Threading.Tasks.Fakes.ShimTaskEx.RunOf1FuncOfM0CancellationToken``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Func{System.Func{``0},System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}})">
+            <summary>Sets the shim of TaskEx.Run(Func`1&lt;!!0&gt; function, CancellationToken cancellationToken)</summary>
+        </member>
+        <member name="M:System.Threading.Tasks.Fakes.ShimTaskEx.RunOf1FuncOfTaskOfM0``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Func{System.Func{System.Threading.Tasks.Task{``0}},System.Threading.Tasks.Task{``0}})">
+            <summary>Sets the shim of TaskEx.Run(Func`1&lt;Task`1&lt;!!0&gt;&gt; function)</summary>
+        </member>
+        <member name="M:System.Threading.Tasks.Fakes.ShimTaskEx.RunOf1FuncOfTaskOfM0CancellationToken``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Func{System.Func{System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}})">
+            <summary>Sets the shim of TaskEx.Run(Func`1&lt;Task`1&lt;!!0&gt;&gt; function, CancellationToken cancellationToken)</summary>
+        </member>
+        <member name="M:System.Threading.Tasks.Fakes.ShimTaskEx.WhenAllCoreOf1IEnumerableOfTaskActionOfTaskArrayTaskCompletionSourceOfM0``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Func{System.Collections.Generic.IEnumerable{System.Threading.Tasks.Task},System.Action{System.Threading.Tasks.Task[],System.Threading.Tasks.TaskCompletionSource{``0}},System.Threading.Tasks.Task{``0}})">
+            <summary>Sets the shim of TaskEx.WhenAllCore(IEnumerable`1&lt;Task&gt; tasks, Action`2&lt;Task[],TaskCompletionSource`1&lt;!!0&gt;&gt; setResultAction)</summary>
+        </member>
+        <member name="M:System.Threading.Tasks.Fakes.ShimTaskEx.WhenAllOf1IEnumerableOfTaskOfM0``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Func{System.Collections.Generic.IEnumerable{System.Threading.Tasks.Task{``0}},System.Threading.Tasks.Task{``0[]}})">
+            <summary>Sets the shim of TaskEx.WhenAll(IEnumerable`1&lt;Task`1&lt;!!0&gt;&gt; tasks)</summary>
+        </member>
+        <member name="M:System.Threading.Tasks.Fakes.ShimTaskEx.WhenAllOf1TaskOfM0Array``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Func{System.Threading.Tasks.Task{``0}[],System.Threading.Tasks.Task{``0[]}})">
+            <summary>Sets the shim of TaskEx.WhenAll(Task`1&lt;!!0&gt;[] tasks)</summary>
+        </member>
+        <member name="M:System.Threading.Tasks.Fakes.ShimTaskEx.WhenAnyOf1IEnumerableOfTaskOfM0``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Func{System.Collections.Generic.IEnumerable{System.Threading.Tasks.Task{``0}},System.Threading.Tasks.Task{System.Threading.Tasks.Task{``0}}})">
+            <summary>Sets the shim of TaskEx.WhenAny(IEnumerable`1&lt;Task`1&lt;!!0&gt;&gt; tasks)</summary>
+        </member>
+        <member name="M:System.Threading.Tasks.Fakes.ShimTaskEx.WhenAnyOf1TaskOfM0Array``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Func{System.Threading.Tasks.Task{``0}[],System.Threading.Tasks.Task{System.Threading.Tasks.Task{``0}}})">
+            <summary>Sets the shim of TaskEx.WhenAny(Task`1&lt;!!0&gt;[] tasks)</summary>
+        </member>
+        <member name="M:System.Threading.Tasks.Fakes.ShimTaskEx._WhenAllb__9Of1TaskArrayTaskCompletionSourceOfM0Array``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Action{System.Threading.Tasks.Task[],System.Threading.Tasks.TaskCompletionSource{``0[]}})">
+            <summary>Sets the shim of TaskEx.&lt;WhenAll&gt;b__9(Task[] completedTasks, TaskCompletionSource`1&lt;!!0[]&gt; tcs)</summary>
+        </member>
+        <member name="M:System.Threading.Tasks.Fakes.ShimTaskEx._WhenAllb__aOf1Task``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Func{System.Threading.Tasks.Task,``0})">
+            <summary>Sets the shim of TaskEx.&lt;WhenAll&gt;b__a(Task t)</summary>
+        </member>
+        <member name="P:System.Threading.Tasks.Fakes.ShimTaskEx.AddPotentiallyUnwrappedExceptionsListOfExceptionRefException">
+            <summary>Sets the shim of TaskEx.AddPotentiallyUnwrappedExceptions(List`1&lt;Exception&gt;&amp; targetList, Exception exception)</summary>
+        </member>
+        <member name="P:System.Threading.Tasks.Fakes.ShimTaskEx.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:System.Threading.Tasks.Fakes.ShimTaskEx.DelayInt32">
+            <summary>Sets the shim of TaskEx.Delay(Int32 dueTime)</summary>
+        </member>
+        <member name="P:System.Threading.Tasks.Fakes.ShimTaskEx.DelayInt32CancellationToken">
+            <summary>Sets the shim of TaskEx.Delay(Int32 dueTime, CancellationToken cancellationToken)</summary>
+        </member>
+        <member name="P:System.Threading.Tasks.Fakes.ShimTaskEx.DelayTimeSpan">
+            <summary>Sets the shim of TaskEx.Delay(TimeSpan dueTime)</summary>
+        </member>
+        <member name="P:System.Threading.Tasks.Fakes.ShimTaskEx.DelayTimeSpanCancellationToken">
+            <summary>Sets the shim of TaskEx.Delay(TimeSpan dueTime, CancellationToken cancellationToken)</summary>
+        </member>
+        <member name="P:System.Threading.Tasks.Fakes.ShimTaskEx.RunAction">
+            <summary>Sets the shim of TaskEx.Run(Action action)</summary>
+        </member>
+        <member name="P:System.Threading.Tasks.Fakes.ShimTaskEx.RunActionCancellationToken">
+            <summary>Sets the shim of TaskEx.Run(Action action, CancellationToken cancellationToken)</summary>
+        </member>
+        <member name="P:System.Threading.Tasks.Fakes.ShimTaskEx.RunFuncOfTask">
+            <summary>Sets the shim of TaskEx.Run(Func`1&lt;Task&gt; function)</summary>
+        </member>
+        <member name="P:System.Threading.Tasks.Fakes.ShimTaskEx.RunFuncOfTaskCancellationToken">
+            <summary>Sets the shim of TaskEx.Run(Func`1&lt;Task&gt; function, CancellationToken cancellationToken)</summary>
+        </member>
+        <member name="P:System.Threading.Tasks.Fakes.ShimTaskEx.StaticConstructor">
+            <summary>Sets the shim of TaskEx.TaskEx()</summary>
+        </member>
+        <member name="P:System.Threading.Tasks.Fakes.ShimTaskEx.WhenAllIEnumerableOfTask">
+            <summary>Sets the shim of TaskEx.WhenAll(IEnumerable`1&lt;Task&gt; tasks)</summary>
+        </member>
+        <member name="P:System.Threading.Tasks.Fakes.ShimTaskEx.WhenAllTaskArray">
+            <summary>Sets the shim of TaskEx.WhenAll(Task[] tasks)</summary>
+        </member>
+        <member name="P:System.Threading.Tasks.Fakes.ShimTaskEx.WhenAnyIEnumerableOfTask">
+            <summary>Sets the shim of TaskEx.WhenAny(IEnumerable`1&lt;Task&gt; tasks)</summary>
+        </member>
+        <member name="P:System.Threading.Tasks.Fakes.ShimTaskEx.WhenAnyTaskArray">
+            <summary>Sets the shim of TaskEx.WhenAny(Task[] tasks)</summary>
+        </member>
+        <member name="P:System.Threading.Tasks.Fakes.ShimTaskEx.Yield">
+            <summary>Sets the shim of TaskEx.Yield()</summary>
+        </member>
+        <member name="P:System.Threading.Tasks.Fakes.ShimTaskEx._Delayb__0">
+            <summary>Sets the shim of TaskEx.&lt;Delay&gt;b__0()</summary>
+        </member>
+        <member name="P:System.Threading.Tasks.Fakes.ShimTaskEx._WhenAllb__7TaskArrayTaskCompletionSourceOfObject">
+            <summary>Sets the shim of TaskEx.&lt;WhenAll&gt;b__7(Task[] completedTasks, TaskCompletionSource`1&lt;Object&gt; tcs)</summary>
+        </member>
+    </members>
+</doc>
